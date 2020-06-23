@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBUtils {
 
-	private String url = "jdbc:mysql://192.168.168.1:3306/ICMS?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";
+	private String url = "jdbc:mysql://localhost/ICMS?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";
 
 	private String user = "root";
 
@@ -38,7 +38,6 @@ public class DBUtils {
 
 
 	public int doUpdate(String Sqls, Object[] params) {
-
 		getConnect();
 		int i=0;
 		try {
@@ -50,9 +49,7 @@ public class DBUtils {
 					stmt.setObject(j+1, params[j]);
 				}
 			}
-
 			i = stmt.executeUpdate();
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

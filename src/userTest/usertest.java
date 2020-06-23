@@ -16,9 +16,9 @@ public class usertest {
         user_1.setUserEmail("lisi@email.com");
         user_1.setUserDepartment("人事部");
         user_1.setUserPwd("ls1234");
-        int userid=userDao.select(user_1.getUserEmail());
-        if(userid!=0) {
-            System.out.println("用户已存在"+userid);
+        ;
+        if(userDao.isUserExist(user_1.getUserEmail())) {
+            System.out.println("用户已存在");
         }
         else{
             if (userDao.register(user_1) == 1)

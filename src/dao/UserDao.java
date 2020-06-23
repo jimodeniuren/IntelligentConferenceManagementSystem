@@ -24,6 +24,8 @@ public class UserDao {
                 count=1;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            dbUtils.getClose();
         }
         return count;
     }
@@ -31,21 +33,33 @@ public class UserDao {
         Object params[]={user.getUserEmail(),user.getUserPwd(),user.getUserName(),user.getUserDepartment()};
         String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
         DBUtils dbUtils = new DBUtils();
-        return dbUtils.doUpdate(sql, params);
+        int count = dbUtils.doUpdate(sql, params);
+        dbUtils.getClose();
+        return count;
     }
-    public int select(String email){
+    public int editUserInfo(User user){
+        int count =0;
+        Object params[]={user.getUserEmail(),user.getUserName(),user.getUserDepartment()};
+        String sql = "update set  tbl_user where user_emailAddr = ? and user_pwd = ?";
+        DBUtils dbUtils = new DBUtils();
+        ResultSet rs = dbUtils.doQuery(sql,params);
+        dbUtils.getClose();
+        return count;
+    }
+    public boolean isUserExist(String email){
         Object params[]={email};
         String sql = "select user_id from tbl_user where user_emailAddr = ?";
         DBUtils dbUtils = new DBUtils();
         ResultSet rs = dbUtils.doQuery(sql,params);
-        int count = 0;
         try {
             if(rs.next())
-                count=rs.getInt(1);
+                return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            dbUtils.getClose();
         }
-        return count;
+        return false;
     }
 
 }
