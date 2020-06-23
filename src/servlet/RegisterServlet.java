@@ -13,10 +13,12 @@ import java.io.IOException;
 @WebServlet(name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         String name = request.getParameter("userName");
         String password = request.getParameter("userPwd");
         String department = request.getParameter("userDepartment");
         String emailAddr = request.getParameter("EmailAddr");
+
 
         User user= new User();
         user.setUserName(name);
