@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class DBUtils {
 
-	private String url = "jdbc:mysql://localhost:3306/hk?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
+	private String url = "jdbc:mysql://192.168.168.1:3306/ICMS?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";
 
 	private String user = "root";
 
-	private String password = "abc123";
+	private String password = "abc1234";
 
 	private Connection conn = null;
 	
