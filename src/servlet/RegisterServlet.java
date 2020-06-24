@@ -14,26 +14,21 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        String name = request.getParameter("userName");
+        String name = request.getParameter("surname")+request.getParameter("firstName");
         String password = request.getParameter("userPwd");
-        String department = request.getParameter("userDepartment");
         String emailAddr = request.getParameter("EmailAddr");
-
 
         User user= new User();
         user.setUserName(name);
         user.setUserPwd(password);
-        user.setUserDepartment(department);
         user.setUserEmail(emailAddr);
 
         UserDao userDao = new UserDao();
         if(userDao.insert(user)!=0){
-            response.sendRedirect("");
+            response.sendRedirect("login.jsp");
         }else{
             response.sendRedirect("");
-
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

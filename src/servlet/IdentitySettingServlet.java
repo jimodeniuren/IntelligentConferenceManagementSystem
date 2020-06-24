@@ -16,4 +16,8 @@ public class IdentitySettingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    private void getUpdUserID(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.valueOf(request.getParameter("userID"));
+    }
 }
