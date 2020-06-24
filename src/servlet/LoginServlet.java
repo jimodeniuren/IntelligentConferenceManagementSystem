@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet {
 
         UserDao userDao = new UserDao();
         userDao.passwordCheck(emailAddr,password);
+        //
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
