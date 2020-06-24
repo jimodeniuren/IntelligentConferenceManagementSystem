@@ -16,4 +16,9 @@ public class BookServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    private void bookConference(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
 }
