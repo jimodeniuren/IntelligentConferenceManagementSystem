@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class DBUtils {
 
-	private String url = "jdbc:mysql://localhost/ICMS?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";
+	private String url = "jdbc:mysql://121.89.200.33:3306/icms?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
 
 	private String user = "root";
 
-	private String password = "abc1234";
+	private String password = "146325";
 
 	private Connection conn = null;
 	
@@ -38,6 +38,7 @@ public class DBUtils {
 
 
 	public int doUpdate(String Sqls, Object[] params) {
+
 		getConnect();
 		int i=0;
 		try {
@@ -49,7 +50,9 @@ public class DBUtils {
 					stmt.setObject(j+1, params[j]);
 				}
 			}
+
 			i = stmt.executeUpdate();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
