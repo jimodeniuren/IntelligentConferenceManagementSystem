@@ -12,12 +12,16 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         String password = request.getParameter("userPwd");
         String emailAddr = request.getParameter("EmailAddr");
 
         UserDao userDao = new UserDao();
-        userDao.passwordCheck(emailAddr,password);
-        //
+        if(userDao.passwordCheck(emailAddr,password)!=0){
+            response.sendRedirect("");
+        }else {
+            response.sendRedirect("");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

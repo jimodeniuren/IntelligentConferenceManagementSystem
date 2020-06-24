@@ -27,14 +27,17 @@ public class RegisterServlet extends HttpServlet {
         user.setUserEmail(emailAddr);
 
         UserDao userDao = new UserDao();
-        if(userDao.isUserExist(user.getUserEmail())){
-            //账户已存在
+        if(userDao.insert(user)!=0){
+            response.sendRedirect("");
         }else{
-            userDao.register(user);
+            response.sendRedirect("");
+
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);
     }
+
 }

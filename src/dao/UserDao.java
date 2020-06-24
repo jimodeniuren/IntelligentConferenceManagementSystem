@@ -29,7 +29,7 @@ public class UserDao extends DBUtils{
         }
         return count;
     }
-    public int register(User user){
+    public int insert(User user){
         Object params[]={user.getUserEmail(),user.getUserPwd(),
                 user.getUserName(),user.getUserDepartment()};
         String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
@@ -39,11 +39,18 @@ public class UserDao extends DBUtils{
         return count;
     }
     public int editUserInfo(User user){
-        int count =0;
-        Object params[]={user.getUserEmail(),user.getUserName(),user.getUserDepartment()};
-        String sql = "update set  tbl_user where user_emailAddr = ? and user_pwd = ?";
+        Object params[]={user.getUserEmail(),user.getUserName(),user.getUserDepartment(),user.getUserID()};
+        String sql = "update tbl_user set user_emailAddr = ?,user_name = ?,user_department=? where user_id = ?";
         DBUtils dbUtils = new DBUtils();
-        ResultSet rs = dbUtils.doQuery(sql,params);
+        int count = dbUtils.doUpdate(sql,params);
+        dbUtils.getClose();
+        return count;
+    }
+    public int updateIdentity(User user){
+        Object params[]={user.getUserIdentity(),user.getUserID()};
+        String sql = "update tbl_user set user_identity=? where user_id = ?";
+        DBUtils dbUtils = new DBUtils();
+        int count  = dbUtils.doUpdate(sql,params);
         dbUtils.getClose();
         return count;
     }
