@@ -11,7 +11,6 @@ public class usertest {
         }else
             System.out.println("失败");
         User user_1 =new User();
-        User user_2 =new User();
         user_1.setUserName("lisi");
         user_1.setUserEmail("lisi@email.com");
         user_1.setUserDepartment("人事部");

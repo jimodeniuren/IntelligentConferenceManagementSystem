@@ -13,6 +13,16 @@ public class User {
     private String userDepartment;
     private String userEmail;
 
+    public User(){}
+
+    public User(int userID,String userPwd,int userIdentity,String userName,String userDepartment,String userEmail){
+        this.userID=userID;
+        this.userPwd=userPwd;
+        this.userIdentity=userIdentity;
+        this.userName=userName;
+        this.userDepartment=userDepartment;
+        this.userEmail=userEmail;
+    }
 
     public int getUserID() {
         return userID;
