@@ -20,7 +20,7 @@ public class AttendenceRecordDao extends DBUtils {
                 = {attendenceRecord.getConferenceId(),attendenceRecord.getConferenceName(),
                     attendenceRecord.getParticipantId(),attendenceRecord.getParticipantName()};
 
-        String sql = "insert into attendence_record values(?,?,?,?)";
+        String sql = "insert into tbl_mar values(?,?,?,?)";
 
         int i = doUpdate(sql,params);
 
@@ -34,7 +34,7 @@ public class AttendenceRecordDao extends DBUtils {
                 =  {attendenceRecord.getConferenceId(),attendenceRecord.getConferenceName(),
                 attendenceRecord.getParticipantId(),attendenceRecord.getParticipantName()};
 
-        String sql = "update attendence_record set conference_id=?,conference_name=?,participant_id=?,participant_name=?";
+        String sql = "update tbl_mar set conference_id=?,conference_name=?,participant_id=?,participant_name=?";
 
         int i = doUpdate(sql, params);
 
@@ -45,10 +45,10 @@ public class AttendenceRecordDao extends DBUtils {
     public List<AttendenceRecord> selectById(String id,int mode){
         String sql = "";
         if (mode == 0){
-            sql = "select * from attendence_record where conference_id = " + id;
+            sql = "select * from tbl_mar where conference_id = " + id;
         }
         else{
-            sql = "select * from attendence_record where participant_id = " + id;
+            sql = "select * from tbl_mar where participant_id = " + id;
         }
 
         ResultSet rs = doQuery(sql, null);

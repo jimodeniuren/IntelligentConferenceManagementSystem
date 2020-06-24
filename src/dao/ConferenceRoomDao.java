@@ -22,7 +22,7 @@ public class ConferenceRoomDao extends DBUtils {
                 , conferenceRoom.getMax(), conferenceRoom.getStatus()
                 , conferenceRoom.getResources()};
 
-        String sql = "insert into conference_room values(?,?,?,?,?)";
+        String sql = "insert into tbl_mr values(?,?,?,?,?)";
 
         int i = doUpdate(sql,params);
 
@@ -34,7 +34,7 @@ public class ConferenceRoomDao extends DBUtils {
 
         Object[] params = {conferenceRoom.getId()};
 
-        String sql = "delete from conference_room where mr_id=?";
+        String sql = "delete from tbl_mr where mr_id=?";
 
         int i = doUpdate(sql, params);
 
@@ -49,7 +49,7 @@ public class ConferenceRoomDao extends DBUtils {
                 , conferenceRoom.getMax(), conferenceRoom.getStatus()
                 , conferenceRoom.getResources()};
 
-        String sql = "update conference_room set mr_addr=?,mr_max=?,mr_status=?,stu_sex=?,mr_resources=? where mr_id=?";
+        String sql = "update tbl_mr set mr_addr=?,mr_max=?,mr_status=?,mr_resources=? where mr_id=?";
 
         int i = doUpdate(sql, params);
 
@@ -58,7 +58,7 @@ public class ConferenceRoomDao extends DBUtils {
     }
 
     public String getStatusById(String id){
-        String sql = "select * from conference_room where mr_id = " + id;
+        String sql = "select * from tbl_mr where mr_id = " + id;
 
         ResultSet rs = doQuery(sql, null);
 

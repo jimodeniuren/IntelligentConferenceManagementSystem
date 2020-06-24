@@ -18,6 +18,9 @@ public class Conference {
     private Date endTime;
     private int conferenceStatus;
 
+    public Conference() {
+    }
+
     public Conference(String conferenceName, int conferenceId, int conferenceType, int mrId, int hostId, String hostDepartment, Date startTime, Date endTime, int conferenceStatus) {
         this.conferenceName = conferenceName;
         this.conferenceId = conferenceId;
