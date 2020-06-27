@@ -33,41 +33,66 @@ public class UserDao extends DBUtils{
         Object params[]={user.getUserEmail(),user.getUserPwd(),
                 user.getUserName(),user.getUserDepartment()};
         String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
-        DBUtils dbUtils = new DBUtils();
-        int count = dbUtils.doUpdate(sql, params);
-        dbUtils.getClose();
+        int count = doUpdate(sql, params);
+        getClose();
         return count;
     }
-    public int editUserInfo(User user){
-        Object params[]={user.getUserEmail(),user.getUserName(),user.getUserDepartment(),user.getUserID()};
-        String sql = "update tbl_user set user_emailAddr = ?,user_name = ?,user_department=? where user_id = ?";
-        DBUtils dbUtils = new DBUtils();
-        int count = dbUtils.doUpdate(sql,params);
-        dbUtils.getClose();
+    public int editUserInfo(String name,String department,int id){
+        Object params[]={name,department,id};
+        String sql = "update tbl_user set user_name = ?,user_department=? where user_id = ?";
+        int count = doUpdate(sql,params);
+        getClose();
         return count;
     }
     public int updateIdentity(User user){
         Object params[]={user.getUserIdentity(),user.getUserID()};
         String sql = "update tbl_user set user_identity=? where user_id = ?";
-        DBUtils dbUtils = new DBUtils();
-        int count  = dbUtils.doUpdate(sql,params);
-        dbUtils.getClose();
+        int count  = doUpdate(sql,params);
+        getClose();
         return count;
     }
-    public boolean isUserExist(String email){
+    public int getUserID(String email){
         Object params[]={email};
         String sql = "select user_id from tbl_user where user_emailAddr = ?";
-        DBUtils dbUtils = new DBUtils();
-        ResultSet rs = dbUtils.doQuery(sql,params);
+        ResultSet rs = doQuery(sql,params);
         try {
             if(rs.next())
-                return true;
+                return rs.getInt("user_id");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
-            dbUtils.getClose();
+            if(rs!=null) {
+                try {
+                    rs.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            getClose();
         }
-        return false;
+        return 0;
     }
+    public Object[] getUserInfo(int id){
 
+        String sql = "select * from tbl_user where user_id = "+id;
+        ResultSet rs = doQuery(sql,null);
+        try {
+            if(rs.next()){
+                Object params[]={rs.getInt("user_id"),rs.getString("user_name"),
+                        rs.getString("user_department"),rs.getString("user_emailAddr")};
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            if(rs!=null) {
+                try {
+                    rs.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            getClose();
+        }
+        return null;
+    }
 }
