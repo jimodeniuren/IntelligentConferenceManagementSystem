@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Blank Page | Okler Themes | Porto-Admin</title>
+		<title>User Profile | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -41,7 +41,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="" class="logo">
+					<a href="../" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -265,7 +265,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							ц╡ЕшНЙф╝Ъшоо
+							╟│▓▌╗с╥щ
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -279,24 +279,24 @@
 									<li>
 										<a href="tables-advanced.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>ф╝ЪшооцЯешпв</span>
+											<span>╗с╥щ▓щ╤п</span>
 										</a>
 									</li>
 									
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ф╝ЪшоощвДхоЪ</span>
+											<span>╗с╥щ╘д╢и</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.html">
-													 хПСш╡╖цЦ░ф╝Ъшоо
+													 ╖в╞Ё╨┬╗с╥щ
 												</a>
 											</li>
-											<li class="nav-active">
+											<li>
 												<a href="pages-blank.html">
-													 цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
+													 ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
 												</a>
 											</li>
 										</ul>
@@ -304,34 +304,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>шпнщЯ│ф╝Ъшоо</span>
+											<span>╙я╥Ї╗с╥щ</span>
 										</a>
 									</li>
-									<li>
-										<a href="pages-search-results.html.html">
+									<li class="nav-active">
+										<a href="pages-search-results.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>цЭГщЩРшо╛ч╜о</span>
+											<span>╚и╧▐╔ш╓├</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>ф╝ЪшоочобчРЖ</span>
+											<span>╗с╥щ╣▄└э</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="tables-basic.html">
-													 ф╝ЪшоощвДхоЪхобца╕
+													 ╗с╥щ╘д╢и╔є║╦
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 ф╝ЪшооходцОзхИ╢ф╕нх┐Г
+													 ╗с╥щ╩╥┐╪╓╞╓╨╨─
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 х║ФцАеш░Гх║ж
+													 ╙ж╝▒╡ў╢╚
 												</a>
 											</li>
 											
@@ -350,7 +350,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо</h2>
+						<h2>╚и╧▐╔ш╓├</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -359,8 +359,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>ф╝ЪшоощвДхоЪ</span></li>
-								<li><span>цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо</span></li>
+								<li><span>╚и╧▐╔ш╓├</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -368,102 +367,102 @@
 					</header>
 
 					<!-- start: page -->
-					
-						<button class="btn btn-sm btn-default">хПЦц╢ИцЙАщАЙф╝Ъшоо</button>                
-					
-					<div class="table-responsive">
-						<table class="table table-striped b-t b-light">
-						  <thead>
-							<tr>
-							  <th style="width:20px;">
-								<label class="i-checks m-b-none">
-								  <input type="checkbox"><i></i>
-								</label>
-							  </th>
-							  <th>ф╝Ъшооф╕╗щвШ</th>
-							  <th>ф╝ЪшоохЬ░чВ╣</th>
-							  <th>цЧецЬЯ</th>
-							  <th>хобца╕чК╢цАБ</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>6цЬИф╗╜х╖еф╜ЬцА╗ч╗У</td>
-							  <td><span class="text-ellipsis">ф╕Ьф╣ЭB201</span></td>
-							  <td><span class="text-ellipsis">2020.6.29 17:00-19:00</span></td>
-							  <td>хобца╕щАЪш┐З</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Formasa</td>
-							  <td>8c</td>
-							  <td>Jul 22, 2013</td>
-							  <td>хобца╕ф╕н</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Avatar system</td>
-							  <td>15c</td>
-							  <td>Jul 15, 2013</td>            
-							  <td>хобца╕ф╕н</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Throwdown</td>
-							  <td>4c</td>
-							  <td>Jul 11, 2013</td>
-							  <td>хобца╕ф╕н</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Idrawfast</td>
-							  <td>4c</td>
-							  <td>Jul 7, 2013</td>
-							  <td>хобца╕ф╕н</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Formasa</td>
-							  <td>8c</td>
-							  <td>Jul 3, 2013</td>
-							  <td>хобца╕цЬкщАЪш┐З</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Avatar system</td>
-							  <td>15c</td>
-							  <td>Jul 2, 2013</td>
-							  <td>хобца╕щАЪш┐З</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Videodown</td>
-							  <td>4c</td>
-							  <td>Jul 1, 2013</td>
-							  <td>хобца╕щАЪш┐З</td>
-							</tr>
-						  </tbody>
-						</table>
-					  </div>
-					  <footer class="panel-footer">
-						<div class="row">
-						  
-						  <div class="col-sm-5 text-center">
-							<small class="text-muted inline m-t-sm m-b-sm">цШ╛чд║8/50ф╕кч╗УцЮЬ</small>
-						  </div>
-						  <div class="col-sm-7 text-right text-center-xs">                
-							<ul class="pagination pagination-sm m-t-none m-b-none">
-							  <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-							  <li><a href="">1</a></li>
-							  <li><a href="">2</a></li>
-							  <li><a href="">3</a></li>
-							  <li><a href="">4</a></li>
-							  <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-							</ul>
-						  </div>
+
+					<div class="row">
+						<div class="col-md-4 col-lg-3">
+
+							<section class="panel">
+								<div class="panel-body">
+									<div class="thumb-info mb-md">
+										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
+										<div class="thumb-info-title">
+											<span class="thumb-info-inner">John Doe</span>
+											<span class="thumb-info-type">CEO</span>
+										</div>
+									</div>
+
+									
+
+									<hr class="dotted short">
+
+									<h6 class="text-muted">About</h6>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
+									<div class="clearfix">
+										<a class="text-uppercase text-muted pull-right" href="#">(View All)</a>
+									</div>
+
+									<hr class="dotted short">
+
+									<div class="social-icons-list">
+										<a rel="tooltip" data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+										<a rel="tooltip" data-placement="bottom" href="http://www.twitter.com" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+										<a rel="tooltip" data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+									</div>
+
+								</div>
+							</section>						
 						</div>
-					  </footer>
+						<div class="col-md-8 col-lg-6">
+					
+									<div id="edit">
+
+										<form class="form-horizontal" method="get">
+											<h4 class="mb-xlg">╕Ў╚╦╨┼╧в</h4>
+											<fieldset>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileID">ID</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileID">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileName">╨╒├√</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileName">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileDep">▓┐├┼</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileDep">
+													</div>
+												</div>												
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileCompany">╚и╧▐╔ш╓├</label>
+													<div class="col-md-8">
+														<div class="radio-custom radio-primary">
+															<input id="administrator" type="radio" value="administrator" required>
+															<label for="administrator">╣▄└э╘▒</label>
+														</div>
+														<div class="radio-custom radio-primary">
+															<input id="initiator" type="radio" value="initiator" required>
+															<label for="initiator">╗с╥щ╖в╞Ё╒▀</label>
+														</div>
+														<div class="radio-custom radio-primary">
+															<input id="attendee" type="radio" value="attendee" required>
+															<label for="attendee">▓╬╗с╒▀</label>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+											
+											<hr class="dotted tall">
+											
+											<div class="panel-footer">
+												<div class="row">
+													<div class="col-md-9 col-md-offset-3">
+														<button type="submit" class="btn btn-primary">╠с╜╗</button>
+														<button type="cancel" class="btn btn-default">╚б╧√</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
+
+									</div>
+						</div>
+						
+					</div>
 					<!-- end: page -->
 				</section>
 			</div>
@@ -546,6 +545,9 @@
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
+		<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
 		
@@ -557,3 +559,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+		 pageEncoding="GB18030"%>

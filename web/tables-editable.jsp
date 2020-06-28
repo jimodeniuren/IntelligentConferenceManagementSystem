@@ -299,7 +299,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html.html">
+												<a href="pages-blank.html">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -312,7 +312,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.html.html">
+										<a href="pages-search-results.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -1031,3 +1031,6 @@
 		<script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+pageEncoding="GB18030"%>

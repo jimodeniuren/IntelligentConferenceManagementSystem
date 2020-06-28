@@ -269,7 +269,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							ц╡ЕшНЙф╝Ъшоо
+							╟│▓▌╗с╥щ
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -283,24 +283,24 @@
 									<li class="nav-active">
 										<a href="tables-advanced.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>ф╝ЪшооцЯешпв</span>
+											<span>╗с╥щ▓щ╤п</span>
 										</a>
 									</li>
 									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ф╝ЪшоощвДхоЪ</span>
+											<span>╗с╥щ╘д╢и</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.html">
-													 хПСш╡╖цЦ░ф╝Ъшоо
+													 ╖в╞Ё╨┬╗с╥щ
 												</a>
 											</li>
 											<li>
 												<a href="forms-advanced.html">
-													 цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
+													 ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
 												</a>
 											</li>
 										</ul>
@@ -308,34 +308,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>шпнщЯ│ф╝Ъшоо</span>
+											<span>╙я╥Ї╗с╥щ</span>
 										</a>
 									</li>
 									<li>
 										<a href="index.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>цЭГщЩРшо╛ч╜о</span>
+											<span>╚и╧▐╔ш╓├</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>ф╝ЪшоочобчРЖ</span>
+											<span>╗с╥щ╣▄└э</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="tables-basic.html">
-													 ф╝ЪшоощвДхоЪхобца╕
+													 ╗с╥щ╘д╢и╔є║╦
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 ф╝ЪшооходцОзхИ╢ф╕нх┐Г
+													 ╗с╥щ╩╥┐╪╓╞╓╨╨─
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 х║ФцАеш░Гх║ж
+													 ╙ж╝▒╡ў╢╚
 												</a>
 											</li>
 											
@@ -354,7 +354,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>ф╝ЪшооцЯешпв</h2>
+						<h2>╗с╥щ▓щ╤п</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -363,7 +363,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>ф╝ЪшооцЯешпв</span></li>
+								<li><span>╗с╥щ▓щ╤п</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -378,17 +378,17 @@
 									<a href="#" class="fa fa-times"></a>
 								</div>
 						
-								<h2 class="panel-title">ф╝ЪшооцЯешпв</h2>
+								<h2 class="panel-title">╗с╥щ▓щ╤п</h2>
 							</header>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped mb-none" id="datatable-default">
 									<thead>
 										<tr>
-											<th>ф╝ЪшоохРНчз░</th>
-											<th>ф╝ЪшоохЬ░чВ╣</th>
-											<th>ф╝ЪшооцЧ╢щЧ┤</th>
-											<th class="hidden-phone">ф╕╗хКЮщГищЧи</th>
-											<th class="hidden-phone">хПСш╡╖ф║║</th>
+											<th>╗с╥щ├√│╞</th>
+											<th>╗с╥щ╡╪╡у</th>
+											<th>╗с╥щ╩▒╝ф</th>
+											<th class="hidden-phone">╓ў░ь▓┐├┼</th>
+											<th class="hidden-phone">╖в╞Ё╚╦</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -398,8 +398,8 @@
 												Explorer 4.0
 											</td>
 											<td>Win 95+</td>
-											<td class="center hidden-phone">шо╛шобщГи</td>
-											<td class="center hidden-phone">цЦЗф╝К</td>
+											<td class="center hidden-phone">╔ш╝╞▓┐</td>
+											<td class="center hidden-phone">╬─╥┴</td>
 										</tr>
 										<tr class="gradeC">
 											<td>Trident</td>
@@ -407,8 +407,8 @@
 												Explorer 5.0
 											</td>
 											<td>Win 95+</td>
-											<td class="center hidden-phone">ч╛Ох╖ещГи</td>
-											<td class="center hidden-phone">чОЛхдзщФд</td>
+											<td class="center hidden-phone">├└╣д▓┐</td>
+											<td class="center hidden-phone">═ї┤є┤╕</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Trident</td>
@@ -416,8 +416,8 @@
 												Explorer 5.5
 											</td>
 											<td>Win 95+</td>
-											<td class="center hidden-phone">ч╛Ох╖ещГи</td>
-											<td class="center hidden-phone">чОЛхдзщФд</td>
+											<td class="center hidden-phone">├└╣д▓┐</td>
+											<td class="center hidden-phone">═ї┤є┤╕</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Trident</td>
@@ -425,29 +425,29 @@
 												Explorer 6
 											</td>
 											<td>Win 98+</td>
-											<td class="center hidden-phone">шо╛шобщГи</td>
-											<td class="center hidden-phone">цЦЗф╝К</td>
+											<td class="center hidden-phone">╔ш╝╞▓┐</td>
+											<td class="center hidden-phone">╬─╥┴</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Trident</td>
 											<td>Internet Explorer 7</td>
 											<td>Win XP SP2+</td>
-											<td class="center hidden-phone">шо╛шобщГи</td>
-											<td class="center hidden-phone">цЦЗф╝К</td>
+											<td class="center hidden-phone">╔ш╝╞▓┐</td>
+											<td class="center hidden-phone">╬─╥┴</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Trident</td>
 											<td>AOL browser (AOL desktop)</td>
 											<td>Win XP</td>
-											<td class="center hidden-phone">шо╛шобщГи</td>
-											<td class="center hidden-phone">цЦЗф╝К</td>
+											<td class="center hidden-phone">╔ш╝╞▓┐</td>
+											<td class="center hidden-phone">╬─╥┴</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Gecko</td>
 											<td>Firefox 1.0</td>
 											<td>Win 98+ / OSX.2+</td>
-											<td class="center hidden-phone">шо╛шобщГи</td>
-											<td class="center hidden-phone">цЦЗф╝К</td>
+											<td class="center hidden-phone">╔ш╝╞▓┐</td>
+											<td class="center hidden-phone">╬─╥┴</td>
 										</tr>
 										<tr class="gradeA">
 											<td>Gecko</td>
@@ -1769,3 +1769,9 @@
 		<script src="assets/javascripts/tables/examples.datatables.tabletools.js"></script>
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+pageEncoding="GB18030"%>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+		 pageEncoding="GB18030"%>

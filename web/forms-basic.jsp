@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>User Profile | Okler Themes | Porto-Admin</title>
+		<title>发起新会议</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -21,6 +21,9 @@
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -41,7 +44,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="../" class="logo">
+					<a href="" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -283,19 +286,19 @@
 										</a>
 									</li>
 									
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议预定</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
+											<li class="nav-active">
 												<a href="forms-basic.html">
 													 发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html">
+												<a href="pages-blank.html.html">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -307,13 +310,13 @@
 											<span>语音会议</span>
 										</a>
 									</li>
-									<li class="nav-active">
+									<li>
 										<a href="pages-search-results.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li class="nav-parent">
+									<li>
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
 											<span>会议管理</span>
@@ -350,7 +353,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>权限设置</h2>
+						<h2>发起新会议</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -359,7 +362,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>权限设置</span></li>
+								<li><span>会议预定</span></li>
+								<li><span>发起新会议</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -367,102 +371,89 @@
 					</header>
 
 					<!-- start: page -->
-
-					<div class="row">
-						<div class="col-md-4 col-lg-3">
-
-							<section class="panel">
-								<div class="panel-body">
-									<div class="thumb-info mb-md">
-										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
-										<div class="thumb-info-title">
-											<span class="thumb-info-inner">John Doe</span>
-											<span class="thumb-info-type">CEO</span>
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
 										</div>
-									</div>
-
-									
-
-									<hr class="dotted short">
-
-									<h6 class="text-muted">About</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
-									<div class="clearfix">
-										<a class="text-uppercase text-muted pull-right" href="#">(View All)</a>
-									</div>
-
-									<hr class="dotted short">
-
-									<div class="social-icons-list">
-										<a rel="tooltip" data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-										<a rel="tooltip" data-placement="bottom" href="http://www.twitter.com" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-										<a rel="tooltip" data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
-									</div>
-
-								</div>
-							</section>						
-						</div>
-						<div class="col-md-8 col-lg-6">
-					
-									<div id="edit">
-
-										<form class="form-horizontal" method="get">
-											<h4 class="mb-xlg">个人信息</h4>
-											<fieldset>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileID">ID</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileID">
-													</div>
+						
+										<h2 class="panel-title">会议预约申请表</h2>
+									</header>
+									<div class="panel-body">
+										<form class="form-horizontal form-bordered" method="get">
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">会议主题</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="inputDefault">
 												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileName">姓名</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileName">
-													</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">会议室</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="inputDefault">
 												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileDep">部门</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileDep">
-													</div>
-												</div>												
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">权限设置</label>
-													<div class="col-md-8">
-														<div class="radio-custom radio-primary">
-															<input id="administrator" type="radio" value="administrator" required>
-															<label for="administrator">管理员</label>
-														</div>
-														<div class="radio-custom radio-primary">
-															<input id="initiator" type="radio" value="initiator" required>
-															<label for="initiator">会议发起者</label>
-														</div>
-														<div class="radio-custom radio-primary">
-															<input id="attendee" type="radio" value="attendee" required>
-															<label for="attendee">参会者</label>
-														</div>
-													</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputSuccess">主办部门</label>
+												<div class="col-md-6">
+													<select class="form-control mb-md">
+														<option>策划部</option>
+														<option>设计部</option>
+														<option>美工部</option>
+													</select>
 												</div>
-											</fieldset>
-											
-											<hr class="dotted tall">
-											
-											<div class="panel-footer">
-												<div class="row">
-													<div class="col-md-9 col-md-offset-3">
-														<button type="submit" class="btn btn-primary">提交</button>
-														<button type="cancel" class="btn btn-default">取消</button>
+											</div>
+						
+											<div class="form-group">
+												<label class="col-md-3 control-label">会议日期</label>
+												<div class="col-md-6">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</span>
+														<input id="date" data-plugin-masked-input data-input-mask="99/99/9999" placeholder="__/__/____" class="form-control">
 													</div>
 												</div>
 											</div>
 
-										</form>
+											<div class="form-group">
+												<label class="col-md-3 control-label">开始时间</label>
+												<div class="col-md-6">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
+														</span>
+														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+													</div>
+												</div>
+											</div>
 
+											<div class="form-group">
+												<label class="col-md-3 control-label">结束时间</label>
+												<div class="col-md-6">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
+														</span>
+														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6"></div>
+											<div class="col-md-6">
+												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">确认</button>
+												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">取消</button>
+											</div>											
+										</form>
 									</div>
-						</div>
-						
-					</div>
+								</section>						
+							</div>
+						</div>						
 					<!-- end: page -->
 				</section>
 			</div>
@@ -547,6 +538,7 @@
 		
 		<!-- Specific Page Vendor -->
 		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+		<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -559,3 +551,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+pageEncoding="GB18030"%>

@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Searching Results | Okler Themes | Porto-Admin</title>
+		<title>权限设置</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -598,3 +598,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+pageEncoding="GB18030"%>

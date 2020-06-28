@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>发起新会议</title>
+		<title>Blank Page | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -21,9 +21,6 @@
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
-
-		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -292,13 +289,13 @@
 											<span>会议预定</span>
 										</a>
 										<ul class="nav nav-children">
-											<li class="nav-active">
+											<li>
 												<a href="forms-basic.html">
 													 发起新会议
 												</a>
 											</li>
-											<li>
-												<a href="pages-blank.html.html">
+											<li class="nav-active">
+												<a href="pages-blank.html">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -311,12 +308,12 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.html">
+										<a href="pages-search-results.html.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li>
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
 											<span>会议管理</span>
@@ -353,7 +350,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>发起新会议</h2>
+						<h2>查看已预订的会议</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -363,7 +360,7 @@
 									</a>
 								</li>
 								<li><span>会议预定</span></li>
-								<li><span>发起新会议</span></li>
+								<li><span>查看已预订的会议</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -371,89 +368,102 @@
 					</header>
 
 					<!-- start: page -->
+					
+						<button class="btn btn-sm btn-default">取消所选会议</button>                
+					
+					<div class="table-responsive">
+						<table class="table table-striped b-t b-light">
+						  <thead>
+							<tr>
+							  <th style="width:20px;">
+								<label class="i-checks m-b-none">
+								  <input type="checkbox"><i></i>
+								</label>
+							  </th>
+							  <th>会议主题</th>
+							  <th>会议地点</th>
+							  <th>日期</th>
+							  <th>审核状态</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>6月份工作总结</td>
+							  <td><span class="text-ellipsis">东九B201</span></td>
+							  <td><span class="text-ellipsis">2020.6.29 17:00-19:00</span></td>
+							  <td>审核通过</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Formasa</td>
+							  <td>8c</td>
+							  <td>Jul 22, 2013</td>
+							  <td>审核中</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Avatar system</td>
+							  <td>15c</td>
+							  <td>Jul 15, 2013</td>            
+							  <td>审核中</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Throwdown</td>
+							  <td>4c</td>
+							  <td>Jul 11, 2013</td>
+							  <td>审核中</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Idrawfast</td>
+							  <td>4c</td>
+							  <td>Jul 7, 2013</td>
+							  <td>审核中</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Formasa</td>
+							  <td>8c</td>
+							  <td>Jul 3, 2013</td>
+							  <td>审核未通过</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Avatar system</td>
+							  <td>15c</td>
+							  <td>Jul 2, 2013</td>
+							  <td>审核通过</td>
+							</tr>
+							<tr>
+							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+							  <td>Videodown</td>
+							  <td>4c</td>
+							  <td>Jul 1, 2013</td>
+							  <td>审核通过</td>
+							</tr>
+						  </tbody>
+						</table>
+					  </div>
+					  <footer class="panel-footer">
 						<div class="row">
-							<div class="col-lg-12">
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
-						
-										<h2 class="panel-title">会议预约申请表</h2>
-									</header>
-									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议主题</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议室</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSuccess">主办部门</label>
-												<div class="col-md-6">
-													<select class="form-control mb-md">
-														<option>策划部</option>
-														<option>设计部</option>
-														<option>美工部</option>
-													</select>
-												</div>
-											</div>
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label">会议日期</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-														</span>
-														<input id="date" data-plugin-masked-input data-input-mask="99/99/9999" placeholder="__/__/____" class="form-control">
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label">开始时间</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-clock-o"></i>
-														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label">结束时间</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-clock-o"></i>
-														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6"></div>
-											<div class="col-md-6">
-												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">确认</button>
-												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">取消</button>
-											</div>											
-										</form>
-									</div>
-								</section>						
-							</div>
-						</div>						
+						  
+						  <div class="col-sm-5 text-center">
+							<small class="text-muted inline m-t-sm m-b-sm">显示8/50个结果</small>
+						  </div>
+						  <div class="col-sm-7 text-right text-center-xs">                
+							<ul class="pagination pagination-sm m-t-none m-b-none">
+							  <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+							  <li><a href="">1</a></li>
+							  <li><a href="">2</a></li>
+							  <li><a href="">3</a></li>
+							  <li><a href="">4</a></li>
+							  <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+							</ul>
+						  </div>
+						</div>
+					  </footer>
 					<!-- end: page -->
 				</section>
 			</div>
@@ -536,10 +546,6 @@
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
-		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
-		<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
 		
@@ -551,3 +557,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+pageEncoding="GB18030"%>

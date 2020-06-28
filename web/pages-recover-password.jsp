@@ -44,11 +44,11 @@
 
 				<div class="panel panel-sign">
 					<div class="panel-title-sign mt-xl text-right">
-						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> æ‰¾å›žå¯†ç </h2>
+						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> ÕÒ»ØÃÜÂë</h2>
 					</div>
 					<div class="panel-body">
 						<div class="alert alert-info">
-							<p class="m-none text-semibold h6">åœ¨ä¸‹é¢è¾“å…¥æ‚¨çš„ç”µå­é‚®ä»¶ï¼Œæˆ‘ä»¬å°†å‘æ‚¨å‘é€é‡ç½®é‚®ä»¶ï¼</p>
+							<p class="m-none text-semibold h6">ÔÚÏÂÃæÊäÈëÄúµÄµç×ÓÓÊ¼þ£¬ÎÒÃÇ½«ÏòÄú·¢ËÍÖØÖÃÓÊ¼þ£¡</p>
 						</div>
 
 						<form>
@@ -56,12 +56,12 @@
 								<div class="input-group">
 									<input name="username" type="email" placeholder="E-mail" class="form-control input-lg" />
 									<span class="input-group-btn">
-										<button class="btn btn-primary btn-lg" type="submit">âˆš</button>
+										<button class="btn btn-primary btn-lg" type="submit">¡Ì</button>
 									</span>
 								</div>
 							</div>
 
-							<p class="text-center mt-lg">è®°å¾—å¯†ç ? <a href="pages-signin.html">ç™»å½•!</a>
+							<p class="text-center mt-lg">¼ÇµÃÃÜÂë? <a href="pages-signin.html">µÇÂ¼!</a>
 						</form>
 					</div>
 				</div>
@@ -91,3 +91,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=GB18030"
+		 pageEncoding="GB18030"%>
