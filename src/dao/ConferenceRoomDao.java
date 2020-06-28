@@ -3,8 +3,7 @@ package dao;
 import entity.ConferenceRoom;
 import utils.DBUtils;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,5 +73,68 @@ public class ConferenceRoomDao extends DBUtils {
         }
         getClose();
         return "会议室不存在！";
+    }
+    public static List getAllData()
+    {
+        List<ConferenceRoom> list = new ArrayList<ConferenceRoom>();
+        Connection con=null;
+        PreparedStatement psmt=null;
+        ResultSet rs=null;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+
+        try {
+            String url = "jdbc:mysql://localhost:3306/words?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+            String user = "root";
+            String password = "";
+            con = DriverManager.getConnection(url, user, password);
+            String sql = "select * from mr";
+            psmt = con.prepareStatement(sql);
+            rs = psmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("mr_id");
+                String add = rs.getString("mr_addr");
+                int max = rs.getInt("mr_max");
+                String status = rs.getString("mr_status");
+                String resources = rs.getString("mr_resources");
+                ConferenceRoom c1 = new ConferenceRoom(id, add, max, status, resources);
+                list.add(c1);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try{
+                if(rs!=null)
+                {
+                    rs.close();
+                }
+                if(psmt!=null)
+                {
+                    psmt.close();
+                }
+                if(con!=null)
+                {
+                    con.close();
+                }
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return list;
+    }
+    public static void main(String args[])
+    {
+        List<ConferenceRoom> list =getAllData();
+        for(ConferenceRoom tl:list)
+        {
+            System.out.println(tl.getId());
+            System.out.println(tl.getMax());
+            System.out.println(tl.getStatus());
+            System.out.println(tl.getAddress());
+            System.out.println(tl.getResources());
+        }
     }
 }
