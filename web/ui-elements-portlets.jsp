@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>发起新会议</title>
+		<title>预定审核</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -44,7 +44,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="" class="logo">
+					<a href="../" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -286,19 +286,19 @@
 										</a>
 									</li>
 									
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议预定</span>
 										</a>
 										<ul class="nav nav-children">
-											<li class="nav-active">
+											<li>
 												<a href="forms-basic.html">
 													 发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html.html">
+												<a href="pages-blank.html">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -316,14 +316,14 @@
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li>
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
 											<span>会议管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
-												<a href="ui-elements-portlets.jsp">
+											<li class="nav-active">
+												<a href="tables-basic.html">
 													 会议预定审核
 												</a>
 											</li>
@@ -353,7 +353,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>发起新会议</h2>
+						<h2>会议预定审核</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -362,8 +362,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>会议预定</span></li>
-								<li><span>发起新会议</span></li>
+								<li><span>会议管理</span></li>
+								<li><span>会议预定审核</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -371,89 +371,125 @@
 					</header>
 
 					<!-- start: page -->
-						<div class="row">
-							<div class="col-lg-12">
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
-						
-										<h2 class="panel-title">会议预约申请表</h2>
-									</header>
-									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议主题</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
-												</div>
-											</div>
+					<h3 class="mt-none">会议预定审核</h3>
+					<p>
+						你可以在这里查看会议发起者提交的会议预定申请，并进行审核。
+					</p>
+					<p>
+						<button id="portletRefresh" type="button" class="mb-xs mt-xs mr-xs btn btn-default"><i class="fa fa-refresh"></i> Refresh</button>
+						<button id="portletReset" type="button" class="mb-xs mt-xs mr-xs btn btn-default"><i class="fa fa-undo"></i> Reset</button>
+					</p>
 
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议室</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSuccess">主办部门</label>
-												<div class="col-md-6">
-													<select class="form-control mb-md">
-														<option>策划部</option>
-														<option>设计部</option>
-														<option>美工部</option>
-													</select>
-												</div>
-											</div>
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label">会议日期</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-														</span>
-														<input id="date" data-plugin-masked-input data-input-mask="99/99/9999" placeholder="__/__/____" class="form-control">
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label">开始时间</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-clock-o"></i>
-														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label">结束时间</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-clock-o"></i>
-														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6"></div>
-											<div class="col-md-6">
-												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">确认</button>
-												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">取消</button>
-											</div>											
-										</form>
+					<div class="row">
+						<div class="col-md-4" data-plugin-portlet id="portlet-1">
+							<section class="panel panel-primary" id="panel-1" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
 									</div>
-								</section>						
-							</div>
-						</div>						
+
+									<h2 class="panel-title">会议名称</h2>
+								</header>
+								<div class="panel-body">
+									<label>申请人：</label><br>
+									<label>举办部门：</label><br>
+									<label>会议室：</label><br>
+									<label>会议时间：</label><br>
+									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+								</div>
+							</section>
+							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title">会议名称</h2>
+								</header>
+								<div class="panel-body">
+									<label>申请人：</label><br>
+									<label>举办部门：</label><br>
+									<label>会议室：</label><br>
+									<label>会议时间：</label><br>
+									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4" data-plugin-portlet id="portlet-2">
+							<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title">会议名称</h2>
+								</header>
+								<div class="panel-body">
+									<label>申请人：</label><br>
+									<label>举办部门：</label><br>
+									<label>会议室：</label><br>
+									<label>会议时间：</label><br>
+									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+								</div>
+							</section>
+							<section class="panel panel-success" id="panel-5" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title">会议名称</h2>
+								</header>
+								<div class="panel-body">
+									<label>申请人：</label><br>
+									<label>举办部门：</label><br>
+									<label>会议室：</label><br>
+									<label>会议时间：</label><br>
+									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+								</div>
+							</section>
+							
+						</div>
+						<div class="col-md-4" data-plugin-portlet id="portlet-3">
+							<section class="panel panel-info" id="panel-7" data-portlet-item>
+								<header class="panel-heading portlet-handler">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title">会议名称</h2>
+								</header>
+								<div class="panel-body">
+									<label>申请人：</label><br>
+									<label>举办部门：</label><br>
+									<label>会议室：</label><br>
+									<label>会议时间：</label><br>
+									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+								</div>
+							</section>
+							
+						</div>
+					</div>
 					<!-- end: page -->
 				</section>
 			</div>
@@ -537,8 +573,9 @@
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
-		<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/store-js/store.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -549,8 +586,8 @@
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
 
+
+		<!-- Examples -->
+		<script src="assets/javascripts/ui-elements/examples.portlets.js"></script>
 	</body>
 </html>
-
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>

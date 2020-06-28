@@ -321,7 +321,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="pages-search-results.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
                                     <span>权限设置</span>
                                 </a>
