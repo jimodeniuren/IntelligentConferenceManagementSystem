@@ -80,6 +80,7 @@ public class UserDao extends DBUtils{
             if(rs.next()){
                 Object params[]={rs.getInt("user_id"),rs.getString("user_name"),
                         rs.getString("user_department"),rs.getString("user_emailAddr")};
+                return params;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
