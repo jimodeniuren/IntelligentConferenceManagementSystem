@@ -996,19 +996,19 @@
 									</div>
 									<div id="edit" class="tab-pane">
 
-										<form class="form-horizontal" method="get">
+										<form class="form-horizontal" action="servlet.UserInfoEditServlet" method="post">
 											<h4 class="mb-xlg">Personal Information</h4>
 											<fieldset>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
+													<label class="col-md-3 control-label" for="profileName">Name</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileFirstName">
+														<input type="text" class="form-control" id="profileName" name="profileName" value="${sessionScope['name']}">
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileLastName">Last Name</label>
+													<label class="col-md-3 control-label" for="profileID">ID</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileLastName">
+														<input type="text" class="form-control" id="profileID" name="profileID" value="${sessionScope['userID']}">
 													</div>
 												</div>
 												<div class="form-group">
@@ -1243,5 +1243,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-		 pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>

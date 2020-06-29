@@ -19,23 +19,32 @@ public class RegisterServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String name = request.getParameter("name");
         String password = request.getParameter("pwd");
+        String password_confirm = request.getParameter("pwd_confirm");
         String emailAddr = request.getParameter("email");
         PrintWriter out =response.getWriter();
+        if(request.getParameter("agreeterms")!=null&&request.getParameter("agreeterms").equals("on")){
+            if(password.equals(password_confirm)){
+                User user= new User();
+                user.setUserDepartment("人事部");
+                user.setUserName(name);
+                user.setUserPwd(password);
+                user.setUserEmail(emailAddr);
 
-        User user= new User();
-        user.setUserName(name);
-        user.setUserPwd(password);
-        user.setUserEmail(emailAddr);
-
-        if(userDao.insert(user)!=0){
-            response.sendRedirect("login.jsp");
+                if(userDao.insert(user)!=0){
+                    HttpSession session = request.getSession();
+                    session.setAttribute("userID",userDao.getUserID(emailAddr));
+                    response.sendRedirect("tables-advanced.jsp");
+                }else{
+                    out.print("<script language='javascript'>alert('user already exist');window.history.go(-1);</script>");
+                }
+            }else{
+                out.print("<script language='javascript'>alert('Your confirmed password and password do not match!');window.history.go(-1);</script>");
+            }
         }else{
-            HttpSession session = request.getSession();
-            //session.setAttribute("existence","<div class=\"col-sm-4 text-right\" style=\"color: #c1261d\"><h3>asdlj</h3></div>");
-//            session.setAttribute("existence","<SCRIPT LANGUAGE=\"javascript\"> alert(\"用户已存在\"); </SCRIPT> ");
-            out.print("<script language='javascript'>alert('UserName Wrong!!');window.location.href='Login.jsp';</script>");
-            response.sendRedirect("pages-signup.html");
+            out.print("<script language='javascript'>alert('Please accept the Terms of Service.');window.history.go(-1);</script>");
         }
+        out.flush();
+        out.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

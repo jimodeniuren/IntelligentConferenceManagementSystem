@@ -15,7 +15,6 @@ import java.io.IOException;
 
 @WebServlet(name = "UserEditServlet")
 public class UserEditServlet extends HttpServlet {
-    private UserDao userDao = new UserDao();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         System.out.println("do post");
@@ -35,11 +34,13 @@ public class UserEditServlet extends HttpServlet {
             System.out.println("test");
 
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("do get");
         doPost(request,response);
+
     }
 
     protected void delConfRoom(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

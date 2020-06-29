@@ -33,8 +33,11 @@ public class UserDao extends DBUtils{
     public int insert(User user){
         Object params[]={user.getUserEmail(),user.getUserPwd(),
                 user.getUserName(),user.getUserDepartment()};
+        System.out.println(user.getUserEmail()+user.getUserPwd()+
+                user.getUserName()+user.getUserDepartment());
         String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
         int count = doUpdate(sql, params);
+        System.out.println(count);
         getClose();
         return count;
     }
@@ -81,6 +84,7 @@ public class UserDao extends DBUtils{
             if(rs.next()){
                 Object params[]={rs.getInt("user_id"),rs.getString("user_name"),
                         rs.getString("user_department"),rs.getString("user_emailAddr")};
+                return params;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
