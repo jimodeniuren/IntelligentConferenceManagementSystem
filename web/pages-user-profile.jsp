@@ -297,7 +297,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.jsp">
+												<a href="tables-participantrecord.jsp">
 													会议参加记录查询
 												</a>
 											</li>
@@ -315,7 +315,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="forms-advanced.html">
+												<a href="pages-blank.jsp">
 													查看已预订的会议
 												</a>
 											</li>
@@ -344,13 +344,13 @@
 													会议预定审核
 												</a>
 											</li>
-											<li class="nav-active">
+											<li>
 												<a href="tables-editable.jsp">
 													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
+												<a href="ui-elements-charts.html">
 													 会议室使用情况
 												</a>
 											</li>
@@ -401,7 +401,7 @@
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
 											<span class="thumb-info-inner"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
-											<span class="thumb-info-type"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
+											<span class="thumb-info-type"><%=userDao.getIdentityById((String) request.getSession().getAttribute("userID"))%></span>
 										</div>
 									</div>
 

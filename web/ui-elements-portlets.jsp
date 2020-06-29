@@ -286,11 +286,28 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
 									
 									<li class="nav-parent">
@@ -340,8 +357,8 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
 											
