@@ -82,4 +82,26 @@ public class ConferenceDao extends DBUtils {
         getClose();
         return list;
     }
+
+    public List<Conference> getUnstartedConference(){
+        String sql = "select * from tbl_conference where end_time > NOW()";
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<Conference> list = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                list.add(new Conference(rs.getString(1),rs.getInt(2),
+                        rs.getInt(3),rs.getInt(4),rs.getInt(5),
+                        rs.getString(6),rs.getTimestamp(7),rs.getTimestamp(8),
+                        rs.getInt(9)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
 }
