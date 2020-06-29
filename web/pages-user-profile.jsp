@@ -996,7 +996,7 @@
 									</div>
 									<div id="edit" class="tab-pane">
 
-										<form class="form-horizontal" action="servlet.UserEditServlet" method="post">
+										<form class="form-horizontal" action="servlet.UserInfoEditServlet" method="post">
 											<h4 class="mb-xlg">Personal Information</h4>
 											<fieldset>
 												<div class="form-group">

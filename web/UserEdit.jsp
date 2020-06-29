@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="panel-body">
-    <form action="servlet.UserEditServlet" method="post">
+    <form action="servlet.UserInfoEditServlet" method="post">
     <!<--form action="" method="post">-->
         <div class="form-group mb-lg">
             <label>userID</label>
