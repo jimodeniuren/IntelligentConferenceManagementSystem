@@ -47,7 +47,7 @@
 						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 注册</h2>
 					</div>
 					<div class="panel-body">
-						<form>
+						<form action="servlet.RegisterServlet" method="post">
 							<div class="form-group mb-lg">
 								<label>姓名</label>
 								<input name="name" type="text" class="form-control input-lg" />

@@ -47,7 +47,7 @@
 						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 登录</h2>
 					</div>
 					<div class="panel-body">
-						<form action="index.html" method="post">
+						<form action="servlet.LoginServlet" method="post">
 							<div class="form-group mb-lg">
 								<label>邮箱</label>
 								<div class="input-group input-group-icon">
@@ -80,6 +80,7 @@
 									<div class="checkbox-custom checkbox-default">
 										<input id="RememberMe" name="rememberme" type="checkbox"/>
 										<label for="RememberMe">记住我</label>
+									</div>
 									</div>
 								</div>
 								<div class="col-sm-4 text-right">
