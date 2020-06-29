@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="IntelligentConferenceManagementSystem:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/IntelligentConferenceManagementSystem_war_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="IntelligentConferenceManagementSystem/web/Web" />
-      <element id="javaee-facet-resources" facet="IntelligentConferenceManagementSystem/web/Web2" />
-    </root>
-  </artifact>
-</component>

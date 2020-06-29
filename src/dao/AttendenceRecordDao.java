@@ -14,7 +14,7 @@ import java.util.List;
  * @create: 2020-06-22 20:17
  **/
 public class AttendenceRecordDao extends DBUtils {
-    public int insert(AttendenceRecord attendenceRecord) {
+    public String insert(AttendenceRecord attendenceRecord) {
 
         Object[] params
                 = {attendenceRecord.getConferenceId(),attendenceRecord.getConferenceName(),
@@ -25,7 +25,7 @@ public class AttendenceRecordDao extends DBUtils {
         int i = doUpdate(sql,params);
 
         getClose();
-        return  i;
+        return  i==1?"签到成功":"签到失败";
     }
 
     public int update(AttendenceRecord attendenceRecord) {
@@ -56,7 +56,7 @@ public class AttendenceRecordDao extends DBUtils {
         List<AttendenceRecord> list = new ArrayList<>();
 
         try {
-            if (rs.next()) {
+            while (rs.next()) {
                 list.add(new AttendenceRecord(rs.getInt(1), rs.getString(2),
                         rs.getInt(3), rs.getString(4)));
             }
