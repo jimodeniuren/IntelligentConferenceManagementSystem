@@ -20,8 +20,7 @@ public class LoginServlet extends HttpServlet {
 
         if(userDao.passwordCheck(emailAddr,password)!=0){
             setResponseAccess(response);
-            //System.out.println(request.getParameter("rememberme"));
-            if (request.getParameter("remeberme")!=null&&request.getParameter("rememberme").equals("on")) {
+            if (request.getParameter("rememberme").equals("on")) {
                 Cookie cookie = new Cookie("userID", Integer.toString(userDao.getUserID(emailAddr)));
                 cookie.setMaxAge(60*60*24*2);
                 response.addCookie(cookie);

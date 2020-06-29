@@ -25,9 +25,11 @@ public class RegisterServlet extends HttpServlet {
         if(request.getParameter("agreeterms")!=null&&request.getParameter("agreeterms").equals("on")){
             if(password.equals(password_confirm)){
                 User user= new User();
+                user.setUserDepartment("人事部");
                 user.setUserName(name);
                 user.setUserPwd(password);
                 user.setUserEmail(emailAddr);
+
                 if(userDao.insert(user)!=0){
                     HttpSession session = request.getSession();
                     session.setAttribute("userID",userDao.getUserID(emailAddr));

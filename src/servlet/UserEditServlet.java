@@ -15,17 +15,22 @@ public class UserEditServlet extends HttpServlet {
     private UserDao userDao = new UserDao();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
-        String id_str =String.valueOf(session.getAttribute("userID"));
-        Object userInfo[] = userDao.getUserInfo(Integer.parseInt(id_str));
-        request.setAttribute("userID",userInfo[0]);
-        request.setAttribute("userName",userInfo[1]);
-        request.setAttribute("userDepartment",userInfo[2]);
-        request.setAttribute("userEmail",userInfo[3]);
-        request.getRequestDispatcher("UserEdit.jsp").forward(request,response);
+        System.out.println("post");
+//        if(request.getParameter("profileNewPassword")!=null&&request.getParameter("profileNewPasswordRepeat")!=null)
+//        System.out.println(request.getParameter("profileName")+request.getParameter("profileID"));
+//        userDao.editUserInfo(request.getParameter("profileName"),request.getParameter("profiledepartment"),request.getParameter("profileID"));
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        String id_str =String.valueOf(session.getAttribute("userID"));
+        Object userInfo[] = userDao.getUserInfo(Integer.parseInt(id_str));
+        session.setAttribute("name",userInfo[1]);
+        session.setAttribute("department",userInfo[2]);
+        session.setAttribute("email",userInfo[3]);
+
+        response.sendRedirect("pages-user-profile.jsp");
     }
 }

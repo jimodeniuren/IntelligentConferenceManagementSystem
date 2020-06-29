@@ -32,8 +32,11 @@ public class UserDao extends DBUtils{
     public int insert(User user){
         Object params[]={user.getUserEmail(),user.getUserPwd(),
                 user.getUserName(),user.getUserDepartment()};
+        System.out.println(user.getUserEmail()+user.getUserPwd()+
+                user.getUserName()+user.getUserDepartment());
         String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
         int count = doUpdate(sql, params);
+        System.out.println(count);
         getClose();
         return count;
     }
