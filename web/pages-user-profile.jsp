@@ -297,7 +297,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.jsp">
+												<a href="tables-participantrecord.jsp">
 													会议参加记录查询
 												</a>
 											</li>
@@ -315,7 +315,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="forms-advanced.html">
+												<a href="pages-blank.jsp">
 													查看已预订的会议
 												</a>
 											</li>
@@ -344,13 +344,13 @@
 													会议预定审核
 												</a>
 											</li>
-											<li class="nav-active">
+											<li>
 												<a href="tables-editable.jsp">
 													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
+												<a href="ui-elements-charts.html">
 													 会议室使用情况
 												</a>
 											</li>
@@ -391,13 +391,17 @@
 					<div class="row">
 						<div class="col-md-4 col-lg-3">
 
+                            <%
+                                UserDao userDao=new UserDao();
+
+                            %>
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner">John Doe</span>
-											<span class="thumb-info-type">CEO</span>
+											<span class="thumb-info-inner"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
+											<span class="thumb-info-type"><%=userDao.getIdentityById((String) request.getSession().getAttribute("userID"))%></span>
 										</div>
 									</div>
 
@@ -654,26 +658,26 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label>request.get</label>
+														<label><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileId">ID</label>
+													<label class="col-md-3 control-label">ID</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileLastName">
-													</div>
+                                                        <label><%=(String) request.getSession().getAttribute("userID")%></label>
+                                                    </div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileEmail">Email</label>
+													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileAddress">
-													</div>
+                                                        <label><%=userDao.getEmailById((String) request.getSession().getAttribute("userID"))%></label>
+                                                    </div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">部门</label>
+													<label class="col-md-3 control-label">部门</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileCompany">
-													</div>
+                                                        <label><%=userDao.getDepartmentById((String) request.getSession().getAttribute("userID"))%></label>
+                                                    </div>
 												</div>
 											</fieldset>
 											
