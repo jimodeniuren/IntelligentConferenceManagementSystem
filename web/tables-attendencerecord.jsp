@@ -286,7 +286,7 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li class="nav-parent">
+                            <li class="nav-parent nav-expanded nav-active">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
                                     <span>会议查询</span>
@@ -297,7 +297,7 @@
                                             会议室状态查询
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="nav-active">
                                         <a href="tables-attendencerecord.jsp">
                                             会议签到情况查询
                                         </a>
@@ -347,7 +347,7 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="tables-basic.html">
+                                        <a href="ui-elements-portlets.jsp">
                                             会议预定审核
                                         </a>
                                     </li>
