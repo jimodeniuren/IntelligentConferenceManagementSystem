@@ -10,15 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "UserEditServlet")
+@WebServlet(name = "UserInfoEditServlet")
 public class UserInfoEditServlet extends HttpServlet {
     private UserDao userDao = new UserDao();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         System.out.println("post");
-//        if(request.getParameter("profileNewPassword")!=null&&request.getParameter("profileNewPasswordRepeat")!=null)
-//        System.out.println(request.getParameter("profileName")+request.getParameter("profileID"));
-//        userDao.editUserInfo(request.getParameter("profileName"),request.getParameter("profiledepartment"),request.getParameter("profileID"));
+        System.out.println(request.getParameter("profileName")+request.getParameter("profileID"));
+        userDao.editUserInfo(request.getParameter("profileName"),request.getParameter("profiledepartment"),Integer.parseInt(request.getParameter("profileID")));
         doGet(request,response);
     }
 
