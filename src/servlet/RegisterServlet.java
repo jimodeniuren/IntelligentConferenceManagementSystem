@@ -22,21 +22,24 @@ public class RegisterServlet extends HttpServlet {
         String password_confirm = request.getParameter("pwd_confirm");
         String emailAddr = request.getParameter("email");
         PrintWriter out =response.getWriter();
-        if(password.equals(password_confirm)){
-            User user= new User();
-            user.setUserName(name);
-            user.setUserPwd(password);
-            user.setUserEmail(emailAddr);
-
-            if(userDao.insert(user)!=0){
-                HttpSession session = request.getSession();
-                session.setAttribute("userID",userDao.getUserID(emailAddr));
-                response.sendRedirect("tables-advanced.jsp");
+        if(request.getParameter("agreeterms")!=null&&request.getParameter("agreeterms").equals("on")){
+            if(password.equals(password_confirm)){
+                User user= new User();
+                user.setUserName(name);
+                user.setUserPwd(password);
+                user.setUserEmail(emailAddr);
+                if(userDao.insert(user)!=0){
+                    HttpSession session = request.getSession();
+                    session.setAttribute("userID",userDao.getUserID(emailAddr));
+                    response.sendRedirect("tables-advanced.jsp");
+                }else{
+                    out.print("<script language='javascript'>alert('user already exist');window.history.go(-1);</script>");
+                }
             }else{
-                out.print("<script language='javascript'>alert('user already exist');window.history.go(-1);</script>");
+                out.print("<script language='javascript'>alert('Your confirmed password and password do not match!');window.history.go(-1);</script>");
             }
         }else{
-            out.print("<script language='javascript'>alert('Your confirmed password and password do not match!');window.history.go(-1);</script>");
+            out.print("<script language='javascript'>alert('Please accept the Terms of Service.');window.history.go(-1);</script>");
         }
         out.flush();
         out.close();
