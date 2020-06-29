@@ -122,5 +122,67 @@ public class UserDao extends DBUtils{
             getClose();
             return "没有这个用户";
     }
+    public String getIdentityById(String id){
 
+        String sql = "select * from tbl_user where user_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                getClose();
+                return rs.getString(3);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "没有这个用户";
+    }
+    public String getEmailById(String id){
+
+        String sql = "select * from tbl_user where user_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                getClose();
+                return rs.getString(6);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "没有这个用户";
+    }
+    public String getDepartmentById(String id){
+
+        String sql = "select * from tbl_user where user_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                getClose();
+                return rs.getString(5);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "没有这个用户";
+    }
 }

@@ -426,11 +426,22 @@
 									<label>申请人：<%=x.getHostId()%></label><br>
 									<label>举办部门：<%=x.getHostDepartment()%></label><br>
 									<label>会议室：<%=x.getMrId()%></label><br>
-									<label>会议时间：<%=sdf.format(x.getStartTime())%></label><br>
+									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+									<form action="ui-elements-portlets.jsp?isPass=true" method="post">
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+										<%
+											if (request.getParameter("isPass").equals("true"))
+												x.setConferenceStatus(1);%>
+									</form>
+									<form action="ui-elements-portlets.jsp?isNotpass=true" method="post">
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+										<%
+											if (request.getParameter("isNotpass").equals("true"))
+												x.setConferenceStatus(2);%>
+									</form>
+
 								</div>
 							</section>
 							<%}%>

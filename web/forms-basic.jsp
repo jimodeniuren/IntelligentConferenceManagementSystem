@@ -402,11 +402,8 @@
 											</div>
 
 											<div class="form-group">
-<<<<<<< HEAD
+
 												<label class="col-md-3 control-label" for="inputDep">ä¸»åŠžéƒ¨é—¨</label>
-=======
-												<label class="col-md-3 control-label">Ö÷°ì²¿ÃÅ</label>
->>>>>>> f08dd59eed2a07cb726bfe3e7c4b044e9bd9f7af
 												<div class="col-md-6">
 													<select name="department" class="form-control mb-md">
 														<option>ç­–åˆ’éƒ¨</option>
