@@ -399,7 +399,7 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
+												<label class="col-md-3 control-label">主办部门</label>
 												<div class="col-md-6">
 													<select class="form-control mb-md">
 														<option>策划部</option>
