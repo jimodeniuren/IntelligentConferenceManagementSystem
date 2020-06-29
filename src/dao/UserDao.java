@@ -47,8 +47,8 @@ public class UserDao extends DBUtils{
         getClose();
         return count;
     }
-    public int updateIdentity(User user){
-        Object params[]={user.getUserIdentity(),user.getUserID()};
+    public int updateIdentity(String identity ,int id){
+        Object params[]={identity,id};
         String sql = "update tbl_user set user_identity=? where user_id = ?";
         int count  = doUpdate(sql,params);
         getClose();

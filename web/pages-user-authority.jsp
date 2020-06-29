@@ -1,3 +1,4 @@
+<%@ page import="dao.UserDao" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -243,7 +244,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -265,7 +266,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							Ç³²Ý»áÒé
+							æµ…è‰ä¼šè®®
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -279,24 +280,24 @@
 									<li>
 										<a href="tables-advanced.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>»áÒé²éÑ¯</span>
+											<span>ä¼šè®®æŸ¥è¯¢</span>
 										</a>
 									</li>
 									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>»áÒéÔ¤¶¨</span>
+											<span>ä¼šè®®é¢„å®š</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.html">
-													 ·¢ÆðÐÂ»áÒé
+													 å‘èµ·æ–°ä¼šè®®
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.html">
-													 ²é¿´ÒÑÔ¤¶©µÄ»áÒé
+													 æŸ¥çœ‹å·²é¢„è®¢çš„ä¼šè®®
 												</a>
 											</li>
 										</ul>
@@ -304,34 +305,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>ÓïÒô»áÒé</span>
+											<span>è¯­éŸ³ä¼šè®®</span>
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="pages-search-results.html">
+										<a href="servlet.IdentitySettingServlet">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>È¨ÏÞÉèÖÃ</span>
+											<span>æƒé™è®¾ç½®</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>»áÒé¹ÜÀí</span>
+											<span>ä¼šè®®ç®¡ç†</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="tables-basic.html">
-													 »áÒéÔ¤¶¨ÉóºË
+													 ä¼šè®®é¢„å®šå®¡æ ¸
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 »áÒéÊÒ¿ØÖÆÖÐÐÄ
+													 ä¼šè®®å®¤æŽ§åˆ¶ä¸­å¿ƒ
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 Ó¦¼±µ÷¶È
+													 åº”æ€¥è°ƒåº¦
 												</a>
 											</li>
 											
@@ -350,7 +351,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>È¨ÏÞÉèÖÃ</h2>
+						<h2>æƒé™è®¾ç½®</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -359,7 +360,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>È¨ÏÞÉèÖÃ</span></li>
+								<li><span>æƒé™è®¾ç½®</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -406,41 +407,53 @@
 					
 									<div id="edit">
 
-										<form class="form-horizontal" method="get">
-											<h4 class="mb-xlg">¸öÈËÐÅÏ¢</h4>
+										<form class="form-horizontal" name="Iden" action="servlet.IdentitySettingServlet" method="post">
+											<h4 class="mb-xlg">ä¸ªäººä¿¡æ¯</h4>
 											<fieldset>
+												<form id="testid" action="servlet.IdentitySettingServlet" method="get">
+													<div class="form-group">
+														<label class="col-md-3 control-label" for="profileID">ID</label>
+														<div class="col-md-8">
+															<input type="text" class="form-control" id="profileID" value="${sessionScope['testID']}" name="ID">
+															<input type="button"  form="testid" value="test" onclick="test()"></inbutton>
+														</div>
+														<script>
+															function test() {
+																document.Iden.action = "servlet.IdentitySettingServlet";
+																document.Iden.submit();
+															}
+														</script>
+												</div>
+												</form>
+
+
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileID">ID</label>
+													<label class="col-md-3 control-label" for="profileName">å§“å</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileID">
+														<input type="text" class="form-control" id="profileName" value="${sessionScope['testName']}" readonly>
 													</div>
 												</div>
+
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileName">ÐÕÃû</label>
+													<label class="col-md-3 control-label" for="profileDep">éƒ¨é—¨</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileName">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileDep">²¿ÃÅ</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileDep">
+														<input type="text" class="form-control" id="profileDep" value="${sessionScope['testDep']}" readonly>
 													</div>
 												</div>												
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">È¨ÏÞÉèÖÃ</label>
+													<label class="col-md-3 control-label" >æƒé™è®¾ç½®</label>
 													<div class="col-md-8">
 														<div class="radio-custom radio-primary">
-															<input id="administrator" type="radio" value="administrator" required>
-															<label for="administrator">¹ÜÀíÔ±</label>
+															<input id="administrator" type="radio" value="administrator" name="indentity" required>
+															<label for="administrator">ç®¡ç†å‘˜</label>
 														</div>
 														<div class="radio-custom radio-primary">
-															<input id="initiator" type="radio" value="initiator" required>
-															<label for="initiator">»áÒé·¢ÆðÕß</label>
+															<input id="initiator" type="radio" value="initiator" name="indentity" required>
+															<label for="initiator">ä¼šè®®å‘èµ·è€…</label>
 														</div>
 														<div class="radio-custom radio-primary">
-															<input id="attendee" type="radio" value="attendee" required>
-															<label for="attendee">²Î»áÕß</label>
+															<input id="attendee" type="radio" value="attendee" name="indentity" required>
+															<label for="attendee">å‚ä¼šè€…</label>
 														</div>
 													</div>
 												</div>
@@ -451,12 +464,15 @@
 											<div class="panel-footer">
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">
-														<button type="submit" class="btn btn-primary">Ìá½»</button>
-														<button type="cancel" class="btn btn-default">È¡Ïû</button>
+														<button type="submit" class="btn btn-primary" onclick="test()">æäº¤</button>
+														<button type="cancel" class="btn btn-default">å–æ¶ˆ</button>
 													</div>
 												</div>
 											</div>
-
+											<%--<%
+												session.removeAttribute("testName");
+												session.removeAttribute("testDep");
+											%>--%>
 										</form>
 
 									</div>
@@ -560,5 +576,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-		 pageEncoding="GB18030"%>
+
+<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="UTF-8" %>
