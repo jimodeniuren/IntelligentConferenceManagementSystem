@@ -5,10 +5,7 @@ import entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -23,16 +20,17 @@ public class LoginServlet extends HttpServlet {
 
         if(userDao.passwordCheck(emailAddr,password)!=0){
             setResponseAccess(response);
-            System.out.println(request.getParameter("rememberme"));
-            if (request.getParameter("rememberme").equals("on")) {
+            //System.out.println(request.getParameter("rememberme"));
+            if (request.getParameter("remeberme")!=null&&request.getParameter("rememberme").equals("on")) {
                 Cookie cookie = new Cookie("userID", Integer.toString(userDao.getUserID(emailAddr)));
                 cookie.setMaxAge(60*60*24*2);
                 response.addCookie(cookie);
             }
+            HttpSession session = request.getSession();
+            session.setAttribute("userID",userDao.getUserID(emailAddr));
             response.sendRedirect("tables-advanced.jsp");
         }else {
-            out.print("<script language='javascript'>alert('Wrong Email Or Password!');window.location.href='pages-signin.html';</script>");
-            response.sendRedirect("pages-signin.html");
+            out.print("<script language='javascript'>alert('Wrong Email Or Password!');window.history.go(-1);</script>");
         }
         out.flush();
         out.close();
