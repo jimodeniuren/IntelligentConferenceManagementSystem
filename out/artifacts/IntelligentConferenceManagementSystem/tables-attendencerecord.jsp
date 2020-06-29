@@ -276,7 +276,7 @@
 
             <div class="sidebar-header">
                 <div class="sidebar-title">
-                    ╟│▓▌╗с╥щ
+                    ц╡ЕшНЙф╝Ъшоо
                 </div>
                 <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
                     <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -287,25 +287,25 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li class="nav-parent">
+                            <li class="nav-parent nav-expanded nav-active">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>╗с╥щ▓щ╤п</span>
+                                    <span>ф╝ЪшооцЯешпв</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ╗с╥щ╩╥╫┤╠м▓щ╤п
+                                            ф╝ЪшооходчК╢цАБцЯешпв
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="nav-active">
                                         <a href="tables-attendencerecord.jsp">
-                                            ╗с╥щ╟й╡╜╙ы╟щ┐Ў▓щ╤п
+                                            ф╝Ъшоочн╛хИ░ф╕ОцГЕхЖ╡цЯешпв
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-participantrecord.jsp">
-                                            ╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
+                                            ф╝ЪшоохПВхКашо░х╜ХцЯешпв
                                         </a>
                                     </li>
                                 </ul>
@@ -314,17 +314,17 @@
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>╗с╥щ╘д╢и</span>
+                                    <span>ф╝ЪшоощвДхоЪ</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ╖в╞Ё╨┬╗с╥щ
+                                            хПСш╡╖цЦ░ф╝Ъшоо
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+                                            цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
                                         </a>
                                     </li>
                                 </ul>
@@ -332,34 +332,34 @@
                             <li>
                                 <a href="tables-advanced.jsp">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>╙я╥Ї╗с╥щ</span>
+                                    <span>шпнщЯ│ф╝Ъшоо</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="tables-advanced.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
-                                    <span>╚и╧▐╔ш╓├</span>
+                                    <span>цЭГщЩРшо╛ч╜о</span>
                                 </a>
                             </li>
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-table" aria-hidden="true"></i>
-                                    <span>╗с╥щ╣▄└э</span>
+                                    <span>ф╝ЪшоочобчРЖ</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="tables-basic.html">
-                                            ╗с╥щ╘д╢и╔є║╦
+                                        <a href="ui-elements-portlets.jsp">
+                                            ф╝ЪшоощвДхоЪхобца╕
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ╗с╥щ╩╥┐╪╓╞╓╨╨─
+                                            ф╝ЪшооходцОзхИ╢ф╕нх┐Г
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ╙ж╝▒╡ў╢╚
+                                            х║ФцАеш░Гх║ж
                                         </a>
                                     </li>
 
@@ -378,7 +378,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>╗с╥щ╟й╡╜</h2>
+                <h2>ф╝Ъшоочн╛хИ░</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -387,7 +387,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>╗с╥щ╟й╡╜</span></li>
+                        <li><span>ф╝Ъшоочн╛хИ░</span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -402,13 +402,13 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">╗с╥щ╟й╡╜</h2>
+                    <h2 class="panel-title">ф╝Ъшоочн╛хИ░</h2>
                 </header>
                 <div class="panel-body">
                     <form action="tables-attendencerecord.jsp?isinsert=true" method="post">
                         <div class="form-group mb-lg">
-                            <input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="╩ф╚ы╥к╟й╡╜╡─╗с╥щID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">╟й╡╜</button>
+                            <input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="ш╛УхЕешжБчн╛хИ░чЪДф╝ЪшооID" aria-controls="datatable-default"/>
+                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">чн╛хИ░</button>
                             <%
                                 try{
                                     if (request.getParameter("isinsert").equals("true")){
@@ -419,8 +419,8 @@
                                         String conferenceName = dao1.getNameById(conferenceId);
                                         String userId = (String) request.getSession().getAttribute("userID");
                                         String userName = dao2.getNameById(userId);
-                                        if (conferenceName.equals("╗с╥щ▓╗┤ц╘┌гб")){
-                                            out.print("╗с╥щ▓╗┤ц╘┌гб");
+                                        if (conferenceName.equals("ф╝Ъшооф╕НхнШхЬия╝Б")){
+                                            out.print("ф╝Ъшооф╕НхнШхЬия╝Б");
                                         }
                                         else{
                                             AttendenceRecord attendenceRecord = new AttendenceRecord(Integer.parseInt(conferenceId), conferenceName, Integer.parseInt(userId), userName);
@@ -440,13 +440,13 @@
                         <a href="#" class="fa fa-caret-down"></a>
                         <a href="#" class="fa fa-times"></a>
                     </div>
-                    <h2 class="panel-title">╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п</h2>
+                    <h2 class="panel-title">ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв</h2>
                 </header>
                 <div class="panel-body">
                     <form action="tables-attendencerecord.jsp?isresult=true" method="post">
                         <div class="form-group mb-lg">
-                            <input name="searchid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="╩ф╚ы╥к▓щ╤п╟й╡╜╟щ┐Ў╡─╗с╥щID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs">▓щ╤п</button>
+                            <input name="searchid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="ш╛УхЕешжБцЯешпвчн╛хИ░цГЕхЖ╡чЪДф╝ЪшооID" aria-controls="datatable-default"/>
+                            <button type="submit" class="btn btn-primary hidden-xs">цЯешпв</button>
                         </div>
                     </form>
                     <% try {
@@ -455,10 +455,10 @@
                     <table class="table table-bordered table-striped mb-none" id="datatable-default">
                         <thead>
                         <tr>
-                            <th>╗с╥щID</th>
-                            <th>╗с╥щ├√│╞</th>
-                            <th>▓╬╙ы╒▀ID</th>
-                            <th>▓╬╙ы╒▀├√│╞</th>
+                            <th>ф╝ЪшооID</th>
+                            <th>ф╝ЪшоохРНчз░</th>
+                            <th>хПВф╕ОшАЕID</th>
+                            <th>хПВф╕ОшАЕхРНчз░</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -582,5 +582,5 @@
 </body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-         pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>

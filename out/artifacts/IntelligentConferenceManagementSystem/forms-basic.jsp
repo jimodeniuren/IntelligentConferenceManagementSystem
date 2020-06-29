@@ -1,3 +1,6 @@
+<%@ page import="dao.ConferenceDao" %>
+<%@ page import="entity.Conference" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -383,41 +386,29 @@
 										<h2 class="panel-title">会议预约申请表</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="post">
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议主题</label>
+												<label class="col-md-3 control-label" for="inputSubject">会议名称</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input name="conference_name" type="text" class="form-control" id="inputSubject">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">会议室</label>
+												<label class="col-md-3 control-label" for="inputMr">会议室</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input name="conferenceroom_id" type="number" class="form-control" id="inputMr">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSuccess">主办部门</label>
+												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
 												<div class="col-md-6">
-													<select class="form-control mb-md">
+													<select name="department" class="form-control mb-md">
 														<option>策划部</option>
 														<option>设计部</option>
 														<option>美工部</option>
 													</select>
-												</div>
-											</div>
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label">会议日期</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-														</span>
-														<input id="date" data-plugin-masked-input data-input-mask="99/99/9999" placeholder="__/__/____" class="form-control">
-													</div>
 												</div>
 											</div>
 
@@ -428,7 +419,7 @@
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+														<input name="start_time" type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -440,7 +431,7 @@
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+														<input name="end_time" type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -448,7 +439,18 @@
 											<div class="col-md-6">
 												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">确认</button>
 												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">取消</button>
-											</div>											
+												<%
+													try{
+														if (request.getParameter("isinsert").equals("true")){
+															SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+															ConferenceDao dao = new ConferenceDao();
+															out.print(dao.insert(new Conference(request.getParameter("conference_name"), 1,
+																		0,Integer.parseInt(request.getParameter("conferenceroom_id")),Integer.parseInt((String)request.getSession().getAttribute("userID")),
+																	request.getParameter("department"),sdf.parse(request.getParameter("start_time")),sdf.parse(request.getParameter("end_time")),0)));
+														}
+													}catch (Exception e){}
+												%>
+											</div>
 										</form>
 									</div>
 								</section>						
@@ -552,5 +554,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>

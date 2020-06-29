@@ -44,57 +44,53 @@
 
 				<div class="panel panel-sign">
 					<div class="panel-title-sign mt-xl text-right">
-						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 登录</h2>
+						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 注册</h2>
 					</div>
 					<div class="panel-body">
-						<form action="index.html" method="post">
+						<form action="servlet.RegisterServlet" method="post">
 							<div class="form-group mb-lg">
-								<label>邮箱</label>
-								<div class="input-group input-group-icon">
-									<input name="email" type="email" class="form-control input-lg" />
-									<span class="input-group-addon">
-										<span class="icon icon-lg">
-											<i class="fa fa-user"></i>
-										</span>
-									</span>
-								</div>
+								<label>姓名</label>
+								<input name="name" type="text" class="form-control input-lg" />
 							</div>
 
 							<div class="form-group mb-lg">
-								<div class="clearfix">
-									<label class="pull-left">密码</label>
-									<a href="pages-recover-password.html" class="pull-right">忘记密码?</a>
-								</div>
-								<div class="input-group input-group-icon">
-									<input name="pwd" type="password" class="form-control input-lg" />
-									<span class="input-group-addon">
-										<span class="icon icon-lg">
-											<i class="fa fa-lock"></i>
-										</span>
-									</span>
+								<label>邮箱</label>
+								<input name="email" type="email" class="form-control input-lg" />
+							</div>
+
+							<div class="form-group mb-none">
+								<div class="row">
+									<div class="col-sm-6 mb-lg">
+										<label>密码</label>
+										<input name="pwd" type="password" class="form-control input-lg" />
+									</div>
+									<div class="col-sm-6 mb-lg">
+										<label>确认密码</label>
+										<input name="pwd_confirm" type="password" class="form-control input-lg" />
+									</div>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col-sm-8">
 									<div class="checkbox-custom checkbox-default">
-										<input id="RememberMe" name="rememberme" type="checkbox"/>
-										<label for="RememberMe">记住我</label>
+										<input id="AgreeTerms" name="agreeterms" type="checkbox"/>
+										<label for="AgreeTerms">我同意 <a href="#">服务条款</a></label>
 									</div>
 								</div>
 								<div class="col-sm-4 text-right">
-									<button type="submit" class="btn btn-primary hidden-xs">登录</button>
-									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+									<button type="submit" class="btn btn-primary hidden-xs">注册</button>
+									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign Up</button>
 								</div>
 							</div>
-
-							<p class="text-center">还没有账号? <a href="pages-signup.html">注册!</a>
+					
+							<p class="text-center">已经拥有账号? <a href="pages-signin.html">登录!</a>
 
 						</form>
 					</div>
 				</div>
 
-				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2018. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2018. All rights reserved. </p>
 			</div>
 		</section>
 		<!-- end: page -->

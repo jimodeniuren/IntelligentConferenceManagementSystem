@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>tables-editable.jsp</welcome-file>
+        <welcome-file>pages-blank.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>BookServlet</servlet-name>
@@ -74,5 +74,15 @@
     <servlet-mapping>
         <servlet-name>UserEditServlet</servlet-name>
         <url-pattern>/servlet.UserEditServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserInfoEditServlet</servlet-name>
+        <servlet-class>servlet.UserInfoEditServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserInfoEditServlet</servlet-name>
+        <url-pattern>/servlet.UserInfoEditServlet</url-pattern>
     </servlet-mapping>
 </web-app>

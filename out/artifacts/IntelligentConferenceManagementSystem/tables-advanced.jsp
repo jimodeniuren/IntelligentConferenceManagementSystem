@@ -251,7 +251,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -284,13 +284,13 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
+											<li class="nav-active">
 												<a href="tables-advanced.jsp">
 													会议室状态查询
 												</a>
@@ -320,7 +320,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.jsp">
+												<a href="pages-blank.jsp">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -333,7 +333,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="tables-advanced.jsp">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -345,12 +345,12 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
+												<a href="ui-elements-portlets.jsp">
 													 会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.jsp">
+												<a href="tables-editable.jsp">
 													 会议室控制中心
 												</a>
 											</li>

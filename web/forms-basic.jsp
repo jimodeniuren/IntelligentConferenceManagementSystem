@@ -1,3 +1,6 @@
+<%@ page import="dao.ConferenceDao" %>
+<%@ page import="entity.Conference" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -5,7 +8,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>╖в╞Ё╨┬╗с╥щ</title>
+		<title>хПСш╡╖цЦ░ф╝Ъшоо</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -268,7 +271,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							╟│▓▌╗с╥щ
+							ц╡ЕшНЙф╝Ъшоо
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -282,24 +285,24 @@
 									<li>
 										<a href="tables-advanced.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>╗с╥щ▓щ╤п</span>
+											<span>ф╝ЪшооцЯешпв</span>
 										</a>
 									</li>
 									
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ╘д╢и</span>
+											<span>ф╝ЪшоощвДхоЪ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li class="nav-active">
 												<a href="forms-basic.html">
-													 ╖в╞Ё╨┬╗с╥щ
+													 хПСш╡╖цЦ░ф╝Ъшоо
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.html.html">
-													 ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+													 цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
 												</a>
 											</li>
 										</ul>
@@ -307,34 +310,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>╙я╥Ї╗с╥щ</span>
+											<span>шпнщЯ│ф╝Ъшоо</span>
 										</a>
 									</li>
 									<li>
 										<a href="pages-search-results.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>╚и╧▐╔ш╓├</span>
+											<span>цЭГщЩРшо╛ч╜о</span>
 										</a>
 									</li>
 									<li>
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>╗с╥щ╣▄└э</span>
+											<span>ф╝ЪшоочобчРЖ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													 ╗с╥щ╘д╢и╔є║╦
+													 ф╝ЪшоощвДхоЪхобца╕
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 ╗с╥щ╩╥┐╪╓╞╓╨╨─
+													 ф╝ЪшооходцОзхИ╢ф╕нх┐Г
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 ╙ж╝▒╡ў╢╚
+													 х║ФцАеш░Гх║ж
 												</a>
 											</li>
 											
@@ -353,7 +356,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>╖в╞Ё╨┬╗с╥щ</h2>
+						<h2>хПСш╡╖цЦ░ф╝Ъшоо</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -362,8 +365,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>╗с╥щ╘д╢и</span></li>
-								<li><span>╖в╞Ё╨┬╗с╥щ</span></li>
+								<li><span>ф╝ЪшоощвДхоЪ</span></li>
+								<li><span>хПСш╡╖цЦ░ф╝Ъшоо</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -380,63 +383,74 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 						
-										<h2 class="panel-title">╗с╥щ╘д╘╝╔ъ╟ы▒э</h2>
+										<h2 class="panel-title">ф╝ЪшоощвДч║жчФ│шп╖шби</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="post">
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSubject">╗с╥щ╓ў╠т</label>
+												<label class="col-md-3 control-label" for="inputSubject">ф╝ЪшоохРНчз░</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputSubject">
+													<input name="conference_name" type="text" class="form-control" id="inputSubject">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputMr">╗с╥щ╩╥</label>
+												<label class="col-md-3 control-label" for="inputMr">ф╝Ъшооход</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputMr">
+													<input name="conferenceroom_id" type="number" class="form-control" id="inputMr">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDep">╓ў░ь▓┐├┼</label>
+												<label class="col-md-3 control-label" for="inputDep">ф╕╗хКЮщГищЧи</label>
 												<div class="col-md-6">
-													<select class="form-control mb-md">
-														<option>▓▀╗о▓┐</option>
-														<option>╔ш╝╞▓┐</option>
-														<option>├└╣д▓┐</option>
+													<select name="department" class="form-control mb-md">
+														<option>чнЦхИТщГи</option>
+														<option>шо╛шобщГи</option>
+														<option>ч╛Ох╖ещГи</option>
 													</select>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label">┐к╩╝╩▒╝ф</label>
+												<label class="col-md-3 control-label">х╝АхзЛцЧ╢щЧ┤</label>
 												<div class="col-md-6">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="datetime-local" class="form-control">
+														<input name="start_time" type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label">╜с╩°╩▒╝ф</label>
+												<label class="col-md-3 control-label">ч╗УцЭЯцЧ╢щЧ┤</label>
 												<div class="col-md-6">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="datetime-local" class="form-control">
+														<input name="end_time" type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>
 											<div class="col-md-6"></div>
 											<div class="col-md-6">
-												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">╚╖╚╧</button>
-												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">╚б╧√</button>
-											</div>											
+												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">чбошод</button>
+												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">хПЦц╢И</button>
+												<%
+													try{
+														if (request.getParameter("isinsert").equals("true")){
+															SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+															ConferenceDao dao = new ConferenceDao();
+															out.print(dao.insert(new Conference(request.getParameter("conference_name"), 1,
+																		0,Integer.parseInt(request.getParameter("conferenceroom_id")),Integer.parseInt((String)request.getSession().getAttribute("userID")),
+																	request.getParameter("department"),sdf.parse(request.getParameter("start_time")),sdf.parse(request.getParameter("end_time")),0)));
+														}
+													}catch (Exception e){}
+												%>
+											</div>
 										</form>
 									</div>
 								</section>						
@@ -540,5 +554,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>

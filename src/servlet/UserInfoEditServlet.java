@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "UserEditServlet")
-public class UserEditServlet extends HttpServlet {
+public class UserInfoEditServlet extends HttpServlet {
     private UserDao userDao = new UserDao();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

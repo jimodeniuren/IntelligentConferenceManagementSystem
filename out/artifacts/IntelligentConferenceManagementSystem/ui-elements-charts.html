@@ -1,7 +1,3 @@
-
-<%@ page import="entity.User" %>
-<%@ page import="dao.UserDao" %>
-
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -9,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>个人信息</title>
+		<title>会议室使用情况</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -25,6 +21,9 @@
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -266,7 +265,7 @@
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
-
+				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
 							浅草会议
@@ -275,7 +274,7 @@
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-		
+				
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
@@ -303,6 +302,7 @@
 											</li>
 										</ul>
 									</li>
+									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -310,13 +310,13 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.jsp">
-													发起新会议
+												<a href="forms-basic.html">
+													 发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="forms-advanced.html">
-													查看已预订的会议
+												<a href="pages-blank.jsp">
+													 查看已预订的会议
 												</a>
 											</li>
 										</ul>
@@ -333,7 +333,7 @@
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
 											<span>会议管理</span>
@@ -341,36 +341,41 @@
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													会议预定审核
+													 会议预定审核
+												</a>
+											</li>
+											<li>
+												<a href="tables-editable.jsp">
+													 会议室控制中心
 												</a>
 											</li>
 											<li class="nav-active">
-												<a href="tables-editable.jsp">
-													会议室控制中心
+												<a href="ui-elements-charts.html">
+													 会议室使用情况
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 会议室使用情况
+													 应急调度
 												</a>
 											</li>
-		
+											
 										</ul>
 									</li>
-		
+									
 								</ul>
 							</nav>
-		
+							
 						</div>
-		
+				
 					</div>
-		
+				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>个人信息</h2>
+						<h2>会议室使用情况</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -379,7 +384,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>个人信息</span></li>
+								<li><span>会议室使用情况</span></li>
+								<li><span>会议管理</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -387,369 +393,129 @@
 					</header>
 
 					<!-- start: page -->
-
-					<div class="row">
-						<div class="col-md-4 col-lg-3">
-
-							<section class="panel">
-								<div class="panel-body">
-									<div class="thumb-info mb-md">
-										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
-										<div class="thumb-info-title">
-											<span class="thumb-info-inner">John Doe</span>
-											<span class="thumb-info-type">CEO</span>
+						<h2 class="mt-none">图表展示</h2>
+						<p class="mb-lg">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
 										</div>
+						
+										<h2 class="panel-title">会议室使用情况</h2>
+										<p class="panel-subtitle">You don't have to do much to get an attractive plot. Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
+									</header>
+									<div class="panel-body">
+						
+										<!-- Flot: Basic -->
+										<div class="chart chart-md" id="flotBasic"></div>
+										<script type="text/javascript">
+						
+											var flotBasicData = [{
+												data: [
+													[8, 17],
+													[9, 16],
+													[10, 17],
+													[11, 18],
+													[12, 14],
+													[13, 11],
+													[14, 12],
+													[15, 16],
+													[16, 17],
+													[17, 12],
+													[18, 12]
+												],
+												label: "空闲中",
+												color: "#0088cc"
+											}, {
+												data: [
+													[8, 11],
+													[9, 12],
+													[10, 11],
+													[11, 12],
+													[12, 11],
+													[13, 8],
+													[14, 10],
+													[15, 14],
+													[16, 14],
+													[17, 10],
+													[18, 11]
+												],
+												label: "使用中",
+												color: "#2baab1"
+											}, {
+												data: [
+													[8, 4],
+													[9, 4],
+													[10, 4],
+													[11, 4],
+													[12, 4],
+													[13, 3],
+													[14, 2],
+													[15, 6],
+													[16, 7],
+													[17, 2],
+													[18, 2]
+												],
+												label: "维修中",
+												color: "#734ba9"
+											}];
+						
+											// See: assets/javascripts/ui-elements/examples.charts.js for more settings.
+						
+										</script>
+						
 									</div>
-
-									<div class="widget-toggle-expand mb-md">
-										<div class="widget-header">
-											<h6>信息填写完成度</h6>
-											<div class="widget-toggle">+</div>
-										</div>
-										<div class="widget-content-collapsed">
-											<div class="progress progress-xs light">
-												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-													60%
-												</div>
-											</div>
-										</div>
-										<div class="widget-content-expanded">
-											<ul class="simple-todo-list">
-												<li class="completed">更新个人照片</li>
-												<li class="completed">修改个人信息</li>
-												<li>更新社交媒体</li>
-												<li>关注某人</li>
-											</ul>
-										</div>
-									</div>
-
-									<hr class="dotted short">
-
-									<h6 class="text-muted">About</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
-									<div class="clearfix">
-										<a class="text-uppercase text-muted pull-right" href="#">(View All)</a>
-									</div>
-
-									<hr class="dotted short">
-
-									<div class="social-icons-list">
-										<a rel="tooltip" data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-										<a rel="tooltip" data-placement="bottom" href="http://www.twitter.com" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-										<a rel="tooltip" data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
-									</div>
-
-								</div>
-							</section>
-
-
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">
-										<span class="label label-primary label-sm text-normal va-middle mr-sm">198</span>
-										<span class="va-middle">Friends</span>
-									</h2>
-								</header>
-								<div class="panel-body">
-									<div class="content">
-										<ul class="simple-user-list">
-											<li>
-												<figure class="image rounded">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Doe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Doe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-										</ul>
-										<hr class="dotted short">
-										<div class="text-right">
-											<a class="text-uppercase text-muted" href="#">(View All)</a>
-										</div>
-									</div>
-								</div>
-								<div class="panel-footer">
-									<div class="input-group input-search">
-										<input type="text" class="form-control" name="q" id="a" placeholder="Search...">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-											</button>
-										</span>
-									</div>
-								</div>
-							</section>
-
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">Popular Posts</h2>
-								</header>
-								<div class="panel-body">
-									<ul class="simple-post-list">
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="assets/images/post-thumb-1.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Nullam Vitae Nibh Un Odiosters</a>
-												<div class="post-meta">
-													 Jan 10, 2013
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="assets/images/post-thumb-2.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Vitae Nibh Un Odiosters</a>
-												<div class="post-meta">
-													 Jan 10, 2013
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="assets/images/post-thumb-3.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Odiosters Nullam Vitae</a>
-												<div class="post-meta">
-													 Jan 10, 2013
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</section>
-
+								</section>
+							</div>
+							
 						</div>
-						<div class="col-md-8 col-lg-6">
-
-							<div class="tabs">
-								<ul class="nav nav-tabs tabs-primary">
-									<li class="active">
-										<a href="#overview" data-toggle="tab">总览</a>
-									</li>
-									<li>
-										<a href="#edit" data-toggle="tab">编辑</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div id="overview" class="tab-pane active">
-										<h4 class="mb-md">更新状态</h4>
-
-										<section class="simple-compose-box mb-xlg">
-											<form method="get" action="/">
-												<textarea name="message-text" data-plugin-textarea-autosize placeholder="What's on your mind?" rows="1"></textarea>
-											</form>
-											<div class="compose-box-footer">
-												<ul class="compose-toolbar">
-													<li>
-														<a href="#"><i class="fa fa-camera"></i></a>
-													</li>
-													<li>
-														<a href="#"><i class="fa fa-map-marker"></i></a>
-													</li>
-												</ul>
-												<ul class="compose-btn">
-													<li>
-														<a class="btn btn-primary btn-xs">发布</a>
-													</li>
-												</ul>
-											</div>
-										</section>
-
-										<h4 class="mb-xlg">时间线</h4>
-
-										<div class="timeline timeline-simple mt-xlg mb-md">
-											<div class="tm-body">
-												<div class="tm-title">
-													<h3 class="h5 text-uppercase">六月 2020</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
+				
+										<h2 class="panel-title">会议室状态</h2>
+										<p class="panel-subtitle">从左到右分别为.</p>
+									</header>
+									<div class="panel-body">
+										<div class="row text-center">
+											<div class="col-md-3">
+												<div class="circular-bar">
+													<div class="circular-bar-chart" data-percent="52" data-plugin-options='{ "barColor": "#0088CC", "delay": 300 }'>
+														<strong>空闲中</strong>
+														<label><span class="percent">52</span>%</label>
+													</div>
 												</div>
-												<ol class="tm-items">
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">3个月前.</p>
-															<p>
-																第一次承办大型会议！紧张！但会议进行的非常好 <span class="text-primary">#awesome</span>
-															</p>
-														</div>
-													</li>
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">5个月前.</p>
-															<p>
-																为什么会议这么多?
-															</p>
-														</div>
-													</li>
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">7个月前.</p>
-															<p>
-																哇哦，可以在这里签到了!
-															</p>
-															<div class="thumbnail-gallery">
-																<a class="img-thumbnail lightbox" href="assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }'>
-																	<img class="img-responsive" width="215" src="assets/images/projects/project-4.jpg">
-																	<span class="zoom">
-																		<i class="fa fa-search"></i>
-																	</span>
-																</a>
-															</div>
-														</div>
-													</li>
-												</ol>
+											</div>
+											<div class="col-md-3">
+												<div class="circular-bar">
+													<div class="circular-bar-chart" data-percent="45" data-plugin-options='{ "barColor": "#2BAAB1", "delay": 600 }'>
+														<strong>使用中</strong>
+														<label><span class="percent">45</span>%</label>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="circular-bar">
+													<div class="circular-bar-chart" data-percent="3" data-plugin-options='{ "barColor": "#734ba9", "delay": 600 }'>
+														<strong>维修中</strong>
+														<label><span class="percent">3</span>%</label>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div id="edit" class="tab-pane">
-
-										<form class="form-horizontal" method="get">
-											<h4 class="mb-xlg">个人信息</h4>
-
-											<fieldset>
-												<div class="form-group">
-													<label class="col-md-3 control-label">姓名</label>
-													<div class="col-md-8">
-														<label>request.get</label>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileId">ID</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileLastName">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileEmail">Email</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileAddress">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">部门</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileCompany">
-													</div>
-												</div>
-											</fieldset>
-											
-											<hr class="dotted tall">
-											
-											<div class="panel-footer">
-												<div class="row">
-													<div class="col-md-9 col-md-offset-3">
-														<button type="submit" class="btn btn-primary">提交</button>
-														<button type="reset" class="btn btn-default">重置</button>
-													</div>
-												</div>
-											</div>
-
-										</form>
-
-									</div>
-								</div>
+								</section>
 							</div>
 						</div>
-						<div class="col-md-12 col-lg-3">
-
-							<h4 class="mb-md">会议</h4>
-							<ul class="simple-bullet-list mb-xlg">
-								<li class="red">
-									<span class="title">Porto Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-								<li class="green">
-									<span class="title">Tucson HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit amet</span>
-								</li>
-								<li class="blue">
-									<span class="title">Porto HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-								<li class="orange">
-									<span class="title">Tucson Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-							</ul>
-
-							<h4 class="mb-md">消息</h4>
-							<ul class="simple-user-list mb-xlg">
-								<li>
-									<figure class="image rounded">
-										<img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Doe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Doe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-							</ul>
-						</div>
-
-					</div>
 					<!-- end: page -->
 				</section>
 			</div>
@@ -833,7 +599,19 @@
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+		<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.js"></script>
+		<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="assets/vendor/raphael/raphael.js"></script>
+		<script src="assets/vendor/morris/morris.js"></script>
+		<script src="assets/vendor/gauge/gauge.js"></script>
+		<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+		<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -844,5 +622,8 @@
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
 
+
+		<!-- Examples -->
+		<script src="assets/javascripts/ui-elements/examples.charts.js"></script>
 	</body>
 </html>

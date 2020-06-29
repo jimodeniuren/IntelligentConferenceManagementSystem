@@ -14,7 +14,7 @@ import java.util.List;
  * @create: 2020-06-22 20:14
  **/
 public class ConferenceDao extends DBUtils {
-    public int insert(Conference conference) {
+    public String insert(Conference conference) {
 
         Object[] params
                 = {conference.getConferenceName(), conference.getConferenceId()
@@ -28,7 +28,7 @@ public class ConferenceDao extends DBUtils {
         int i = doUpdate(sql,params);
 
         getClose();
-        return  i;
+        return  i==1?"预定成功！":"预定失败！";
     }
 
     public int delete(Conference conference) {
@@ -60,7 +60,7 @@ public class ConferenceDao extends DBUtils {
         return i;
     }
 
-    public List selectByHostId(String id){
+    public List<Conference> selectByHostId(String id){
         String sql = "select * from tbl_conference where host_id = " + id;
 
         ResultSet rs = doQuery(sql, null);
