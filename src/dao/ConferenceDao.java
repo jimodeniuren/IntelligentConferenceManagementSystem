@@ -68,7 +68,7 @@ public class ConferenceDao extends DBUtils {
         List<Conference> list = new ArrayList<>();
 
         try {
-            if (rs.next()) {
+            while (rs.next()) {
                 list.add(new Conference(rs.getString(1),rs.getInt(2),
                         rs.getInt(3),rs.getInt(4),rs.getInt(5),
                         rs.getString(6),rs.getDate(7),rs.getDate(8),
@@ -81,6 +81,24 @@ public class ConferenceDao extends DBUtils {
         }
         getClose();
         return list;
+    }
+
+    public String getNameById(String id){
+        String sql = "select * from tbl_conference where conference_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        try {
+            if (rs.next()) {
+                return rs.getString(1);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "会议不存在！";
     }
 
     public List<Conference> getUnstartedConference(){

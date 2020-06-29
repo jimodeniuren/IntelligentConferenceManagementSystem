@@ -301,7 +301,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.jsp">
+												<a href="tables-participantrecord.jsp">
 													会议参加记录查询
 												</a>
 											</li>

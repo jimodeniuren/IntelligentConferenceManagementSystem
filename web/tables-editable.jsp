@@ -359,7 +359,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-editable.html">
+                                        <a href="tables-editable.jsp">
                                             应急调度
                                         </a>
                                     </li>

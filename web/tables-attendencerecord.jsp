@@ -4,6 +4,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="dao.AttendenceRecordDao" %>
 <%@ page import="entity.AttendenceRecord" %>
+<%@ page import="dao.UserDao" %>
 <!doctype html>
 <html class="fixed">
 <head>
@@ -299,11 +300,11 @@
                                     </li>
                                     <li class="nav-active">
                                         <a href="tables-attendencerecord.jsp">
-                                            会议签到情况查询
+                                            会议签到与情况查询
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-advanced.jsp">
+                                        <a href="tables-participantrecord.jsp">
                                             会议参加记录查询
                                         </a>
                                     </li>
@@ -401,12 +402,50 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
+                    <h2 class="panel-title">会议签到</h2>
+                </header>
+                <div class="panel-body">
+                    <form action="tables-attendencerecord.jsp?isinsert=true" method="post">
+                        <div class="form-group mb-lg">
+                            <input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="输入要签到的会议ID" aria-controls="datatable-default"/>
+                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">签到</button>
+                            <%
+                                try{
+                                    if (request.getParameter("isinsert").equals("true")){
+                                        AttendenceRecordDao dao =new AttendenceRecordDao();
+                                        ConferenceDao dao1 = new ConferenceDao();
+                                        UserDao dao2 = new UserDao();
+                                        String conferenceId = request.getParameter("insertid");
+                                        String conferenceName = dao1.getNameById(conferenceId);
+                                        String userId = (String) request.getSession().getAttribute("userID");
+                                        String userName = dao2.getNameById(userId);
+                                        if (conferenceName.equals("会议不存在！")){
+                                            out.print("会议不存在！");
+                                        }
+                                        else{
+                                            AttendenceRecord attendenceRecord = new AttendenceRecord(Integer.parseInt(conferenceId), conferenceName, Integer.parseInt(userId), userName);
+                                            out.print(dao.insert(attendenceRecord));
+                                        }
+                                    }
+                                }catch (Exception e){}
+                            %>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- start: page -->
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="fa fa-caret-down"></a>
+                        <a href="#" class="fa fa-times"></a>
+                    </div>
                     <h2 class="panel-title">会议签到情况查询</h2>
                 </header>
                 <div class="panel-body">
                     <form action="tables-attendencerecord.jsp?isresult=true" method="post">
                         <div class="form-group mb-lg">
-                            <input name="searchid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="要查询签到情况的会议ID" aria-controls="datatable-default"/>
+                            <input name="searchid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="输入要查询签到情况的会议ID" aria-controls="datatable-default"/>
                             <button type="submit" class="btn btn-primary hidden-xs">查询</button>
                         </div>
                     </form>
