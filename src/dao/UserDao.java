@@ -5,6 +5,7 @@ import utils.DBUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -95,4 +96,27 @@ public class UserDao extends DBUtils{
         }
         return null;
     }
+
+    public String getNameById(String id){
+
+            String sql = "select * from tbl_user where user_id = " + id;
+
+            ResultSet rs = doQuery(sql, null);
+
+            List<User> list = new ArrayList<>();
+
+            try {
+                if (rs.next()) {
+                    getClose();
+                    return rs.getString(4);
+                }
+
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            getClose();
+            return "没有这个用户";
+    }
+
 }
