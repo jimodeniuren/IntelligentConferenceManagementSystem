@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>User Profile | Okler Themes | Porto-Admin</title>
+		<title>个人信息</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -41,7 +41,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="" class="logo">
+					<a href="../" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -262,225 +262,39 @@
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
-				
+
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							Navigation
+							浅草会议
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-				
+		
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="index.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>Dashboard</span>
-										</a>
-									</li>
-									<li>
-										<a href="mailbox-folder.html">
-											<span class="pull-right label label-primary">182</span>
-											<i class="fa fa-envelope" aria-hidden="true"></i>
-											<span>Mailbox</span>
-										</a>
-									</li>
-									<li class="nav-parent nav-expanded nav-active">
-										<a>
-											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Pages</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="pages-signup.html">
-													 Sign Up
-												</a>
-											</li>
-											<li>
-												<a href="pages-signin.html">
-													 Sign In
-												</a>
-											</li>
-											<li>
-												<a href="pages-recover-password.html">
-													 Recover Password
-												</a>
-											</li>
-											<li>
-												<a href="pages-lock-screen.html">
-													 Locked Screen
-												</a>
-											</li>
-											<li class="nav-active">
-												<a href="pages-user-profile.html">
-													 User Profile
-												</a>
-											</li>
-											<li>
-												<a href="pages-session-timeout.html">
-													 Session Timeout
-												</a>
-											</li>
-											<li>
-												<a href="pages-calendar.html">
-													 Calendar
-												</a>
-											</li>
-											<li>
-												<a href="pages-timeline.html">
-													 Timeline
-												</a>
-											</li>
-											<li>
-												<a href="pages-media-gallery.html">
-													 Media Gallery
-												</a>
-											</li>
-											<li>
-												<a href="pages-invoice.html">
-													 Invoice
-												</a>
-											</li>
-											<li>
-												<a href="pages-blank.html">
-													 Blank Page
-												</a>
-											</li>
-											<li>
-												<a href="pages-404.html">
-													 404
-												</a>
-											</li>
-											<li>
-												<a href="pages-500.html">
-													 500
-												</a>
-											</li>
-											<li>
-												<a href="pages-log-viewer.html">
-													 Log Viewer
-												</a>
-											</li>
-											<li>
-												<a href="pages-search-results.html">
-													 Search Results
-												</a>
-											</li>
-										</ul>
-									</li>
 									<li class="nav-parent">
 										<a>
-											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>UI Elements</span>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
+											<span>会议查询</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="ui-elements-typography.html">
-													 Typography
+												<a href="tables-advanced.jsp">
+													会议室状态查询
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-icons.html">
-													 Icons
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-tabs.html">
-													 Tabs
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-panels.html">
-													 Panels
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-widgets.html">
-													 Widgets
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-portlets.html">
-													 Portlets
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-buttons.html">
-													 Buttons
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-alerts.html">
-													 Alerts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-notifications.html">
-													 Notifications
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-modals.html">
-													 Modals
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-lightbox.html">
-													 Lightbox
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-progressbars.html">
-													 Progress Bars
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-sliders.html">
-													 Sliders
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-carousels.html">
-													 Carousels
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-accordions.html">
-													 Accordions
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-nestable.html">
-													 Nestable
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-tree-view.html">
-													 Tree View
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-grid-system.html">
-													 Grid System
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-charts.html">
-													 Charts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-animations.html">
-													 Animations
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-extra.html">
-													 Extra
+												<a href="tables-advanced.jsp">
+													会议参加记录查询
 												</a>
 											</li>
 										</ul>
@@ -488,237 +302,71 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Forms</span>
+											<span>会议预定</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.html">
-													 Basic
+												<a href="forms-basic.jsp">
+													发起新会议
 												</a>
 											</li>
 											<li>
 												<a href="forms-advanced.html">
-													 Advanced
+													查看已预订的会议
 												</a>
-											</li>
-											<li>
-												<a href="forms-validation.html">
-													 Validation
-												</a>
-											</li>
-											<li>
-												<a href="forms-layouts.html">
-													 Layouts
-												</a>
-											</li>
-											<li>
-												<a href="forms-wizard.html">
-													 Wizard
-												</a>
-											</li>
-											<li>
-												<a href="forms-code-editor.html">
-													 Code Editor
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Tables</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="tables-basic.html">
-													 Basic
-												</a>
-											</li>
-											<li>
-												<a href="tables-advanced.html">
-													 Advanced
-												</a>
-											</li>
-											<li>
-												<a href="tables-responsive.html">
-													 Responsive
-												</a>
-											</li>
-											<li>
-												<a href="tables-editable.html">
-													 Editable
-												</a>
-											</li>
-											<li>
-												<a href="tables-ajax.html">
-													 Ajax
-												</a>
-											</li>
-											<li>
-												<a href="tables-pricing.html">
-													 Pricing
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Maps</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="maps-google-maps.html">
-													 Basic
-												</a>
-											</li>
-											<li>
-												<a href="maps-google-maps-builder.html">
-													 Map Builder
-												</a>
-											</li>
-											<li>
-												<a href="maps-vector.html">
-													 Vector
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Layouts</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="layouts-default.html">
-													 Default
-												</a>
-											</li>
-											<li>
-												<a href="layouts-boxed.html">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="layouts-menu-collapsed.html">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="layouts-scroll.html">
-													 Scroll
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Menu Levels</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a>First Level</a>
-											</li>
-											<li class="nav-parent">
-												<a>Second Level</a>
-												<ul class="nav nav-children">
-													<li class="nav-parent">
-														<a>Third Level</a>
-														<ul class="nav nav-children">
-															<li>
-																<a>Third Level Link #1</a>
-															</li>
-															<li>
-																<a>Third Level Link #2</a>
-															</li>
-														</ul>
-													</li>
-													<li>
-														<a>Second Level Link #1</a>
-													</li>
-													<li>
-														<a>Second Level Link #2</a>
-													</li>
-												</ul>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="" target="_blank">
-											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<span>Front-End <em class="not-included">(Not Included)</em></span>
+										<a href="index.html">
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>语音会议</span>
 										</a>
 									</li>
+									<li>
+										<a href="pages-search-results.jsp">
+											<i class="fa fa-tasks" aria-hidden="true"></i>
+											<span>权限设置</span>
+										</a>
+									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-table" aria-hidden="true"></i>
+											<span>会议管理</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="ui-elements-portlets.jsp">
+													会议预定审核
+												</a>
+											</li>
+											<li class="nav-active">
+												<a href="tables-editable.jsp">
+													会议室控制中心
+												</a>
+											</li>
+											<li>
+												<a href="tables-editable.html">
+													 会议室使用情况
+												</a>
+											</li>
+		
+										</ul>
+									</li>
+		
 								</ul>
 							</nav>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-tasks">
-								<div class="widget-header">
-									<h6>Projects</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul class="list-unstyled m-none">
-										<li><a href="#">Porto HTML5 Template</a></li>
-										<li><a href="#">Tucson Template</a></li>
-										<li><a href="#">Porto Admin</a></li>
-									</ul>
-								</div>
-							</div>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-stats">
-								<div class="widget-header">
-									<h6>Company Stats</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul>
-										<li>
-											<span class="stats-title">Stat 1</span>
-											<span class="stats-complete">85%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-													<span class="sr-only">85% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 2</span>
-											<span class="stats-complete">70%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-													<span class="sr-only">70% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 3</span>
-											<span class="stats-complete">2%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-													<span class="sr-only">2% Complete</span>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
+		
 						</div>
-				
+		
 					</div>
-				
+		
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>User Profile</h2>
+						<h2>个人信息</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -727,8 +375,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Pages</span></li>
-								<li><span>User Profile</span></li>
+								<li><span>个人信息</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -752,7 +399,7 @@
 
 									<div class="widget-toggle-expand mb-md">
 										<div class="widget-header">
-											<h6>Profile Completion</h6>
+											<h6>信息填写完成度</h6>
 											<div class="widget-toggle">+</div>
 										</div>
 										<div class="widget-content-collapsed">
@@ -764,10 +411,10 @@
 										</div>
 										<div class="widget-content-expanded">
 											<ul class="simple-todo-list">
-												<li class="completed">Update Profile Picture</li>
-												<li class="completed">Change Personal Information</li>
-												<li>Update Social Media</li>
-												<li>Follow Someone</li>
+												<li class="completed">更新个人照片</li>
+												<li class="completed">修改个人信息</li>
+												<li>更新社交媒体</li>
+												<li>关注某人</li>
 											</ul>
 										</div>
 									</div>
@@ -919,15 +566,15 @@
 							<div class="tabs">
 								<ul class="nav nav-tabs tabs-primary">
 									<li class="active">
-										<a href="#overview" data-toggle="tab">Overview</a>
+										<a href="#overview" data-toggle="tab">总览</a>
 									</li>
 									<li>
-										<a href="#edit" data-toggle="tab">Edit</a>
+										<a href="#edit" data-toggle="tab">编辑</a>
 									</li>
 								</ul>
 								<div class="tab-content">
 									<div id="overview" class="tab-pane active">
-										<h4 class="mb-md">Update Status</h4>
+										<h4 class="mb-md">更新状态</h4>
 
 										<section class="simple-compose-box mb-xlg">
 											<form method="get" action="/">
@@ -944,41 +591,41 @@
 												</ul>
 												<ul class="compose-btn">
 													<li>
-														<a class="btn btn-primary btn-xs">Post</a>
+														<a class="btn btn-primary btn-xs">发布</a>
 													</li>
 												</ul>
 											</div>
 										</section>
 
-										<h4 class="mb-xlg">Timeline</h4>
+										<h4 class="mb-xlg">时间线</h4>
 
 										<div class="timeline timeline-simple mt-xlg mb-md">
 											<div class="tm-body">
 												<div class="tm-title">
-													<h3 class="h5 text-uppercase">November 2013</h3>
+													<h3 class="h5 text-uppercase">六月 2020</h3>
 												</div>
 												<ol class="tm-items">
 													<li>
 														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
+															<p class="text-muted mb-none">3个月前.</p>
 															<p>
-																It's awesome when we find a good solution for our projects, Porto Admin is <span class="text-primary">#awesome</span>
+																第一次承办大型会议！紧张！但会议进行的非常好 <span class="text-primary">#awesome</span>
 															</p>
 														</div>
 													</li>
 													<li>
 														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
+															<p class="text-muted mb-none">5个月前.</p>
 															<p>
-																What is your biggest developer pain point?
+																为什么会议这么多?
 															</p>
 														</div>
 													</li>
 													<li>
 														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
+															<p class="text-muted mb-none">7个月前.</p>
 															<p>
-																Checkout! How cool is that!
+																哇哦，可以在这里签到了!
 															</p>
 															<div class="thumbnail-gallery">
 																<a class="img-thumbnail lightbox" href="assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }'>
@@ -997,73 +644,41 @@
 									<div id="edit" class="tab-pane">
 
 										<form class="form-horizontal" method="get">
-											<h4 class="mb-xlg">Personal Information</h4>
+											<h4 class="mb-xlg">个人信息</h4>
 											<fieldset>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
+													<label class="col-md-3 control-label" for="profileName">姓名</label>
 													<div class="col-md-8">
 														<input type="text" class="form-control" id="profileFirstName">
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileLastName">Last Name</label>
+													<label class="col-md-3 control-label" for="profileId">ID</label>
 													<div class="col-md-8">
 														<input type="text" class="form-control" id="profileLastName">
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileAddress">Address</label>
+													<label class="col-md-3 control-label" for="profileEmail">Email</label>
 													<div class="col-md-8">
 														<input type="text" class="form-control" id="profileAddress">
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">Company</label>
+													<label class="col-md-3 control-label" for="profileCompany">部门</label>
 													<div class="col-md-8">
 														<input type="text" class="form-control" id="profileCompany">
 													</div>
 												</div>
 											</fieldset>
+											
 											<hr class="dotted tall">
-											<h4 class="mb-xlg">About Yourself</h4>
-											<fieldset>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileBio">Biographical Info</label>
-													<div class="col-md-8">
-														<textarea class="form-control" rows="3" id="profileBio"></textarea>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-xs-3 control-label mt-xs pt-none">Public</label>
-													<div class="col-md-8">
-														<div class="checkbox-custom checkbox-default checkbox-inline mt-xs">
-															<input type="checkbox" checked="" id="profilePublic">
-															<label for="profilePublic"></label>
-														</div>
-													</div>
-												</div>
-											</fieldset>
-											<hr class="dotted tall">
-											<h4 class="mb-xlg">Change Password</h4>
-											<fieldset class="mb-xl">
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileNewPassword">New Password</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPassword">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileNewPasswordRepeat">Repeat New Password</label>
-													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPasswordRepeat">
-													</div>
-												</div>
-											</fieldset>
+											
 											<div class="panel-footer">
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">
-														<button type="submit" class="btn btn-primary">Submit</button>
-														<button type="reset" class="btn btn-default">Reset</button>
+														<button type="submit" class="btn btn-primary">提交</button>
+														<button type="reset" class="btn btn-default">重置</button>
 													</div>
 												</div>
 											</div>
@@ -1076,23 +691,7 @@
 						</div>
 						<div class="col-md-12 col-lg-3">
 
-							<h4 class="mb-md">Sale Stats</h4>
-							<ul class="simple-card-list mb-xlg">
-								<li class="primary">
-									<h3>488</h3>
-									<p>Nullam quris ris.</p>
-								</li>
-								<li class="primary">
-									<h3>$ 189,000.00</h3>
-									<p>Nullam quris ris.</p>
-								</li>
-								<li class="primary">
-									<h3>16</h3>
-									<p>Nullam quris ris.</p>
-								</li>
-							</ul>
-
-							<h4 class="mb-md">Projects</h4>
+							<h4 class="mb-md">会议</h4>
 							<ul class="simple-bullet-list mb-xlg">
 								<li class="red">
 									<span class="title">Porto Template</span>
@@ -1112,7 +711,7 @@
 								</li>
 							</ul>
 
-							<h4 class="mb-md">Messages</h4>
+							<h4 class="mb-md">消息</h4>
 							<ul class="simple-user-list mb-xlg">
 								<li>
 									<figure class="image rounded">
@@ -1242,6 +841,3 @@
 
 	</body>
 </html>
-
-<%@ page language="java" contentType="text/html; charset=GB18030"
-		 pageEncoding="GB18030"%>
