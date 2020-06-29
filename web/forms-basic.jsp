@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>хПСш╡╖цЦ░ф╝Ъшоо</title>
+		<title>╖в╞Ё╨┬╗с╥щ</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -268,7 +268,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							ц╡ЕшНЙф╝Ъшоо
+							╟│▓▌╗с╥щ
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -282,24 +282,24 @@
 									<li>
 										<a href="tables-advanced.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>ф╝ЪшооцЯешпв</span>
+											<span>╗с╥щ▓щ╤п</span>
 										</a>
 									</li>
 									
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ф╝ЪшоощвДхоЪ</span>
+											<span>╗с╥щ╘д╢и</span>
 										</a>
 										<ul class="nav nav-children">
 											<li class="nav-active">
 												<a href="forms-basic.html">
-													 хПСш╡╖цЦ░ф╝Ъшоо
+													 ╖в╞Ё╨┬╗с╥щ
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.html.html">
-													 цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
+													 ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
 												</a>
 											</li>
 										</ul>
@@ -307,34 +307,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>шпнщЯ│ф╝Ъшоо</span>
+											<span>╙я╥Ї╗с╥щ</span>
 										</a>
 									</li>
 									<li>
 										<a href="pages-search-results.html">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>цЭГщЩРшо╛ч╜о</span>
+											<span>╚и╧▐╔ш╓├</span>
 										</a>
 									</li>
 									<li>
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>ф╝ЪшоочобчРЖ</span>
+											<span>╗с╥щ╣▄└э</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													 ф╝ЪшоощвДхоЪхобца╕
+													 ╗с╥щ╘д╢и╔є║╦
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 ф╝ЪшооходцОзхИ╢ф╕нх┐Г
+													 ╗с╥щ╩╥┐╪╓╞╓╨╨─
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.html">
-													 х║ФцАеш░Гх║ж
+													 ╙ж╝▒╡ў╢╚
 												</a>
 											</li>
 											
@@ -353,7 +353,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>хПСш╡╖цЦ░ф╝Ъшоо</h2>
+						<h2>╖в╞Ё╨┬╗с╥щ</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -362,8 +362,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>ф╝ЪшоощвДхоЪ</span></li>
-								<li><span>хПСш╡╖цЦ░ф╝Ъшоо</span></li>
+								<li><span>╗с╥щ╘д╢и</span></li>
+								<li><span>╖в╞Ё╨┬╗с╥щ</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -380,37 +380,37 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 						
-										<h2 class="panel-title">ф╝ЪшоощвДч║жчФ│шп╖шби</h2>
+										<h2 class="panel-title">╗с╥щ╘д╘╝╔ъ╟ы▒э</h2>
 									</header>
 									<div class="panel-body">
 										<form class="form-horizontal form-bordered" method="get">
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">ф╝Ъшооф╕╗щвШ</label>
+												<label class="col-md-3 control-label" for="inputSubject">╗с╥щ╓ў╠т</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputSubject">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputDefault">ф╝Ъшооход</label>
+												<label class="col-md-3 control-label" for="inputMr">╗с╥щ╩╥</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="inputDefault">
+													<input type="text" class="form-control" id="inputMr">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputSuccess">ф╕╗хКЮщГищЧи</label>
+												<label class="col-md-3 control-label" for="inputDep">╓ў░ь▓┐├┼</label>
 												<div class="col-md-6">
 													<select class="form-control mb-md">
-														<option>чнЦхИТщГи</option>
-														<option>шо╛шобщГи</option>
-														<option>ч╛Ох╖ещГи</option>
+														<option>▓▀╗о▓┐</option>
+														<option>╔ш╝╞▓┐</option>
+														<option>├└╣д▓┐</option>
 													</select>
 												</div>
 											</div>
 						
 											<div class="form-group">
-												<label class="col-md-3 control-label">ф╝ЪшооцЧецЬЯ</label>
+												<label class="col-md-3 control-label">╗с╥щ╚╒╞┌</label>
 												<div class="col-md-6">
 													<div class="input-group">
 														<span class="input-group-addon">
@@ -422,7 +422,7 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label">х╝АхзЛцЧ╢щЧ┤</label>
+												<label class="col-md-3 control-label">┐к╩╝╩▒╝ф</label>
 												<div class="col-md-6">
 													<div class="input-group">
 														<span class="input-group-addon">
@@ -434,7 +434,7 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label">ч╗УцЭЯцЧ╢щЧ┤</label>
+												<label class="col-md-3 control-label">╜с╩°╩▒╝ф</label>
 												<div class="col-md-6">
 													<div class="input-group">
 														<span class="input-group-addon">
@@ -446,8 +446,8 @@
 											</div>
 											<div class="col-md-6"></div>
 											<div class="col-md-6">
-												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">чбошод</button>
-												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">хПЦц╢И</button>
+												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">╚╖╚╧</button>
+												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">╚б╧√</button>
 											</div>											
 										</form>
 									</div>
