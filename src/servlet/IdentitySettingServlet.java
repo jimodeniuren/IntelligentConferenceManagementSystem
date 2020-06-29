@@ -18,7 +18,8 @@ public class IdentitySettingServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         PrintWriter out = response.getWriter();
-        if(session.getAttribute("userID").equals("1")){
+        int userID= Integer.parseInt(String.valueOf(session.getAttribute("userID")));
+        if(userDao.getUserInfo(userID)[4].equals("administrator")){
             if(request.getParameter("ID")==null){
                 out.print("<script language='javascript'>alert('user do not exist');window.history.go(-1);</script>");
             }else {
@@ -44,7 +45,7 @@ public class IdentitySettingServlet extends HttpServlet {
                 }
             }
         }else{
-            out.print("<script language='javascript'>alert('root');window.history.go(-1);</script>");
+            out.print("<script language='javascript'>alert('administrator!');window.history.go(-1);</script>");
         }
         out.flush();
         out.close();
