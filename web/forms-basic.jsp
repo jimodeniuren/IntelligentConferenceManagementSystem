@@ -408,18 +408,6 @@
 													</select>
 												</div>
 											</div>
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label">会议日期</label>
-												<div class="col-md-6">
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-														</span>
-														<input id="date" data-plugin-masked-input data-input-mask="99/99/9999" placeholder="__/__/____" class="form-control">
-													</div>
-												</div>
-											</div>
 
 											<div class="form-group">
 												<label class="col-md-3 control-label">开始时间</label>
@@ -428,7 +416,7 @@
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+														<input type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -440,7 +428,7 @@
 														<span class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</span>
-														<input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+														<input type="datetime-local" class="form-control">
 													</div>
 												</div>
 											</div>

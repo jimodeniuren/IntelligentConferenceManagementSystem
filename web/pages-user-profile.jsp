@@ -1,3 +1,7 @@
+
+<%@ page import="entity.User" %>
+<%@ page import="dao.UserDao" %>
+
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -491,7 +495,7 @@
 								</div>
 								<div class="panel-footer">
 									<div class="input-group input-search">
-										<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+										<input type="text" class="form-control" name="q" id="a" placeholder="Search...">
 										<span class="input-group-btn">
 											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
 											</button>
@@ -645,11 +649,12 @@
 
 										<form class="form-horizontal" method="get">
 											<h4 class="mb-xlg">个人信息</h4>
+
 											<fieldset>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileName">姓名</label>
+													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileFirstName">
+														<label>request.get</label>
 													</div>
 												</div>
 												<div class="form-group">
