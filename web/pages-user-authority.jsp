@@ -263,7 +263,7 @@
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
-				
+
 					<div class="sidebar-header">
 						<div class="sidebar-title">
 							浅草会议
@@ -272,18 +272,34 @@
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-				
+
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
-									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -291,13 +307,13 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.html">
-													 发起新会议
+												<a href="forms-basic.jsp">
+													发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html">
-													 查看已预订的会议
+												<a href="pages-blank.jsp">
+													查看已预订的会议
 												</a>
 											</li>
 										</ul>
@@ -309,7 +325,7 @@
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="pages-user-authority.jsp">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -322,30 +338,30 @@
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													 会议预定审核
+													会议预定审核
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.jsp">
-													 会议室控制中心
+													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
-											
+
 										</ul>
 									</li>
-									
+
 								</ul>
 							</nav>
-							
+
 						</div>
-				
+
 					</div>
-				
+
 				</aside>
 				<!-- end: sidebar -->
 
@@ -466,7 +482,7 @@
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">
 														<button type="submit" class="btn btn-primary" onclick="test()">提交</button>
-														<button type="cancel" class="btn btn-default">取消</button>
+														<button type="cancel" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
 													</div>
 												</div>
 											</div>

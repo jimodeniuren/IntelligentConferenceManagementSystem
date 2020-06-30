@@ -231,7 +231,7 @@
 					</ul>
 			
 					<span class="separator"></span>
-			
+
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
@@ -241,21 +241,21 @@
 								<span class="name">John Doe Junior</span>
 								<span class="role">administrator</span>
 							</div>
-			
+
 							<i class="fa custom-caret"></i>
 						</a>
-			
+
 						<div class="dropdown-menu">
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
@@ -419,7 +419,7 @@
 
 											<div class="form-group">
 
-												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
+												<label class="col-md-3 control-label">主办部门</label>
 
 												<div class="col-md-6">
 													<select name="department" class="form-control mb-md">

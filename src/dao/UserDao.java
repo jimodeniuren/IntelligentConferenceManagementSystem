@@ -101,6 +101,18 @@ public class UserDao extends DBUtils{
         return null;
     }
 
+    public int getNum(){
+        String sql="SELECT COUNT(*) FROM tbl_user";
+
+        ResultSet rs = doQuery(sql, null);
+        try {
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
     public List<User> selectAll() {
         String sql = "select * from tbl_user";
 
