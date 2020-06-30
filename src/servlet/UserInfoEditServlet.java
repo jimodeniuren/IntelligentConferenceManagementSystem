@@ -17,12 +17,15 @@ public class UserInfoEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         System.out.println("post");
-        System.out.println(request.getParameter("userDep")+request.getSession().getAttribute("userID"));
-        userDao.editUserInfo(request.getParameter("userDep"),Integer.parseInt((String)request.getSession().getAttribute("userID")));
+        String dep = request.getParameter("department");
+        //dep = new String(dep.getBytes("ISO-8859-1"),"UFT-8");
+        System.out.println(dep+request.getSession().getAttribute("userID"));
+        userDao.editUserInfo(dep,Integer.parseInt((String)request.getSession().getAttribute("userID")));
         PrintWriter out = response.getWriter();
-        out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('修改成功');window.local.href('pages-user-profile.jsp');</script>");
+        out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('success');window.location.href='pages-user-profile.jsp';</script>");
         out.flush();
         out.close();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

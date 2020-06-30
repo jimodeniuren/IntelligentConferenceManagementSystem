@@ -416,7 +416,7 @@
 										<p class="result-type">
 											<span class="label label-primary">user</span>
 										</p>
-										<a href="pages-user-authority.html" class="has-thumb">
+										<a href="pages-user-authority.jsp" class="has-thumb">
 											<div class="result-thumb">
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
