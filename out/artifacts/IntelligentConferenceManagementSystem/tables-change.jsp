@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: cxy
+  Date: 2020/6/29
+  Time: 22:33
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="dao.ConferenceRoomDao" %>
 <%@ page import="entity.ConferenceRoom" %>
 <%@ page import="java.util.*" %><%--
@@ -410,25 +417,37 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <%
-                            ConferenceRoomDao dao=new ConferenceRoomDao();
-                            List<ConferenceRoom> list =dao.getAllData();
-                            for(ConferenceRoom cl:list)
-                            {%>
+                        <%String id=request.getParameter("id");%>
+                        <%String max=request.getParameter("max"); %>
+                        <%String status=request.getParameter("status"); %>
+                        <%String add=request.getParameter("add"); %>
+                        <%String res=request.getParameter("res"); %>
                         <tr class="gradeA">
-                            <td><%=cl.getId()%></td>
-                            <td><%=cl.getMax()%></td>
-                            <td><%=cl.getStatus()%></td>
-                            <td><%=cl.getAddress()%></td>
-                            <td><%=cl.getResources()%></td>
+                            <td><%=id%></td>
+                            <td><%=max%></td>
+                            <td><%=status%></td>
+                            <td><%=add%></td>
+                            <td><%=res%></td>
                             <td class="actions">
-                                <a href="tables-change.jsp?id=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
-                                <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>"><i class="fa fa-trash-o">删除</i></a>
+                                <a href="#" class="hidden" ><i class="fa fa-trash-o"></i></a>
+
 
                             </td>
                         </tr>
-                        <%}
-                        %>
+                        <tr class="gradeX">
+                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" method="post">
+                            <td> <input type="text" name="cid"  value="<%=id%>"></td>
+                            <td><input type="text" name="cmax" value="<%=max%>"></td>
+                            <td><input type="text" name="cstatus" value="<%=status%>"></td>
+                            <td><input type="text" name="cadd" value="<%=add%>"></td>
+                            <td><input type="text" name="cres" value="<%=res%>"></td>
+                            <td class="actions">
+                                <a href="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" ><i class="fa fa-save"></i></a>
+                                <a href="tables-editable.jsp" ><i class="fa fa-times">取消</i></a>
+                                <input type="submit" name="修改"><i class="fa fa-save"></i>
+                            </td>
+                            </form>
+                        </tr>
                         </tbody>
 
                     </table>
