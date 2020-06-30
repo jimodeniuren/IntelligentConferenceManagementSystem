@@ -101,6 +101,47 @@ public class UserDao extends DBUtils{
         return null;
     }
 
+    public List<User> selectAll() {
+        String sql = "select * from student";
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = null;
+
+        try {
+            while (rs.next()) {
+                list.add(new User(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getString(4),rs.getString(5),
+                        rs.getString(6)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
+
+    public List<User> selectById(String id){
+        String sql = "select * from tbl_user where host_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                list.add(new User(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getString(4),rs.getString(5),
+                        rs.getString(6)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
     public String getNameById(String id){
 
             String sql = "select * from tbl_user where user_id = " + id;

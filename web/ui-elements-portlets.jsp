@@ -429,23 +429,20 @@
 									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
-									<form action="ui-elements-portlets.jsp?isPass=true" method="post">
-										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
+									<form method="post">
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>
 										<%
 											if (request.getParameter("isPass").equals("true"))
-												x.setConferenceStatus(1);%>
-									</form>
-									<form action="ui-elements-portlets.jsp?isNotpass=true" method="post">
-										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
-										<%
-											if (request.getParameter("isNotpass").equals("true"))
+												x.setConferenceStatus(1);
+											if (request.getParameter("isReject").equals("true"))
 												x.setConferenceStatus(2);%>
 									</form>
 
 								</div>
 							</section>
 							<%}%>
-							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
+						<%--	<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
 										<a href="#" class="fa fa-caret-down"></a>
@@ -530,7 +527,7 @@
 									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
 								</div>
 							</section>
-							
+							--%>
 						</div>
 					</div>
 					<!-- end: page -->
