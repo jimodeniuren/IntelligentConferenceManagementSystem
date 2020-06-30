@@ -392,14 +392,10 @@
 					<div class="search-content">
 						<div class="search-control-wrapper">
 							<form action="pages-search-results.jsp?isresult=true" method="post">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" class="form-control" value="something">
-										<span class="input-group-btn">
-											<button class="btn btn-primary" type="button">go</button>
-										</span>
+								<div class="form-group mb-lg">
+									<input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="something" aria-controls="datatable-default"/>
+									<button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">go</button>
 									</div>
-								</div>
 							</form>
 						</div>
 						<div class="search-toolbar">
@@ -418,11 +414,10 @@
 								<% try {
 									if(request.getParameter("isresult").equals("true"))
 									{%>
-								<ul class="list-unstyled search-results-list">
-
+										<ul class="list-unstyled search-results-list">
 									<%
-										UserDao udao=new UserDao();
-										List<User> ulist=udao.selectAll();
+										UserDao dao=new UserDao();
+										List<User> ulist = dao.selectAll();
 										for (User u:ulist){
 									%>
 									<li>

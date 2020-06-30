@@ -1,5 +1,4 @@
 <%@ page import="dao.ConferenceDao" %>
-<%@ page import="java.util.List" %>
 <%@ page import="entity.Conference" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <!doctype html>
@@ -9,7 +8,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Advanced Tables | Okler Themes | Porto-Admin</title>
+		<title>хПСш╡╖цЦ░ф╝Ъшоо</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -27,8 +26,7 @@
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
-		<link rel="stylesheet" href="assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+		<link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -251,7 +249,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -270,10 +268,10 @@
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
-
+				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							╟│▓▌╗с╥щ
+							ц╡ЕшНЙф╝Ъшоо
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -284,43 +282,43 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ▓щ╤п</span>
+											<span>ф╝ЪшооцЯешпв</span>
 										</a>
 										<ul class="nav nav-children">
-											<li class="nav-active">
+											<li>
 												<a href="tables-advanced.jsp">
-													╗с╥щ╩╥╫┤╠м▓щ╤п
+													ф╝ЪшооходчК╢цАБцЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-attendencerecord.jsp">
-													╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п
+													ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-participantrecord.jsp">
-													╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
+													ф╝ЪшоохПВхКашо░х╜ХцЯешпв
 												</a>
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ╘д╢и</span>
+											<span>ф╝ЪшоощвДхоЪ</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
+											<li class="nav-active">
 												<a href="forms-basic.jsp">
-													╖в╞Ё╨┬╗с╥щ
+													хПСш╡╖цЦ░ф╝Ъшоо
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.jsp">
-													▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+													цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
 												</a>
 											</li>
 										</ul>
@@ -328,34 +326,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>╙я╥Ї╗с╥щ</span>
+											<span>шпнщЯ│ф╝Ъшоо</span>
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.jsp">
+										<a href="pages-user-authority.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>╚и╧▐╔ш╓├</span>
+											<span>цЭГщЩРшо╛ч╜о</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>╗с╥щ╣▄└э</span>
+											<span>ф╝ЪшоочобчРЖ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													╗с╥щ╘д╢и╔є║╦
+													ф╝ЪшоощвДхоЪхобца╕
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.jsp">
-													╗с╥щ╩╥┐╪╓╞╓╨╨─
+													ф╝ЪшооходцОзхИ╢ф╕нх┐Г
 												</a>
 											</li>
 											<li>
 												<a href="ui-elements-charts.html">
-													╗с╥щ╩╥╩╣╙├╟щ┐Ў
+													ф╝Ъшооходф╜┐чФицГЕхЖ╡
 												</a>
 											</li>
 
@@ -368,22 +366,23 @@
 						</div>
 
 					</div>
-
+				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>╗с╥щ▓щ╤п</h2>
+						<h2>хПСш╡╖цЦ░ф╝Ъшоо</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
-									<a href="tables-advanced.jsp">
+									<a href="index.html">
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>╗с╥щ▓щ╤п</span></li>
+								<li><span>ф╝ЪшоощвДхоЪ</span></li>
+								<li><span>хПСш╡╖цЦ░ф╝Ъшоо</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -391,47 +390,91 @@
 					</header>
 
 					<!-- start: page -->
-						<section class="panel">
-							<header class="panel-heading">
-								<div class="panel-actions">
-									<a href="#" class="fa fa-caret-down"></a>
-									<a href="#" class="fa fa-times"></a>
-								</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
 						
-								<h2 class="panel-title">╗с╥щ╩╥╫┤╠м▓щ╤п</h2>
-							</header>
-							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-default">
-									<thead>
-										<tr>
-											<th>╗с╥щ├√│╞</th>
-											<th>╗с╥щ╡╪╡уID</th>
-											<th>╗с╥щ┐к╩╝╩▒╝ф</th>
-											<th class="hidden-phone">╓ў░ь▓┐├┼</th>
-											<th class="hidden-phone">╖в╞Ё╚╦ID</th>
-											<th class="hidden-phone">╗с╥щ╔є║╦╫┤╠м</th>
-										</tr>
-									</thead>
-									<tbody>
-										<%
-											ConferenceDao dao = new ConferenceDao();
-											List<Conference> conferences = dao.getUnstartedConference();
-											SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-											for (Conference x:conferences){
-										%>
-										<tr class="gradeA">
-											<td><%=x.getConferenceName()%></td>
-											<td><%=x.getMrId()%></td>
-											<td><%=sdf.format(x.getStartTime())%></td>
-											<td class="center hidden-phone"><%=x.getHostDepartment()%></td>
-											<td class="center hidden-phone"><%=x.getHostId()%></td>
-											<td class="center hidden-phone"><%=x.getConferenceStatus()%></td>
-										</tr><%}%>
-									</tbody>
-								</table>
-							</div>
-						</section>
+										<h2 class="panel-title">ф╝ЪшоощвДч║жчФ│шп╖шби</h2>
+									</header>
+									<div class="panel-body">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="get">
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputSubject">ф╝ЪшоохРНчз░</label>
+												<div class="col-md-6">
+													<input name="conference_name" type="text" class="form-control" id="inputSubject">
+												</div>
+											</div>
 
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputMr">ф╝Ъшооход</label>
+												<div class="col-md-6">
+													<input name="conferenceroom_id" type="number" class="form-control" id="inputMr">
+												</div>
+											</div>
+
+											<div class="form-group">
+
+												<label class="col-md-3 control-label" for="inputDep">ф╕╗хКЮщГищЧи</label>
+
+												<div class="col-md-6">
+													<select name="department" class="form-control mb-md">
+														<option>чнЦхИТщГи</option>
+														<option>шо╛шобщГи</option>
+														<option>ч╛Ох╖ещГи</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label">х╝АхзЛцЧ╢щЧ┤</label>
+												<div class="col-md-6">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
+														</span>
+														<input name="start_time" type="datetime-local" class="form-control">
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label">ч╗УцЭЯцЧ╢щЧ┤</label>
+												<div class="col-md-6">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
+														</span>
+														<input name="end_time" type="datetime-local" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6"></div>
+											<div class="col-md-6">
+												<button id="book" class="mb-xs mt-xs mr-xs btn btn-primary">чбошод</button>
+												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">хПЦц╢И</button>
+												<%
+													try{
+														if (request.getParameter("isinsert").equals("true")){
+															SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+															ConferenceDao dao = new ConferenceDao();
+															out.print(dao.insert(new Conference(request.getParameter("conference_name"), 1,
+																		0,Integer.parseInt(request.getParameter("conferenceroom_id")),Integer.parseInt((String)request.getSession().getAttribute("userID")),
+																	request.getParameter("department"),sdf.parse(request.getParameter("start_time")),sdf.parse(request.getParameter("end_time")),0)));
+														}
+													}catch (Exception e){}
+												%>
+											</div>
+										</form>
+									</div>
+								</section>						
+							</div>
+						</div>						
+					<!-- end: page -->
 				</section>
 			</div>
 
@@ -514,10 +557,8 @@
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/select2/select2.js"></script>
-		<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-		<script src="assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-		<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+		<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -528,13 +569,8 @@
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
 
-
-		<!-- Examples -->
-		<script src="assets/javascripts/tables/examples.datatables.default.js"></script>
-		<script src="assets/javascripts/tables/examples.datatables.row.with.details.js"></script>
-		<script src="assets/javascripts/tables/examples.datatables.tabletools.js"></script>
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>

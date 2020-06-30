@@ -1,15 +1,14 @@
-<%@ page import="dao.ConferenceDao" %>
+<%@ page import="dao.UserDao" %>
 <%@ page import="java.util.List" %>
-<%@ page import="entity.Conference" %>
-<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="entity.User" %>
 <!doctype html>
-<html class="fixed">
+<html class="fixed search-results">
 	<head>
 
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Advanced Tables | Okler Themes | Porto-Admin</title>
+		<title>权限设置</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -25,10 +24,6 @@
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
-
-		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
-		<link rel="stylesheet" href="assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -49,7 +44,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="" class="logo">
+					<a href="../" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -251,7 +246,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -270,7 +265,7 @@
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
-
+				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
 							浅草会议
@@ -279,18 +274,18 @@
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-
+				
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
 										<ul class="nav nav-children">
-											<li class="nav-active">
+											<li>
 												<a href="tables-advanced.jsp">
 													会议室状态查询
 												</a>
@@ -307,6 +302,7 @@
 											</li>
 										</ul>
 									</li>
+									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -315,12 +311,12 @@
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.jsp">
-													发起新会议
+													 发起新会议
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.jsp">
-													查看已预订的会议
+													 查看已预订的会议
 												</a>
 											</li>
 										</ul>
@@ -331,7 +327,7 @@
 											<span>语音会议</span>
 										</a>
 									</li>
-									<li>
+									<li class="nav-active">
 										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
@@ -361,29 +357,29 @@
 
 										</ul>
 									</li>
-
+									
 								</ul>
 							</nav>
-
+							
 						</div>
-
+				
 					</div>
-
+				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>会议查询</h2>
+						<h2>查找结果</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
-									<a href="tables-advanced.jsp">
+									<a href="index.html">
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>会议查询</span></li>
+								<li><span>权限设置</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -391,47 +387,158 @@
 					</header>
 
 					<!-- start: page -->
-						<section class="panel">
-							<header class="panel-heading">
-								<div class="panel-actions">
-									<a href="#" class="fa fa-caret-down"></a>
-									<a href="#" class="fa fa-times"></a>
-								</div>
-						
-								<h2 class="panel-title">会议室状态查询</h2>
-							</header>
-							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-default">
-									<thead>
-										<tr>
-											<th>会议名称</th>
-											<th>会议地点ID</th>
-											<th>会议开始时间</th>
-											<th class="hidden-phone">主办部门</th>
-											<th class="hidden-phone">发起人ID</th>
-											<th class="hidden-phone">会议审核状态</th>
-										</tr>
-									</thead>
-									<tbody>
-										<%
-											ConferenceDao dao = new ConferenceDao();
-											List<Conference> conferences = dao.getUnstartedConference();
-											SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-											for (Conference x:conferences){
-										%>
-										<tr class="gradeA">
-											<td><%=x.getConferenceName()%></td>
-											<td><%=x.getMrId()%></td>
-											<td><%=sdf.format(x.getStartTime())%></td>
-											<td class="center hidden-phone"><%=x.getHostDepartment()%></td>
-											<td class="center hidden-phone"><%=x.getHostId()%></td>
-											<td class="center hidden-phone"><%=x.getConferenceStatus()%></td>
-										</tr><%}%>
-									</tbody>
-								</table>
-							</div>
-						</section>
+					<div class="search-content">
+						<div class="search-control-wrapper">
+							<form action="pages-search-results.jsp?isresult=true" method="post">
+								<div class="form-group mb-lg">
+									<input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="something" aria-controls="datatable-default"/>
+									<button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">go</button>
+									</div>
+							</form>
+						</div>
+						<div class="search-toolbar">
+							<ul class="list-unstyled nav nav-pills">
+								<li class="active">
+									<a href="#everything" data-toggle="tab">详细信息</a>
+								</li>
+								<li>
+									<a href="#medias" data-toggle="tab">头像</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div id="everything" class="tab-pane active">
+								<p class="total-results text-muted">展示47条结果中的1-10条</p>
+								<% try {
+									if(request.getParameter("isresult").equals("true"))
+									{%>
+										<ul class="list-unstyled search-results-list">
+									<%
+										UserDao dao=new UserDao();
+										System.out.println("aaaaaa");
+										List<User> ulist = dao.selectAll();
+										System.out.println("bbbbbb");
+										System.out.println(ulist.size()+"ccccc");
+										for (User u:ulist){
+									%>
+									<li>
+										<p class="result-type">
+											<span class="label label-primary">User</span>
+										</p>
+										<a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
+											<div class="result-thumb">
+												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
+											</div>
+											<div class="result-data">
+												<p class="h3 title text-primary"><%=u.getUserName()%>></p>
+												<p class="description">
+													<label>ID：</label><label><%=u.getUserID()%></label><br>
+													<label>邮箱：</label><label><%=u.getUserEmail()%></label><br>
+													<label>部门：</label><label><%=u.getUserDepartment()%></label><br>
+												</p>
+											</div>
+										</a>
+									</li>
+									<%}}} catch (Exception e){}%>
+									<%--
+									<li>
+										<p class="result-type">
+											<span class="label label-primary">user</span>
+										</p>
+										<a href="pages-user-authority.html" class="has-thumb">
+											<div class="result-thumb">
+												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
+											</div>
+											<div class="result-data">
+												<p class="h3 title text-primary">张三</p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
+											</div>
+										</a>
+									</li>
+									--%>
+								</ul>
 
+								<hr class="solid mb-none" />
+
+								<ul class="pagination">
+									<li class="prev disabled">
+										<a href="#">
+											<i class="fa fa-chevron-left"></i>
+										</a>
+									</li>
+									<li class="active">
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li class="next">
+										<a href="#">
+											<i class="fa fa-chevron-right"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div id="medias" class="tab-pane">
+								<div class="row">
+									<div class="col-sm-6 col-md-4 col-lg-3">
+										<div class="thumbnail">
+											<div class="thumb-preview">
+												<a class="thumb-image" href="#">
+													<img src="assets/images/projects/project-2.jpg" class="img-responsive" alt="Project">
+												</a>
+											</div>
+											<h5 class="mg-title text-semibold">Blog<small>.png</small></h5>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 col-lg-3">
+										<div class="thumbnail">
+											<div class="thumb-preview">
+												<a class="thumb-image" href="#">
+													<img src="assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
+												</a>
+											</div>
+											<h5 class="mg-title text-semibold">Friends<small>.png</small></h5>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 col-lg-3">
+										<div class="thumbnail">
+											<div class="thumb-preview">
+												<a class="thumb-image" href="#">
+													<img src="assets/images/projects/project-4.jpg" class="img-responsive" alt="Project">
+												</a>
+											</div>
+											<h5 class="mg-title text-semibold">Life<small>.png</small></h5>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 col-lg-3">
+										<div class="thumbnail">
+											<div class="thumb-preview">
+												<a class="thumb-image" href="#">
+													<img src="assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
+												</a>
+											</div>
+											<h5 class="mg-title text-semibold">Poetry<small>.png</small></h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="emails" class="tab-pane">
+								<p>Recent</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+							</div>
+						</div>
+					</div>
+					<!-- end: page -->
 				</section>
 			</div>
 
@@ -513,12 +620,6 @@
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
-		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/select2/select2.js"></script>
-		<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-		<script src="assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-		<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
-		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
 		
@@ -528,11 +629,6 @@
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
 
-
-		<!-- Examples -->
-		<script src="assets/javascripts/tables/examples.datatables.default.js"></script>
-		<script src="assets/javascripts/tables/examples.datatables.row.with.details.js"></script>
-		<script src="assets/javascripts/tables/examples.datatables.tabletools.js"></script>
 	</body>
 </html>
 
