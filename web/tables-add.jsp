@@ -561,3 +561,6 @@
 <script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
 </body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>

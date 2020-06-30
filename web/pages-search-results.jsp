@@ -2,7 +2,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="entity.User" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="fixed search-results">
 	<head>
@@ -424,7 +423,8 @@
 										<p class="result-type">
 											<span class="label label-primary">User</span>
 										</p>
-										<a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
+										<a href="pages-user-authority.jsp" class="has-thumb">
+                                            <%session.setAttribute("testID",u.getUserID());%>
 											<div class="result-thumb">
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>

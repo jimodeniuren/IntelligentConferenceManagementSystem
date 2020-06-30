@@ -6,7 +6,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>User Profile | Okler Themes | Porto-Admin</title>
+		<title>权限设置</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -321,12 +321,12 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
+												<a href="ui-elements-portlets.jsp">
 													 会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
+												<a href="tables-editable.jsp">
 													 会议室控制中心
 												</a>
 											</li>
@@ -576,5 +576,5 @@
 	</body>
 </html>
 
-
-<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
