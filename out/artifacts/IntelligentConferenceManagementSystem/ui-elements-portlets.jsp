@@ -286,11 +286,28 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
 									
 									<li class="nav-parent">
@@ -340,8 +357,8 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
 											
@@ -409,15 +426,23 @@
 									<label>申请人：<%=x.getHostId()%></label><br>
 									<label>举办部门：<%=x.getHostDepartment()%></label><br>
 									<label>会议室：<%=x.getMrId()%></label><br>
-									<label>会议时间：<%=sdf.format(x.getStartTime())%></label><br>
+									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+									<form method="post">
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>
+										<%
+											if (request.getParameter("isPass").equals("true"))
+												x.setConferenceStatus(1);
+											if (request.getParameter("isReject").equals("true"))
+												x.setConferenceStatus(2);%>
+									</form>
+
 								</div>
 							</section>
 							<%}%>
-							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
+						<%--	<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
 										<a href="#" class="fa fa-caret-down"></a>
@@ -502,7 +527,7 @@
 									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
 								</div>
 							</section>
-							
+							--%>
 						</div>
 					</div>
 					<!-- end: page -->

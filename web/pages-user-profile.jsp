@@ -401,8 +401,8 @@
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner"><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[1]%></span>
-											<span class="thumb-info-type"><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[4]%></span>
+											<span class="thumb-info-inner"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
+											<span class="thumb-info-type"><%=userDao.getIdentityById((String) request.getSession().getAttribute("userID"))%></span>
 										</div>
 									</div>
 
@@ -659,7 +659,7 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[1]%></label>
+														<label><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -671,19 +671,19 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[3]%></label>
+                                                        <label><%=userDao.getEmailById((String) request.getSession().getAttribute("userID"))%></label>
                                                     </div>
 												</div>
-												<%
-													String department = (String) userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[2];
-													department = java.net.URLDecoder.decode(department,"UTF-8");
-
-												%>
 												<div class="form-group">
+
 													<label class="col-md-3 control-label">部门</label>
-													<div class="col-md-8">
-														<input type="text" name="userDep" value="<%=department%>">
-                                                    </div>
+													<div class="col-md-6">
+														<select name="department" class="form-control mb-md">
+															<option>策划部</option>
+															<option>设计部</option>
+															<option>美工部</option>
+														</select>
+													</div>
 												</div>
 											</fieldset>
 											

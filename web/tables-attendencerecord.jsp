@@ -300,7 +300,7 @@
                                     </li>
                                     <li class="nav-active">
                                         <a href="tables-attendencerecord.jsp">
-                                            会议签到与情况查询
+                                            会议签到情况查询
                                         </a>
                                     </li>
                                     <li>
@@ -310,7 +310,6 @@
                                     </li>
                                 </ul>
                             </li>
-
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -318,25 +317,25 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="tables-advanced.jsp">
+                                        <a href="forms-basic.jsp">
                                             发起新会议
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-advanced.jsp">
+                                        <a href="pages-blank.jsp">
                                             查看已预订的会议
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="tables-advanced.jsp">
+                                <a href="index.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="tables-advanced.jsp">
+                                <a href="pages-user-authority.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
                                     <span>权限设置</span>
                                 </a>
@@ -353,13 +352,13 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-advanced.jsp">
+                                        <a href="tables-editable.jsp">
                                             会议室控制中心
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-advanced.jsp">
-                                            应急调度
+                                        <a href="ui-elements-charts.html">
+                                            会议室使用情况
                                         </a>
                                     </li>
 

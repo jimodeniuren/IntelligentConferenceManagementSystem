@@ -1,3 +1,6 @@
+<%@ page import="dao.UserDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="entity.User" %>
 <!doctype html>
 <html class="fixed search-results">
 	<head>
@@ -386,15 +389,11 @@
 					<!-- start: page -->
 					<div class="search-content">
 						<div class="search-control-wrapper">
-							<form action="pages-search-results.html">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" class="form-control" value="something">
-										<span class="input-group-btn">
-											<button class="btn btn-primary" type="button">go</button>
-										</span>
+							<form action="pages-search-results.jsp?isresult=true" method="post">
+								<div class="form-group mb-lg">
+									<input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="something" aria-controls="datatable-default"/>
+									<button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">go</button>
 									</div>
-								</div>
 							</form>
 						</div>
 						<div class="search-toolbar">
@@ -410,22 +409,35 @@
 						<div class="tab-content">
 							<div id="everything" class="tab-pane active">
 								<p class="total-results text-muted">展示47条结果中的1-10条</p>
-
-								<ul class="list-unstyled search-results-list">
+								<% try {
+									if(request.getParameter("isresult").equals("true"))
+									{%>
+										<ul class="list-unstyled search-results-list">
+									<%
+										UserDao dao=new UserDao();
+										List<User> ulist = dao.selectAll();
+										for (User u:ulist){
+									%>
 									<li>
 										<p class="result-type">
-											<span class="label label-primary">user</span>
+											<span class="label label-primary">User</span>
 										</p>
-										<a href="pages-user-authority.html" class="has-thumb">
+										<a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
 											<div class="result-thumb">
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
 											<div class="result-data">
-												<p class="h3 title text-primary">李四</p>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
+												<p class="h3 title text-primary"><%=u.getUserName()%>></p>
+												<p class="description">
+													<label>ID：</label><label><%=u.getUserID()%></label><br>
+													<label>邮箱：</label><label><%=u.getUserEmail()%></label><br>
+													<label>部门：</label><label><%=u.getUserDepartment()%></label><br>
+												</p>
 											</div>
 										</a>
 									</li>
+									<%}}} catch (Exception e){}%>
+									<%--
 									<li>
 										<p class="result-type">
 											<span class="label label-primary">user</span>
@@ -440,6 +452,7 @@
 											</div>
 										</a>
 									</li>
+									--%>
 								</ul>
 
 								<hr class="solid mb-none" />

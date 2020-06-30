@@ -397,6 +397,15 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        if ((String)request.getAttribute("str") == "false") {
+                    %>
+                    <script>
+                        alert("会议室id已被使用！");
+                    </script>
+                    <%
+                        }
+                    %>
                     <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                         <thead>
                         <tr>
@@ -425,6 +434,7 @@
                         </tbody>
 
                     </table>
+
                 </div>
             </section>
             <!-- end: page -->

@@ -84,7 +84,6 @@ public class UserDao extends DBUtils{
             if(rs.next()){
                 Object params[]={rs.getInt("user_id"),rs.getString("user_name"),
                         rs.getString("user_department"),rs.getString("user_emailAddr"),rs.getString("user_identity")};
-//                System.out.println(rs.getString("user_identity") +" "+ params[4]);
                 return params;
             }
         } catch (SQLException throwables) {
@@ -102,6 +101,47 @@ public class UserDao extends DBUtils{
         return null;
     }
 
+    public List<User> selectAll() {
+        String sql = "select * from tbl_user";
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                list.add(new User(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getString(4),rs.getString(5),
+                        rs.getString(6)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
+
+    public List<User> selectById(String id){
+        String sql = "select * from tbl_user where host_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                list.add(new User(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getString(4),rs.getString(5),
+                        rs.getString(6)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
     public String getNameById(String id){
 
             String sql = "select * from tbl_user where user_id = " + id;
@@ -123,17 +163,64 @@ public class UserDao extends DBUtils{
             getClose();
             return "没有这个用户";
     }
+    public String getIdentityById(String id){
 
+        String sql = "select * from tbl_user where user_id = " + id;
 
-    public String getIdentityById(String userID) {
-        String sql = "select user_identity from tbl_user where user_id = " + userID;
         ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
         try {
             if (rs.next()) {
                 getClose();
-                return rs.getString(1);
+                return rs.getString(3);
             }
+
         } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "没有这个用户";
+    }
+    public String getEmailById(String id){
+
+        String sql = "select * from tbl_user where user_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                getClose();
+                return rs.getString(6);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return "没有这个用户";
+    }
+    public String getDepartmentById(String id){
+
+        String sql = "select * from tbl_user where user_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<User> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                getClose();
+                return rs.getString(5);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         getClose();

@@ -277,18 +277,34 @@
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-				
+
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
-									
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -296,13 +312,13 @@
 										</a>
 										<ul class="nav nav-children">
 											<li class="nav-active">
-												<a href="forms-basic.html">
-													 发起新会议
+												<a href="forms-basic.jsp">
+													发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html.html">
-													 查看已预订的会议
+												<a href="pages-blank.jsp">
+													查看已预订的会议
 												</a>
 											</li>
 										</ul>
@@ -314,12 +330,12 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.html">
+										<a href="pages-user-authority.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li>
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
 											<span>会议管理</span>
@@ -327,28 +343,28 @@
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													 会议预定审核
+													会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 会议室控制中心
+												<a href="tables-editable.jsp">
+													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
-											
+
 										</ul>
 									</li>
-									
+
 								</ul>
 							</nav>
-							
+
 						</div>
-				
+
 					</div>
 				
 				</aside>
@@ -386,7 +402,7 @@
 										<h2 class="panel-title">会议预约申请表</h2>
 									</header>
 									<div class="panel-body">
-										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="post">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="get">
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputSubject">会议名称</label>
 												<div class="col-md-6">
@@ -402,11 +418,9 @@
 											</div>
 
 											<div class="form-group">
-<<<<<<< HEAD
+
 												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
-=======
-												<label class="col-md-3 control-label">���첿��</label>
->>>>>>> f08dd59eed2a07cb726bfe3e7c4b044e9bd9f7af
+
 												<div class="col-md-6">
 													<select name="department" class="form-control mb-md">
 														<option>策划部</option>
