@@ -31,6 +31,11 @@ public class UserEditServlet extends HttpServlet {
             System.out.println("test");
 
         }
+        if(caozuo.equals("tianjia"))
+        {
+            System.out.println("tianjia");
+            AddConfRoom(request,response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,6 +73,25 @@ public class UserEditServlet extends HttpServlet {
         conf1.setId(id!=null&&!id.equals("")?Integer.parseInt(id):0);
         ConferenceRoomDao dao=new ConferenceRoomDao();
         dao.delete(conf1);
+        dao.insert(conf);
+        response.sendRedirect("tables-editable.jsp");
+    }
+    protected void AddConfRoom(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+        String aid=request.getParameter("aid");
+        System.out.println(aid);
+        String amax=request.getParameter("amax");
+        System.out.println(amax);
+        String astatus=request.getParameter("astatus");
+        String aadd=request.getParameter("aadd");
+        String ares=request.getParameter("ares");
+        ConferenceRoom conf=new ConferenceRoom();
+        conf.setId(aid!=null&&!aid.equals("")?Integer.parseInt(aid):0);
+        conf.setMax(amax!=null&&!amax.equals("")?Integer.parseInt(amax):0);
+        conf.setStatus(astatus);
+        conf.setAddress(aadd);
+        conf.setResources(ares);
+        ConferenceRoomDao dao=new ConferenceRoomDao();
         dao.insert(conf);
         response.sendRedirect("tables-editable.jsp");
     }
