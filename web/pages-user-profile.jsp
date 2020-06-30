@@ -177,6 +177,7 @@
 								</div>
 							</div>
 						</li>
+
 						<li>
 							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
 								<i class="fa fa-bell"></i>
@@ -392,12 +393,11 @@
 
 					<div class="row">
 						<div class="col-md-4 col-lg-3">
-
                             <%
 								UserDao userDao=new UserDao();
-								int id =  Integer.parseInt(request.getSession().getAttribute("userID").toString());
+								String id_str = (String) request.getSession().getAttribute("userID");
+								int id = Integer.parseInt(id_str);
                             %>
-
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
