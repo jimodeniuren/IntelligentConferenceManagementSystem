@@ -386,7 +386,7 @@
 										<h2 class="panel-title">会议预约申请表</h2>
 									</header>
 									<div class="panel-body">
-										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="post">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="get">
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputSubject">会议名称</label>
 												<div class="col-md-6">
@@ -402,7 +402,9 @@
 											</div>
 
 											<div class="form-group">
+
 												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
+
 												<div class="col-md-6">
 													<select name="department" class="form-control mb-md">
 														<option>策划部</option>

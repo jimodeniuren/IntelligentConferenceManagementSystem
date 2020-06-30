@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>æƒé™è®¾ç½®</title>
+		<title>È¨ÏŞÉèÖÃ</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -265,7 +265,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							æµ…è‰ä¼šè®®
+							Ç³²İ»áÒé
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -276,27 +276,44 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>ä¼šè®®æŸ¥è¯¢</span>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
+											<span>»áÒé²éÑ¯</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													»áÒéÊÒ×´Ì¬²éÑ¯
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													»áÒéÇ©µ½Çé¿ö²éÑ¯
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													»áÒé²Î¼Ó¼ÇÂ¼²éÑ¯
+												</a>
+											</li>
+										</ul>
 									</li>
 									
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ä¼šè®®é¢„å®š</span>
+											<span>»áÒéÔ¤¶¨</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.html">
-													 å‘èµ·æ–°ä¼šè®®
+												<a href="forms-basic.jsp">
+													 ·¢ÆğĞÂ»áÒé
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html">
-													 æŸ¥çœ‹å·²é¢„è®¢çš„ä¼šè®®
+												<a href="pages-blank.jsp">
+													 ²é¿´ÒÑÔ¤¶©µÄ»áÒé
 												</a>
 											</li>
 										</ul>
@@ -304,37 +321,37 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>è¯­éŸ³ä¼šè®®</span>
+											<span>ÓïÒô»áÒé</span>
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="pages-search-results.html">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>æƒé™è®¾ç½®</span>
+											<span>È¨ÏŞÉèÖÃ</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>ä¼šè®®ç®¡ç†</span>
+											<span>»áÒé¹ÜÀí</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
-													 ä¼šè®®é¢„å®šå®¡æ ¸
+												<a href="ui-elements-portlets.jsp">
+													»áÒéÔ¤¶¨ÉóºË
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 ä¼šè®®å®¤æ§åˆ¶ä¸­å¿ƒ
+												<a href="tables-editable.jsp">
+													»áÒéÊÒ¿ØÖÆÖĞĞÄ
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 åº”æ€¥è°ƒåº¦
+												<a href="ui-elements-charts.html">
+													»áÒéÊÒÊ¹ÓÃÇé¿ö
 												</a>
 											</li>
-											
+
 										</ul>
 									</li>
 									
@@ -350,7 +367,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>æŸ¥æ‰¾ç»“æœ</h2>
+						<h2>²éÕÒ½á¹û</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -359,7 +376,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>æƒé™è®¾ç½®</span></li>
+								<li><span>È¨ÏŞÉèÖÃ</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -383,16 +400,16 @@
 						<div class="search-toolbar">
 							<ul class="list-unstyled nav nav-pills">
 								<li class="active">
-									<a href="#everything" data-toggle="tab">è¯¦ç»†ä¿¡æ¯</a>
+									<a href="#everything" data-toggle="tab">ÏêÏ¸ĞÅÏ¢</a>
 								</li>
 								<li>
-									<a href="#medias" data-toggle="tab">å¤´åƒ</a>
+									<a href="#medias" data-toggle="tab">Í·Ïñ</a>
 								</li>
 							</ul>
 						</div>
 						<div class="tab-content">
 							<div id="everything" class="tab-pane active">
-								<p class="total-results text-muted">å±•ç¤º47æ¡ç»“æœä¸­çš„1-10æ¡</p>
+								<p class="total-results text-muted">Õ¹Ê¾47Ìõ½á¹ûÖĞµÄ1-10Ìõ</p>
 
 								<ul class="list-unstyled search-results-list">
 									<li>
@@ -404,7 +421,7 @@
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
 											<div class="result-data">
-												<p class="h3 title text-primary">æå››</p>
+												<p class="h3 title text-primary">ÀîËÄ</p>
 												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
 											</div>
 										</a>
@@ -418,7 +435,7 @@
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
 											<div class="result-data">
-												<p class="h3 title text-primary">å¼ ä¸‰</p>
+												<p class="h3 title text-primary">ÕÅÈı</p>
 												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
 											</div>
 										</a>
