@@ -1,7 +1,6 @@
 
 <%@ page import="entity.User" %>
 <%@ page import="dao.UserDao" %>
-<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="UTF-8" %>
 
 <!doctype html>
 <html class="fixed">
@@ -238,9 +237,15 @@
 							<figure class="profile-picture">
 								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
+							<%
+								UserDao userDao=new UserDao();
+								String id_str = (String) request.getSession().getAttribute("userID");
+								System.out.println(id_str);
+								int id = Integer.parseInt(id_str);
+							%>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
+								<span class="name"><%=userDao.getUserInfo(id)[1]%>></span>
+								<span class="role"><%=userDao.getUserInfo(id)[4]%>></span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
@@ -250,13 +255,13 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> 个人中心</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> 锁屏</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> 登出</a>
 								</li>
 							</ul>
 						</div>
@@ -393,11 +398,7 @@
 
 					<div class="row">
 						<div class="col-md-4 col-lg-3">
-                            <%
-								UserDao userDao=new UserDao();
-								String id_str = (String) request.getSession().getAttribute("userID");
-								int id = Integer.parseInt(id_str);
-                            %>
+
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
@@ -858,3 +859,6 @@
 
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>

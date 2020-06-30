@@ -568,3 +568,6 @@
 		<script src="assets/javascripts/ui-elements/examples.portlets.js"></script>
 	</body>
 </html>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
