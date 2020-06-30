@@ -674,10 +674,15 @@
                                                     </div>
 												</div>
 												<div class="form-group">
+
 													<label class="col-md-3 control-label">部门</label>
-													<div class="col-md-8">
-                                                        <label><%=userDao.getDepartmentById((String) request.getSession().getAttribute("userID"))%></label>
-                                                    </div>
+													<div class="col-md-6">
+														<select name="department" class="form-control mb-md">
+															<option>策划部</option>
+															<option>设计部</option>
+															<option>美工部</option>
+														</select>
+													</div>
 												</div>
 											</fieldset>
 											
