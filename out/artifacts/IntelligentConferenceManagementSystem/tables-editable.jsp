@@ -289,29 +289,13 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                            <li>
+                                <a href="tables-advanced.jsp">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
                                     <span>会议查询</span>
                                 </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="tables-advanced.jsp">
-                                            会议室状态查询
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-attendencerecord.jsp">
-                                            会议签到情况查询
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-advanced.jsp">
-                                            会议参加记录查询
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
+
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -324,7 +308,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="forms-advanced.html">
+                                        <a href="forms-advanced.jsp">
                                             查看已预订的会议
                                         </a>
                                     </li>
@@ -349,7 +333,7 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="ui-elements-portlets.jsp">
+                                        <a href="tables-basic.html">
                                             会议预定审核
                                         </a>
                                     </li>
@@ -438,16 +422,15 @@
                             <td><%=cl.getAddress()%></td>
                             <td><%=cl.getResources()%></td>
                             <td class="actions">
-                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>">删除</a>
+                                <a href="tables-change.jsp?id=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
+                                <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>"><i class="fa fa-trash-o">删除</i></a>
+
                             </td>
                         </tr>
                         <%}
                         %>
                         </tbody>
+
                     </table>
                 </div>
             </section>
