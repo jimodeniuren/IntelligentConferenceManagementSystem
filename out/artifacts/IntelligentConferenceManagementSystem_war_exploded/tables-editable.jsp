@@ -290,7 +290,7 @@
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
                             <li>
-                                <a href="tables-advanced.html">
+                                <a href="tables-advanced.jsp">
                                     <i class="fa fa-home" aria-hidden="true"></i>
                                     <span>会议查询</span>
                                 </a>
@@ -303,12 +303,12 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="forms-basic.html">
+                                        <a href="forms-basic.jsp">
                                             发起新会议
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="forms-advanced.html">
+                                        <a href="forms-advanced.jsp">
                                             查看已预订的会议
                                         </a>
                                     </li>
@@ -338,12 +338,12 @@
                                         </a>
                                     </li>
                                     <li class="nav-active">
-                                        <a href="tables-editable.html">
+                                        <a href="tables-editable.jsp">
                                             会议室控制中心
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tables-editable.html">
+                                        <a href="tables-editable.jsp">
                                             应急调度
                                         </a>
                                     </li>
@@ -394,7 +394,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <button id="addToTable" class="btn btn-primary">添加 <i class="fa fa-plus"></i></button>
+                                <a href="tables-add.jsp" class="btn btn-primary" >添加<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -422,15 +422,15 @@
                             <td><%=cl.getAddress()%></td>
                             <td><%=cl.getResources()%></td>
                             <td class="actions">
-                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                <a href="tables-change.jsp?id=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
+                                <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>"><i class="fa fa-trash-o">删除</i></a>
+
                             </td>
                         </tr>
                         <%}
                         %>
                         </tbody>
+
                     </table>
                 </div>
             </section>

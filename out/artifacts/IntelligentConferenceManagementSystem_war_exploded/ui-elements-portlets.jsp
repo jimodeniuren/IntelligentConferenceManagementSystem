@@ -1,3 +1,10 @@
+<%@ page import="entity.Conference" %>
+<%@ page import="dao.ConferenceDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -279,11 +286,28 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
 									
 									<li class="nav-parent">
@@ -298,7 +322,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html">
+												<a href="pages-blank.jsp">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -311,7 +335,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.html">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -323,18 +347,18 @@
 										</a>
 										<ul class="nav nav-children">
 											<li class="nav-active">
-												<a href="tables-basic.html">
+												<a href="ui-elements-portlets.jsp">
 													 会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
+												<a href="tables-editable.jsp">
 													 会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
 											
@@ -382,6 +406,13 @@
 
 					<div class="row">
 						<div class="col-md-4" data-plugin-portlet id="portlet-1">
+
+							<%
+								ConferenceDao dao = new ConferenceDao();
+								List<Conference> conferences = dao.getUnstartedConference();
+								SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+								for (Conference x:conferences){
+							%>
 							<section class="panel panel-primary" id="panel-1" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
@@ -389,20 +420,29 @@
 										<a href="#" class="fa fa-times"></a>
 									</div>
 
-									<h2 class="panel-title">会议名称</h2>
+									<h2 class="panel-title"><%=x.getConferenceId()%></h2>
 								</header>
 								<div class="panel-body">
-									<label>申请人：</label><br>
-									<label>举办部门：</label><br>
-									<label>会议室：</label><br>
-									<label>会议时间：</label><br>
+									<label>申请人：<%=x.getHostId()%></label><br>
+									<label>举办部门：<%=x.getHostDepartment()%></label><br>
+									<label>会议室：<%=x.getMrId()%></label><br>
+									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
+									<form method="post">
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
+										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>
+										<%
+											if (request.getParameter("isPass").equals("true"))
+												x.setConferenceStatus(1);
+											if (request.getParameter("isReject").equals("true"))
+												x.setConferenceStatus(2);%>
+									</form>
+
 								</div>
 							</section>
-							<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
+							<%}%>
+						<%--	<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
 								<header class="panel-heading portlet-handler">
 									<div class="panel-actions">
 										<a href="#" class="fa fa-caret-down"></a>
@@ -487,7 +527,7 @@
 									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
 								</div>
 							</section>
-							
+							--%>
 						</div>
 					</div>
 					<!-- end: page -->

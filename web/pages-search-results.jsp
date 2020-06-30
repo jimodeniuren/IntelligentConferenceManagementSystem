@@ -1,6 +1,8 @@
 <%@ page import="dao.UserDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="entity.User" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="fixed search-results">
 	<head>
@@ -8,7 +10,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>╚и╧▐╔ш╓├</title>
+		<title>цЭГщЩРшо╛ч╜о</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -268,7 +270,7 @@
 				
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							╟│▓▌╗с╥щ
+							ц╡ЕшНЙф╝Ъшоо
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -282,22 +284,22 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ▓щ╤п</span>
+											<span>ф╝ЪшооцЯешпв</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="tables-advanced.jsp">
-													╗с╥щ╩╥╫┤╠м▓щ╤п
+													ф╝ЪшооходчК╢цАБцЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-attendencerecord.jsp">
-													╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п
+													ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-participantrecord.jsp">
-													╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
+													ф╝ЪшоохПВхКашо░х╜ХцЯешпв
 												</a>
 											</li>
 										</ul>
@@ -306,17 +308,17 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ╘д╢и</span>
+											<span>ф╝ЪшоощвДхоЪ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.jsp">
-													 ╖в╞Ё╨┬╗с╥щ
+													 хПСш╡╖цЦ░ф╝Ъшоо
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.jsp">
-													 ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+													 цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
 												</a>
 											</li>
 										</ul>
@@ -324,34 +326,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>╙я╥Ї╗с╥щ</span>
+											<span>шпнщЯ│ф╝Ъшоо</span>
 										</a>
 									</li>
 									<li class="nav-active">
 										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>╚и╧▐╔ш╓├</span>
+											<span>цЭГщЩРшо╛ч╜о</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>╗с╥щ╣▄└э</span>
+											<span>ф╝ЪшоочобчРЖ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													╗с╥щ╘д╢и╔є║╦
+													ф╝ЪшоощвДхоЪхобца╕
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.jsp">
-													╗с╥щ╩╥┐╪╓╞╓╨╨─
+													ф╝ЪшооходцОзхИ╢ф╕нх┐Г
 												</a>
 											</li>
 											<li>
 												<a href="ui-elements-charts.html">
-													╗с╥щ╩╥╩╣╙├╟щ┐Ў
+													ф╝Ъшооходф╜┐чФицГЕхЖ╡
 												</a>
 											</li>
 
@@ -370,7 +372,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>▓щ╒╥╜с╣√</h2>
+						<h2>цЯецЙ╛ч╗УцЮЬ</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -379,7 +381,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>╚и╧▐╔ш╓├</span></li>
+								<li><span>цЭГщЩРшо╛ч╜о</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -403,16 +405,16 @@
 						<div class="search-toolbar">
 							<ul class="list-unstyled nav nav-pills">
 								<li class="active">
-									<a href="#everything" data-toggle="tab">╧ъ╧╕╨┼╧в</a>
+									<a href="#everything" data-toggle="tab">шпжч╗Жф┐бцБп</a>
 								</li>
 								<li>
-									<a href="#medias" data-toggle="tab">═╖╧ё</a>
+									<a href="#medias" data-toggle="tab">хд┤хГП</a>
 								</li>
 							</ul>
 						</div>
 						<div class="tab-content">
 							<div id="everything" class="tab-pane active">
-								<p class="total-results text-muted">╒╣╩╛47╠ї╜с╣√╓╨╡─1-10╠ї</p>
+								<p class="total-results text-muted">х▒Хчд║47цЭбч╗УцЮЬф╕нчЪД1-10цЭб</p>
 								<% try {
 									if(request.getParameter("isresult").equals("true"))
 									{%>
@@ -434,9 +436,9 @@
 											<div class="result-data">
 												<p class="h3 title text-primary"><%=u.getUserName()%>></p>
 												<p class="description">
-													<label>IDг║</label><label><%=u.getUserID()%></label><br>
-													<label>╙╩╧фг║</label><label><%=u.getUserEmail()%></label><br>
-													<label>▓┐├┼г║</label><label><%=u.getUserDepartment()%></label><br>
+													<label>IDя╝Ъ</label><label><%=u.getUserID()%></label><br>
+													<label>щВочо▒я╝Ъ</label><label><%=u.getUserEmail()%></label><br>
+													<label>щГищЧия╝Ъ</label><label><%=u.getUserDepartment()%></label><br>
 												</p>
 											</div>
 										</a>
@@ -452,7 +454,7 @@
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
 											<div class="result-data">
-												<p class="h3 title text-primary">╒┼╚¤</p>
+												<p class="h3 title text-primary">х╝аф╕Й</p>
 												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
 											</div>
 										</a>
@@ -634,5 +636,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>

@@ -75,4 +75,14 @@
         <servlet-name>UserEditServlet</servlet-name>
         <url-pattern>/servlet.UserEditServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserInfoEditServlet</servlet-name>
+        <servlet-class>servlet.UserInfoEditServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserInfoEditServlet</servlet-name>
+        <url-pattern>/servlet.UserInfoEditServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

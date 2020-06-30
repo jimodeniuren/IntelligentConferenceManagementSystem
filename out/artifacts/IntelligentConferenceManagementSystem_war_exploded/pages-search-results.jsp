@@ -1,3 +1,8 @@
+<%@ page import="dao.UserDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="entity.User" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="fixed search-results">
 	<head>
@@ -276,11 +281,28 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
 									
 									<li class="nav-parent">
@@ -290,12 +312,12 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.html">
+												<a href="forms-basic.jsp">
 													 发起新会议
 												</a>
 											</li>
 											<li>
-												<a href="pages-blank.html">
+												<a href="pages-blank.jsp">
 													 查看已预订的会议
 												</a>
 											</li>
@@ -308,7 +330,7 @@
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="pages-search-results.html">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -320,21 +342,21 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
-													 会议预定审核
+												<a href="ui-elements-portlets.jsp">
+													会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 会议室控制中心
+												<a href="tables-editable.jsp">
+													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
-											
+
 										</ul>
 									</li>
 									
@@ -369,7 +391,7 @@
 					<!-- start: page -->
 					<div class="search-content">
 						<div class="search-control-wrapper">
-							<form action="pages-search-results.html">
+							<form action="pages-search-results.jsp?isresult=true" method="post">
 								<div class="form-group">
 									<div class="input-group">
 										<input type="text" class="form-control" value="something">
@@ -393,22 +415,36 @@
 						<div class="tab-content">
 							<div id="everything" class="tab-pane active">
 								<p class="total-results text-muted">展示47条结果中的1-10条</p>
-
+								<% try {
+									if(request.getParameter("isresult").equals("true"))
+									{%>
 								<ul class="list-unstyled search-results-list">
+
+									<%
+										UserDao udao=new UserDao();
+										List<User> ulist=udao.selectAll();
+										for (User u:ulist){
+									%>
 									<li>
 										<p class="result-type">
-											<span class="label label-primary">user</span>
+											<span class="label label-primary">User</span>
 										</p>
-										<a href="pages-user-authority.html" class="has-thumb">
+										<a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
 											<div class="result-thumb">
 												<img src="assets/images/!logged-user.jpg" alt="John Doe" />
 											</div>
 											<div class="result-data">
-												<p class="h3 title text-primary">李四</p>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
+												<p class="h3 title text-primary"><%=u.getUserName()%>></p>
+												<p class="description">
+													<label>ID：</label><label><%=u.getUserID()%></label><br>
+													<label>邮箱：</label><label><%=u.getUserEmail()%></label><br>
+													<label>部门：</label><label><%=u.getUserDepartment()%></label><br>
+												</p>
 											</div>
 										</a>
 									</li>
+									<%}}} catch (Exception e){}%>
+									<%--
 									<li>
 										<p class="result-type">
 											<span class="label label-primary">user</span>
@@ -423,6 +459,7 @@
 											</div>
 										</a>
 									</li>
+									--%>
 								</ul>
 
 								<hr class="solid mb-none" />
@@ -599,5 +636,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>

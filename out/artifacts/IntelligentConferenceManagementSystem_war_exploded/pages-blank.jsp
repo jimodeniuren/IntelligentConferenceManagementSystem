@@ -1,3 +1,6 @@
+<%@ page import="dao.ConferenceDao" %>
+<%@ page import="entity.Conference" %>
+<%@ page import="java.util.List" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -271,18 +274,34 @@
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 						</div>
 					</div>
-				
+
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
-										<a href="tables-advanced.html">
-											<i class="fa fa-home" aria-hidden="true"></i>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>会议查询</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="tables-advanced.jsp">
+													会议室状态查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-attendencerecord.jsp">
+													会议签到情况查询
+												</a>
+											</li>
+											<li>
+												<a href="tables-participantrecord.jsp">
+													会议参加记录查询
+												</a>
+											</li>
+										</ul>
 									</li>
-									
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -290,13 +309,13 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-basic.html">
-													 发起新会议
+												<a href="forms-basic.jsp">
+													发起新会议
 												</a>
 											</li>
 											<li class="nav-active">
-												<a href="pages-blank.html">
-													 查看已预订的会议
+												<a href="pages-blank.jsp">
+													查看已预订的会议
 												</a>
 											</li>
 										</ul>
@@ -308,7 +327,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-search-results.html.html">
+										<a href="pages-user-authority.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -320,29 +339,29 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
-													 会议预定审核
+												<a href="ui-elements-portlets.jsp">
+													会议预定审核
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 会议室控制中心
+												<a href="tables-editable.jsp">
+													会议室控制中心
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
-													 应急调度
+												<a href="ui-elements-charts.html">
+													会议室使用情况
 												</a>
 											</li>
-											
+
 										</ul>
 									</li>
-									
+
 								</ul>
 							</nav>
-							
+
 						</div>
-				
+
 					</div>
 				
 				</aside>
@@ -368,7 +387,7 @@
 					</header>
 
 					<!-- start: page -->
-					
+					<form action="pages-blank.jsp?isdelete=true" method="post">
 						<button class="btn btn-sm btn-default">取消所选会议</button>                
 					
 					<div class="table-responsive">
@@ -377,94 +396,55 @@
 							<tr>
 							  <th style="width:20px;">
 								<label class="i-checks m-b-none">
-								  <input type="checkbox"><i></i>
 								</label>
 							  </th>
-							  <th>会议主题</th>
+							  <th>会议名称</th>
 							  <th>会议地点</th>
 							  <th>日期</th>
 							  <th>审核状态</th>
 							</tr>
 						  </thead>
 						  <tbody>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>6月份工作总结</td>
-							  <td><span class="text-ellipsis">东九B201</span></td>
-							  <td><span class="text-ellipsis">2020.6.29 17:00-19:00</span></td>
-							  <td>审核通过</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Formasa</td>
-							  <td>8c</td>
-							  <td>Jul 22, 2013</td>
-							  <td>审核中</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Avatar system</td>
-							  <td>15c</td>
-							  <td>Jul 15, 2013</td>            
-							  <td>审核中</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Throwdown</td>
-							  <td>4c</td>
-							  <td>Jul 11, 2013</td>
-							  <td>审核中</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Idrawfast</td>
-							  <td>4c</td>
-							  <td>Jul 7, 2013</td>
-							  <td>审核中</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Formasa</td>
-							  <td>8c</td>
-							  <td>Jul 3, 2013</td>
-							  <td>审核未通过</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Avatar system</td>
-							  <td>15c</td>
-							  <td>Jul 2, 2013</td>
-							  <td>审核通过</td>
-							</tr>
-							<tr>
-							  <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-							  <td>Videodown</td>
-							  <td>4c</td>
-							  <td>Jul 1, 2013</td>
-							  <td>审核通过</td>
-							</tr>
+						  <%
+							  ConferenceDao dao = new ConferenceDao();
+							  List<Conference> conferenceList = dao.selectByHostId((String) request.getSession().getAttribute("userID"));
+							  for (int i=0;i<conferenceList.size();i++){
+						  %>
+						  <tr>
+							  <td><label class="i-checks m-b-none"><input type="radio" name="deleteId" value=<%=i%>></label></td>
+							  <td><%=conferenceList.get(i).getConferenceName()%></td>
+							  <td><%=conferenceList.get(i).getMrId()%></td>
+							  <td><%=conferenceList.get(i).getStartTime()+"-"+conferenceList.get(i).getEndTime()%></td>
+							  <%
+								  String status = "";
+								  switch (conferenceList.get(i).getConferenceStatus()){
+									  case 0:
+									  	status="审核中";
+									  	break;
+									  case 1:
+									  	status="审核通过";
+									  	break;
+									  case 2:
+									  	status="审核不通过";
+								  }
+							  %>
+							  <%
+								  try{
+									  if (request.getParameter("isdelete").equals("true")){
+										  ConferenceDao dao1 =new ConferenceDao();
+										  Conference conference = new Conference();
+										  conference.setConferenceId(conferenceList.get(Integer.parseInt(request.getParameter("deleteId"))).getConferenceId());
+										  dao1.delete(conference);
+										  response.sendRedirect("pages-blank.jsp");
+									  }
+								  }catch (Exception e){}
+							  %>
+							  <td><%=status%></td>
+						  </tr><%}%>
 						  </tbody>
 						</table>
 					  </div>
-					  <footer class="panel-footer">
-						<div class="row">
-						  
-						  <div class="col-sm-5 text-center">
-							<small class="text-muted inline m-t-sm m-b-sm">显示8/50个结果</small>
-						  </div>
-						  <div class="col-sm-7 text-right text-center-xs">                
-							<ul class="pagination pagination-sm m-t-none m-b-none">
-							  <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-							  <li><a href="">1</a></li>
-							  <li><a href="">2</a></li>
-							  <li><a href="">3</a></li>
-							  <li><a href="">4</a></li>
-							  <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-							</ul>
-						  </div>
-						</div>
-					  </footer>
-					<!-- end: page -->
+					</form>
 				</section>
 			</div>
 
@@ -558,5 +538,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
