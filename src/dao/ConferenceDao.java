@@ -50,9 +50,9 @@ public class ConferenceDao extends DBUtils {
                 , conference.getConferenceType(), conference.getMrId()
                 , conference.getHostId(),conference.getHostDepartment()
                 , conference.getStartTime(),conference.getEndTime()
-                , conference.getConferenceStatus()};
+                , conference.getConferenceStatus(),conference.getConferenceId()};
 
-        String sql = "update tbl_conference set conference_name=?,conference_type=?,mr_id=?,host_id=?,host_department=?,start_time=?,end_time=?,conference_status? where conference_id=?";
+        String sql = "update tbl_conference set conference_name=?,conference_type=?,mr_id=?,host_id=?,host_department=?,start_time=?,end_time=?,conference_status=? where conference_id=?";
 
         int i = doUpdate(sql, params);
 
@@ -116,6 +116,24 @@ public class ConferenceDao extends DBUtils {
                         rs.getInt(9)));
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
+
+    public List<Conference> getUnreviewedConference(){
+        String sql = "select * from tbl_conference where end_time > NOW() and conference_status=1";
+        ResultSet rs = doQuery(sql, null);
+        List<Conference> list = new ArrayList<>();
+        try {
+            while (rs.next()) {
+                list.add(new Conference(rs.getString(1),rs.getInt(2),
+                        rs.getInt(3),rs.getInt(4),rs.getInt(5),
+                        rs.getString(6),rs.getTimestamp(7),rs.getTimestamp(8),
+                        rs.getInt(9)));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

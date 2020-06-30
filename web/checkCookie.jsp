@@ -22,7 +22,7 @@
             }
         }
     }
-    response.sendRedirect("pages-signin.html");
+    response.sendRedirect("pages-signin.jsp");
 %>
 
 </body>

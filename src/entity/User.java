@@ -8,14 +8,14 @@ package entity;
 public class User {
     private int userID;
     private String userPwd;
-    private int userIdentity;
+    private String userIdentity;
     private String userName;
     private String userDepartment;
     private String userEmail;
 
     public User(){}
 
-    public User(int userID,String userPwd,int userIdentity,String userName,String userDepartment,String userEmail){
+    public User(int userID,String userPwd,String userIdentity,String userName,String userDepartment,String userEmail){
         this.userID=userID;
         this.userPwd=userPwd;
         this.userIdentity=userIdentity;
@@ -40,11 +40,11 @@ public class User {
         this.userPwd = userPwd;
     }
 
-    public int getUserIdentity() {
+    public String getUserIdentity() {
         return userIdentity;
     }
 
-    public void setUserIdentity(int userIdentity) {
+    public void setUserIdentity(String userIdentity) {
         this.userIdentity = userIdentity;
     }
 

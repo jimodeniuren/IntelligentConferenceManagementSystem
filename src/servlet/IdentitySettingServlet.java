@@ -19,6 +19,7 @@ public class IdentitySettingServlet extends HttpServlet {
         HttpSession session = request.getSession();
         PrintWriter out = response.getWriter();
         int userID= Integer.parseInt(String.valueOf(session.getAttribute("userID")));
+        System.out.println(userDao.getUserInfo(userID)[4]);
         if(userDao.getUserInfo(userID)[4].equals("administrator")){
             if(request.getParameter("ID")==null){
                 out.print("<script language='javascript'>alert('user do not exist');window.history.go(-1);</script>");

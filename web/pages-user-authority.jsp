@@ -309,7 +309,7 @@
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="servlet.IdentitySettingServlet">
+										<a href="pages-user-authority.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>

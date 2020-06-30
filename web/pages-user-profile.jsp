@@ -1,7 +1,8 @@
 
 <%@ page import="entity.User" %>
 <%@ page import="dao.UserDao" %>
-
+<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="UTF-8" %>
+<% request.setCharacterEncoding("utf-8"); %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -247,13 +248,13 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
@@ -400,8 +401,8 @@
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
-											<span class="thumb-info-type"><%=userDao.getIdentityById((String) request.getSession().getAttribute("userID"))%></span>
+											<span class="thumb-info-inner"><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[1]%></span>
+											<span class="thumb-info-type"><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[4]%></span>
 										</div>
 									</div>
 
@@ -651,14 +652,14 @@
 									</div>
 									<div id="edit" class="tab-pane">
 
-										<form class="form-horizontal" method="get">
+										<form class="form-horizontal" action="servlet.UserInfoEditServlet" method="post">
 											<h4 class="mb-xlg">个人信息</h4>
 
 											<fieldset>
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></label>
+														<label><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[1]%></label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -670,13 +671,18 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getEmailById((String) request.getSession().getAttribute("userID"))%></label>
+                                                        <label><%=userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[3]%></label>
                                                     </div>
 												</div>
+												<%
+													String department = (String) userDao.getUserInfo(Integer.parseInt((String) request.getSession().getAttribute("userID")))[2];
+													department = java.net.URLDecoder.decode(department,"UTF-8");
+
+												%>
 												<div class="form-group">
 													<label class="col-md-3 control-label">部门</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getDepartmentById((String) request.getSession().getAttribute("userID"))%></label>
+														<input type="text" name="userDep" value="<%=department%>">
                                                     </div>
 												</div>
 											</fieldset>
