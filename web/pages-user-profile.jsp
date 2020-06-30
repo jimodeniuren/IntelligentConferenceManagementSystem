@@ -394,15 +394,16 @@
 
                             <%
                                 UserDao userDao=new UserDao();
-
+								int userID = Integer.parseInt((String)request.getSession().getAttribute("userID"));
+								Object userInfo[] = userDao.getUserInfo(userID);
                             %>
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner"><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></span>
-											<span class="thumb-info-type"><%=userDao.getIdentityById((String) request.getSession().getAttribute("userID"))%></span>
+											<span class="thumb-info-inner"><%=userInfo[1]%></span>
+											<span class="thumb-info-type"><%=userInfo[4]%></span>
 										</div>
 									</div>
 
@@ -654,12 +655,12 @@
 
 										<form class="form-horizontal" action="servlet.UserInfoEditServlet" method="post">
 											<h4 class="mb-xlg">个人信息</h4>
-
 											<fieldset>
+
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label><%=userDao.getNameById((String) request.getSession().getAttribute("userID"))%></label>
+														<label><%=userDao.getUserInfo(userID)[1]%></label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -671,7 +672,7 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getEmailById((String) request.getSession().getAttribute("userID"))%></label>
+                                                        <label><%=userDao.getUserInfo(userID)[3]%></label>
                                                     </div>
 												</div>
 												<div class="form-group">
