@@ -422,8 +422,13 @@
 														<label class="col-md-3 control-label" for="profileID">ID</label>
 														<div class="col-md-8">
 															<input type="text" class="form-control" id="profileID" value="<%=id%>" name="ID">
-															<%System.out.println(id);%>
 														</div>
+														<script>
+															function test() {
+																document.Iden.action = "servlet.IdentitySettingServlet";
+																document.Iden.submit();
+															}
+														</script>
 												</div>
 												</form>
 

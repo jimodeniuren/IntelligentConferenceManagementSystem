@@ -40,7 +40,7 @@ public class IdentitySettingServlet extends HttpServlet {
                         System.out.println("update"+identity);
                         out.print("<script language='javascript'>alert('成功');window.history.go(-1);</script>");
                     }
-                    response.sendRedirect("pages-user-authority.jsp");
+                    response.sendRedirect("pages-user-authority.jsp?id="+id);
                 } else {
                     out.print("<script language='javascript'>alert('user do not exist');window.history.go(-1);</script>");
                 }
