@@ -430,17 +430,37 @@
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
 									<form method="post">
-										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
-										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>
+										<%--<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
+										<button type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>--%>
+											<button type="button" class="mb-xs mt-xs mr-xs btn btn-success"  onclick="pass(<%=x.getConferenceId()%>)">通过</button>
+                                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="reject(<%=x.getConferenceId()%>)">不通过</button>
+											<script>
+												function pass(value) {
+													window.location.href = "servlet.reviewConf?caozuo=pass&id="+value;
+												}
+												function reject(value) {
+													window.location.href = "servlet.reviewConf?caozuo=reject&id="+value;
+												}
+											</script>
+											<%-- <script>
+													document.getElementById("pass").onclick = pass;
+													document.getElementById("reject").onclick = reject;
+                                                    /*function Reject() {
+														&lt;%&ndash;<%System.out.println("Reject");
+                                                        x.setConferenceStatus(2);
+                                                        dao.update(x);%>&ndash;%&gt;
+                                                    }*/
+                                                </script>--%><%--
 										<%System.out.println("111111111");
-											if (request.getParameter("isPass").equals("true"))
-												x.setConferenceStatus(1);
-										System.out.println("111111111");
+											if (request.getParameter("isPass").equals("true")){
+												System.out.println("111111111");x.setConferenceStatus(1);
+										}
 											if (request.getParameter("isReject").equals("true"))
 												x.setConferenceStatus(2);
 
-										%>
+										%>--%>
 									</form>
+
 
 								</div>
 							</section>

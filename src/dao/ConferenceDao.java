@@ -140,4 +140,31 @@ public class ConferenceDao extends DBUtils {
         getClose();
         return list;
     }
+    public Conference getConfByID(String id){
+        String sql = "select * from tbl_conference where conference_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        try {
+            if (rs.next()) {
+                Conference conference = new Conference();
+                conference.setConferenceId(rs.getInt("conference_id"));
+                conference.setConferenceName(rs.getString("conference_name"));
+                conference.setConferenceType(rs.getInt("conference_type"));
+                conference.setMrId(rs.getInt("mr_id"));
+                conference.setHostId(rs.getInt("host_id"));
+                conference.setHostDepartment(rs.getString("host_department"));
+                conference.setStartTime(rs.getDate("start_time"));
+                conference.setEndTime(rs.getDate("end_time"));
+                conference.setConferenceStatus(rs.getInt("conference_status"));
+                return conference;
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return null;
+    }
 }
