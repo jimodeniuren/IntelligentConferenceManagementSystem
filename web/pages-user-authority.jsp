@@ -373,14 +373,19 @@
 						<div class="col-md-4 col-lg-3">
 							<%
 								UserDao userDao = new UserDao();
+								System.out.println("111");
+								int id = Integer.parseInt(request.getParameter("id"));
+								Object userInfo [] = userDao.getUserInfo(id);
+								System.out.println(id);
 							%>
+
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner" >${sessionScope['testName']}</span>
-											<span class="thumb-info-type"><%=userDao.getUserInfo(Integer.parseInt(request.getSession().getAttribute("testID").toString()))[4]%></span>
+											<span class="thumb-info-inner" ><%=userInfo[1]%></span>
+											<span class="thumb-info-type"><%=userInfo[4]%></span>
 										</div>
 									</div>
 
@@ -416,7 +421,8 @@
 													<div class="form-group">
 														<label class="col-md-3 control-label" for="profileID">ID</label>
 														<div class="col-md-8">
-															<input type="text" class="form-control" id="profileID" value="${sessionScope['testID']}" name="ID">
+															<input type="text" class="form-control" id="profileID" value="<%=id%>" name="ID">
+															<%System.out.println(id);%>
 															<input type="button"  form="testid" value="test" onclick="test()"></inbutton>
 														</div>
 														<script>
@@ -432,14 +438,14 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileName">姓名</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileName" value="${sessionScope['testName']}" readonly>
+														<input type="text" class="form-control" id="profileName" value="<%=userInfo[1]%>" readonly>
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileDep">部门</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileDep" value="${sessionScope['testDep']}" readonly>
+														<input type="text" class="form-control" id="profileDep" value="<%=userInfo[2]%>" readonly>
 													</div>
 												</div>												
 												<div class="form-group">
