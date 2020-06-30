@@ -394,7 +394,6 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <a href="tables-add.jsp" class="btn btn-primary" >添加<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -410,25 +409,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <%
-                            ConferenceRoomDao dao=new ConferenceRoomDao();
-                            List<ConferenceRoom> list =dao.getAllData();
-                            for(ConferenceRoom cl:list)
-                            {%>
-                        <tr class="gradeA">
-                            <td><%=cl.getId()%></td>
-                            <td><%=cl.getMax()%></td>
-                            <td><%=cl.getStatus()%></td>
-                            <td><%=cl.getAddress()%></td>
-                            <td><%=cl.getResources()%></td>
-                            <td class="actions">
-                                <a href="tables-change.jsp?id=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
-                                <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>"><i class="fa fa-trash-o">删除</i></a>
-
-                            </td>
+                        <tr class="gradeX">
+                            <form action="servlet.UserEditServlet?caozuo=tianjia" method="post" id="add">
+                                <td> <input type="text" name="aid" ></td>
+                                <td><input type="text" name="amax" ></td>
+                                <td><input type="text" name="astatus" ></td>
+                                <td><input type="text" name="aadd" ></td>
+                                <td><input type="text" name="ares" ></td>
+                                <td class="actions">
+                                    <a href="#" onclick="document:add.submit()" ><i class="fa fa-save">保存</i></a>
+                                    <a href="tables-editable.jsp" ><i class="fa fa-times">取消</i></a>
+                                </td>
+                            </form>
                         </tr>
-                        <%}
-                        %>
                         </tbody>
 
                     </table>

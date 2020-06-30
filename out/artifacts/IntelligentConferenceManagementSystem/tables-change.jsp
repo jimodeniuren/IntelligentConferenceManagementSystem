@@ -435,16 +435,15 @@
                             </td>
                         </tr>
                         <tr class="gradeX">
-                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" method="post">
+                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" method="post" id="change">
                             <td> <input type="text" name="cid"  value="<%=id%>"></td>
                             <td><input type="text" name="cmax" value="<%=max%>"></td>
                             <td><input type="text" name="cstatus" value="<%=status%>"></td>
                             <td><input type="text" name="cadd" value="<%=add%>"></td>
                             <td><input type="text" name="cres" value="<%=res%>"></td>
                             <td class="actions">
-                                <a href="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" ><i class="fa fa-save"></i></a>
+                                <a href="#" onclick="document:change.submit()" ><i class="fa fa-save">保存</i></a>
                                 <a href="tables-editable.jsp" ><i class="fa fa-times">取消</i></a>
-                                <input type="submit" name="修改"><i class="fa fa-save"></i>
                             </td>
                             </form>
                         </tr>
