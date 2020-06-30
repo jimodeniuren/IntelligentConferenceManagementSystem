@@ -102,11 +102,11 @@ public class UserDao extends DBUtils{
     }
 
     public List<User> selectAll() {
-        String sql = "select * from student";
+        String sql = "select * from tbl_user";
 
         ResultSet rs = doQuery(sql, null);
 
-        List<User> list = null;
+        List<User> list = new ArrayList<>();
 
         try {
             while (rs.next()) {
