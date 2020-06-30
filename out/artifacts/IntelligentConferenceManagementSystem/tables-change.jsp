@@ -405,6 +405,24 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        if ((String)request.getAttribute("str") == "false") {
+                    %>
+                    <script>
+                        alert("会议室id已被使用！");
+                    </script>
+                    <%
+                        }
+                    %>
+                    <%
+                        if ((String)request.getAttribute("stri") == "false") {
+                    %>
+                    <script>
+                        alert("会议室id和容纳人数必须为整数且容纳人数不能为负！");
+                    </script>
+                    <%
+                        }
+                    %>
                     <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                         <thead>
                         <tr>
@@ -418,10 +436,10 @@
                         </thead>
                         <tbody>
                         <%String id=request.getParameter("id");%>
-                        <%String max=request.getParameter("max"); %>
-                        <%String status=request.getParameter("status"); %>
-                        <%String add=request.getParameter("add"); %>
-                        <%String res=request.getParameter("res"); %>
+                        <%String max=request.getParameter("max");%>
+                        <%String status=request.getParameter("status");%>
+                        <%String add=request.getParameter("add");%>
+                        <%String res=request.getParameter("res");%>
                         <tr class="gradeA">
                             <td><%=id%></td>
                             <td><%=max%></td>
@@ -435,7 +453,7 @@
                             </td>
                         </tr>
                         <tr class="gradeX">
-                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>" method="post" id="change">
+                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>&max=<%=max%>&status=<%=status%>&add=<%=add%>&res=<%=res%>" method="post" id="change">
                             <td> <input type="text" name="cid"  value="<%=id%>"></td>
                             <td><input type="text" name="cmax" value="<%=max%>"></td>
                             <td><input type="text" name="cstatus" value="<%=status%>"></td>
@@ -450,6 +468,7 @@
                         </tbody>
 
                     </table>
+
                 </div>
             </section>
             <!-- end: page -->
