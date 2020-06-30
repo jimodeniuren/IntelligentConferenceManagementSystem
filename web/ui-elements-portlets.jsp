@@ -409,7 +409,7 @@
 
 							<%
 								ConferenceDao dao = new ConferenceDao();
-								List<Conference> conferences = dao.getUnstartedConference();
+								List<Conference> conferences = dao.getUnreviewedConference();
 								SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 								for (Conference x:conferences){
 							%>

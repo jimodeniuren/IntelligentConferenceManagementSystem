@@ -244,13 +244,13 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
@@ -309,7 +309,7 @@
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="servlet.IdentitySettingServlet">
+										<a href="pages-user-authority.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
@@ -371,14 +371,16 @@
 
 					<div class="row">
 						<div class="col-md-4 col-lg-3">
-
+							<%
+								UserDao userDao = new UserDao();
+							%>
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner">John Doe</span>
-											<span class="thumb-info-type">CEO</span>
+											<span class="thumb-info-inner" >${sessionScope['testName']}</span>
+											<span class="thumb-info-type"><%=userDao.getUserInfo(Integer.parseInt(request.getSession().getAttribute("testID").toString()))[4]%></span>
 										</div>
 									</div>
 

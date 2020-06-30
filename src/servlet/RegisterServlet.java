@@ -26,6 +26,7 @@ public class RegisterServlet extends HttpServlet {
             if(password.equals(password_confirm)){
                 User user= new User();
                 user.setUserDepartment("人事部");
+                user.setUserIdentity("attendee");
                 user.setUserName(name);
                 user.setUserPwd(password);
                 user.setUserEmail(emailAddr);
@@ -33,7 +34,8 @@ public class RegisterServlet extends HttpServlet {
                 if(userDao.insert(user)!=0){
                     HttpSession session = request.getSession();
                     session.setAttribute("userID",userDao.getUserID(emailAddr));
-                    response.sendRedirect("tables-advanced.jsp");
+                    out.print("<script language='javascript'>alert('register successfully');window.local;</script>");
+                    response.sendRedirect("pages-signin.jsp");
                 }else{
                     out.print("<script language='javascript'>alert('user already exist');window.history.go(-1);</script>");
                 }

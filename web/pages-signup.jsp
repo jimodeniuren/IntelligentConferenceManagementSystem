@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -84,7 +85,7 @@
 								</div>
 							</div>
 					
-							<p class="text-center">已经拥有账号? <a href="pages-signin.html">登录!</a>
+							<p class="text-center">已经拥有账号? <a href="pages-signin.jsp">登录!</a>
 
 						</form>
 					</div>

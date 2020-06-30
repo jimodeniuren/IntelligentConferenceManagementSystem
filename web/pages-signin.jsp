@@ -89,7 +89,7 @@
 								</div>
 							</div>
 
-							<p class="text-center">还没有账号? <a href="pages-signup.html">注册!</a>
+							<p class="text-center">还没有账号? <a href="pages-signup.jsp">注册!</a>
 
 						</form>
 					</div>
@@ -120,6 +120,4 @@
 
 	</body>
 </html>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>

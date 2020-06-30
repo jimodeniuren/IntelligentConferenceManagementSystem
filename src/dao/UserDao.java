@@ -32,18 +32,18 @@ public class UserDao extends DBUtils{
     }
     public int insert(User user){
         Object params[]={user.getUserEmail(),user.getUserPwd(),
-                user.getUserName(),user.getUserDepartment()};
+                user.getUserName(),user.getUserDepartment(),user.getUserIdentity()};
         System.out.println(user.getUserEmail()+user.getUserPwd()+
-                user.getUserName()+user.getUserDepartment());
-        String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department) value(?,?,?,?)";
+                user.getUserName()+user.getUserDepartment()+user.getUserIdentity());
+        String sql = "insert into tbl_user (user_emailAddr,user_pwd,user_name,user_department,user_identity) value(?,?,?,?,?)";
         int count = doUpdate(sql, params);
         System.out.println(count);
         getClose();
         return count;
     }
-    public int editUserInfo(String name,String department,int id){
-        Object params[]={name,department,id};
-        String sql = "update tbl_user set user_name = ?,user_department=? where user_id = ?";
+    public int editUserInfo(String department,int id){
+        Object params[]={department,id};
+        String sql = "update tbl_user set user_department=? where user_id = ?";
         int count = doUpdate(sql,params);
         getClose();
         return count;
