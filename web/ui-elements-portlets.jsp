@@ -432,102 +432,19 @@
 									<form method="post">
 										<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
 										<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>
-										<%
+										<%System.out.println("111111111");
 											if (request.getParameter("isPass").equals("true"))
 												x.setConferenceStatus(1);
+										System.out.println("111111111");
 											if (request.getParameter("isReject").equals("true"))
-												x.setConferenceStatus(2);%>
+												x.setConferenceStatus(2);
+
+										%>
 									</form>
 
 								</div>
 							</section>
 							<%}%>
-						<%--	<section class="panel panel-tertiary" id="panel-3" data-portlet-item>
-								<header class="panel-heading portlet-handler">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">会议名称</h2>
-								</header>
-								<div class="panel-body">
-									<label>申请人：</label><br>
-									<label>举办部门：</label><br>
-									<label>会议室：</label><br>
-									<label>会议时间：</label><br>
-									<div class="col-md-3"></div>
-									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
-								</div>
-							</section>
-						</div>
-						<div class="col-md-4" data-plugin-portlet id="portlet-2">
-							<section class="panel panel-quartenary" id="panel-4" data-portlet-item>
-								<header class="panel-heading portlet-handler">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">会议名称</h2>
-								</header>
-								<div class="panel-body">
-									<label>申请人：</label><br>
-									<label>举办部门：</label><br>
-									<label>会议室：</label><br>
-									<label>会议时间：</label><br>
-									<div class="col-md-3"></div>
-									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
-								</div>
-							</section>
-							<section class="panel panel-success" id="panel-5" data-portlet-item>
-								<header class="panel-heading portlet-handler">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">会议名称</h2>
-								</header>
-								<div class="panel-body">
-									<label>申请人：</label><br>
-									<label>举办部门：</label><br>
-									<label>会议室：</label><br>
-									<label>会议时间：</label><br>
-									<div class="col-md-3"></div>
-									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
-								</div>
-							</section>
-							
-						</div>
-						<div class="col-md-4" data-plugin-portlet id="portlet-3">
-							<section class="panel panel-info" id="panel-7" data-portlet-item>
-								<header class="panel-heading portlet-handler">
-									<div class="panel-actions">
-										<a href="#" class="fa fa-caret-down"></a>
-										<a href="#" class="fa fa-times"></a>
-									</div>
-
-									<h2 class="panel-title">会议名称</h2>
-								</header>
-								<div class="panel-body">
-									<label>申请人：</label><br>
-									<label>举办部门：</label><br>
-									<label>会议室：</label><br>
-									<label>会议时间：</label><br>
-									<div class="col-md-3"></div>
-									<div class="col-md-2"></div>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-success">通过</button>
-									<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">不通过</button>
-								</div>
-							</section>
-							--%>
 						</div>
 					</div>
 					<!-- end: page -->
@@ -554,7 +471,7 @@
 									</li>
 								</ul>
 							</div>
-			
+
 							<div class="sidebar-widget widget-friends">
 								<h6>Friends</h6>
 								<ul>

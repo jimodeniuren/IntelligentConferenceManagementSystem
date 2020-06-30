@@ -423,14 +423,7 @@
 														<div class="col-md-8">
 															<input type="text" class="form-control" id="profileID" value="<%=id%>" name="ID">
 															<%System.out.println(id);%>
-															<input type="button"  form="testid" value="test" onclick="test()"></inbutton>
 														</div>
-														<script>
-															function test() {
-																document.Iden.action = "servlet.IdentitySettingServlet";
-																document.Iden.submit();
-															}
-														</script>
 												</div>
 												</form>
 

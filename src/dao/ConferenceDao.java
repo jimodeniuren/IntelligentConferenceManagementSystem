@@ -124,7 +124,7 @@ public class ConferenceDao extends DBUtils {
     }
 
     public List<Conference> getUnreviewedConference(){
-        String sql = "select * from tbl_conference where end_time > NOW() and conference_status=1";
+        String sql = "select * from tbl_conference where end_time > NOW() and conference_status=0";
         ResultSet rs = doQuery(sql, null);
         List<Conference> list = new ArrayList<>();
         try {
