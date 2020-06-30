@@ -2,11 +2,12 @@
 <%@ page import="entity.User" %>
 <%@ page import="dao.UserDao" %>
 <%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="UTF-8" %>
-<% request.setCharacterEncoding("utf-8"); %>
+
 <!doctype html>
 <html class="fixed">
 	<head>
-
+		<% request.setCharacterEncoding( "utf-8");%>
+		<% response.setCharacterEncoding("utf-8"); %>
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
@@ -393,17 +394,18 @@
 						<div class="col-md-4 col-lg-3">
 
                             <%
-                                UserDao userDao=new UserDao();
-								int userID = Integer.parseInt((String)request.getSession().getAttribute("userID"));
-								Object userInfo[] = userDao.getUserInfo(userID);
+								UserDao userDao=new UserDao();
+								int id =  Integer.parseInt(request.getSession().getAttribute("userID").toString());
                             %>
+
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner"><%=userInfo[1]%></span>
-											<span class="thumb-info-type"><%=userInfo[4]%></span>
+											<span class="thumb-info-inner"><%=userDao.getUserInfo(id)[1]%></span>
+
+											<span class="thumb-info-type"><%=userDao.getUserInfo(id)[4]%></span>
 										</div>
 									</div>
 
@@ -655,34 +657,33 @@
 
 										<form class="form-horizontal" action="servlet.UserInfoEditServlet" method="post">
 											<h4 class="mb-xlg">个人信息</h4>
-											<fieldset>
 
+											<fieldset>
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label><%=userDao.getUserInfo(userID)[1]%></label>
+														<label><%=userDao.getUserInfo(id)[1]%></label>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label">ID</label>
 													<div class="col-md-8">
-                                                        <label><%=(String) request.getSession().getAttribute("userID")%></label>
+                                                        <label><%=id%></label>
                                                     </div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getUserInfo(userID)[3]%></label>
+                                                        <label><%=userDao.getUserInfo(id)[3]%></label>
                                                     </div>
 												</div>
 												<div class="form-group">
-
 													<label class="col-md-3 control-label">部门</label>
 													<div class="col-md-6">
 														<select name="department" class="form-control mb-md">
-															<option>策划部</option>
-															<option>设计部</option>
-															<option>美工部</option>
+															<option id="ch" >策划部</option>
+															<option id="sj" >设计部</option>
+															<option id="mg" >美工部</option>
 														</select>
 													</div>
 												</div>
