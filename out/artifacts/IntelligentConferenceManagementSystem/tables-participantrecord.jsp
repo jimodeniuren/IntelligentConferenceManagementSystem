@@ -12,7 +12,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п</title>
+    <title>ф╝ЪшоохПВхКашо░х╜ХцЯешпв</title>
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
@@ -244,7 +244,7 @@
                     </figure>
                     <%
                         UserDao userDao=new UserDao();
-                        String id_str = (String) request.getSession().getAttribute("userID");
+                        String id_str = request.getSession().getAttribute("userID").toString();
                         int id = Integer.parseInt(id_str);
                         Object userInfo[] = userDao.getUserInfo(id);
                     %>
@@ -260,13 +260,13 @@
                     <ul class="list-unstyled">
                         <li class="divider"></li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> ╕Ў╚╦╓╨╨─</a>
+                            <a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> ф╕кф║║ф╕нх┐Г</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> ╦°╞┴</a>
+                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> щФБх▒П</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> ╡╟│Ў</a>
+                            <a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> чЩ╗хЗ║</a>
                         </li>
                     </ul>
                 </div>
@@ -282,7 +282,7 @@
 
             <div class="sidebar-header">
                 <div class="sidebar-title">
-                    ╟│▓▌╗с╥щ
+                    ц╡ЕшНЙф╝Ъшоо
                 </div>
                 <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
                     <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -296,22 +296,22 @@
                             <li class="nav-parent nav-expanded nav-active">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>╗с╥щ▓щ╤п</span>
+                                    <span>ф╝ЪшооцЯешпв</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ╗с╥щ╩╥╫┤╠м▓щ╤п
+                                            ф╝ЪшооходчК╢цАБцЯешпв
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-attendencerecord.jsp">
-                                            ╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п
+                                            ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв
                                         </a>
                                     </li>
                                     <li class="nav-active">
                                         <a href="tables-participantrecord.jsp">
-                                            ╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
+                                            ф╝ЪшоохПВхКашо░х╜ХцЯешпв
                                         </a>
                                     </li>
                                 </ul>
@@ -319,52 +319,52 @@
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>╗с╥щ╘д╢и</span>
+                                    <span>ф╝ЪшоощвДхоЪ</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="forms-basic.jsp">
-                                            ╖в╞Ё╨┬╗с╥щ
+                                            хПСш╡╖цЦ░ф╝Ъшоо
                                         </a>
                                     </li>
                                     <li>
                                         <a href="pages-blank.jsp">
-                                            ▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+                                            цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="test.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>╙я╥Ї╗с╥щ</span>
+                                    <span>шпнщЯ│ф╝Ъшоо</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="pages-user-authority.jsp">
+                                <a href="pages-search-results.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
-                                    <span>╚и╧▐╔ш╓├</span>
+                                    <span>цЭГщЩРшо╛ч╜о</span>
                                 </a>
                             </li>
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-table" aria-hidden="true"></i>
-                                    <span>╗с╥щ╣▄└э</span>
+                                    <span>ф╝ЪшоочобчРЖ</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="ui-elements-portlets.jsp">
-                                            ╗с╥щ╘д╢и╔є║╦
+                                            ф╝ЪшоощвДхоЪхобца╕
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-editable.jsp">
-                                            ╗с╥щ╩╥┐╪╓╞╓╨╨─
+                                            ф╝ЪшооходцОзхИ╢ф╕нх┐Г
                                         </a>
                                     </li>
                                     <li>
                                         <a href="ui-elements-charts.jsp">
-                                            ╗с╥щ╩╥╩╣╙├╟щ┐Ў
+                                            ф╝Ъшооходф╜┐чФицГЕхЖ╡
                                         </a>
                                     </li>
 
@@ -383,7 +383,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>╗с╥щ╝╟┬╝</h2>
+                <h2>ф╝Ъшоошо░х╜Х</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -392,7 +392,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>╗с╥щ╝╟┬╝</span></li>
+                        <li><span>ф╝Ъшоошо░х╜Х</span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -407,16 +407,16 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п</h2>
+                    <h2 class="panel-title">ф╝ЪшоохПВхКашо░х╜ХцЯешпв</h2>
                 </header>
                 <div class="panel-body">
                     <table class="table table-bordered table-striped mb-none" id="datatable-default">
                         <thead>
                         <tr>
-                            <th>╗с╥щID</th>
-                            <th>╗с╥щ├√│╞</th>
-                            <th>▓╬╙ы╒▀ID</th>
-                            <th>▓╬╙ы╒▀├√│╞</th>
+                            <th>ф╝ЪшооID</th>
+                            <th>ф╝ЪшоохРНчз░</th>
+                            <th>хПВф╕ОшАЕID</th>
+                            <th>хПВф╕ОшАЕхРНчз░</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -1404,5 +1404,5 @@
 </body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-         pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>

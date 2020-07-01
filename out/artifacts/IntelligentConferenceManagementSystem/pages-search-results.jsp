@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="entity.User" %>
 <%@ page import="java.io.IOException" %>
+<%@ page import="java.util.ArrayList" %>
 
 <!doctype html>
 <html class="fixed search-results">
@@ -248,7 +249,7 @@
                     </figure>
                     <%
                         UserDao userDao=new UserDao();
-                        String id_str = (String) request.getSession().getAttribute("userID");
+                        String id_str = request.getSession().getAttribute("userID").toString();
                         int id = Integer.parseInt(id_str);
                         Object userInfo[] = userDao.getUserInfo(id);
                     %>
@@ -344,7 +345,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="test.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
@@ -397,7 +398,7 @@
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="index.html">
+                            <a href="test.html">
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
@@ -411,11 +412,12 @@
             <!-- start: page -->
             <div class="search-content">
                 <div class="search-control-wrapper">
-                    <form>
+                    <form action="servlet.SelectServlet" method="post">
                         <div class="form-group mb-lg">
                             <input name="insertid" type="search" style="width:250px;Float:left;" class="form-control"
                                    placeholder="请输入用户ID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">查找</button>
+                            <button type="submit" class="btn btn-primary hidden-xs" formaction="servlet.SelectServlet?caozuo=search" style="Float:left;">查找</button>
+                            <button type="submit" class="btn btn-default" style="Float:left;">显示全部</button>
                         </div>
                     </form>
                 </div>
@@ -434,9 +436,11 @@
                         <p class="total-results text-muted">展示47条结果中的1-10条</p>
                         <ul class="list-unstyled search-results-list">
                             <%
-									UserDao dao = new UserDao();
-                                List<User> ulist = dao.selectAll();
-                                for (User u : ulist) {
+                                if(request.getSession().getAttribute("list")!=null){
+                                ArrayList list = (ArrayList) request.getSession().getAttribute("list");
+                                System.out.println(list);
+                                for (Object i : list) {
+                                    User u = (User) i;
                             %>
                             <li>
                                 <p class="result-type">
@@ -461,8 +465,8 @@
                                 </a>
                             </li>
                             <%
-
                                     }
+                                }
                             %>
                             <%--
                             <li>
@@ -514,7 +518,9 @@
                     </div>
                     <div id="medias" class="tab-pane">
                         <div class="row">
-                            <%for (User u : ulist) {%>
+                         <%--   <%for (Object i : list) {
+                                User u=(User)i;
+                            %>
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail">
                                     <div class="thumb-preview">
@@ -523,10 +529,11 @@
                                                  alt="Project">
                                         </a>
                                     </div>
-                                    <h5 class="mg-title text-semibold"><%=u.getUserName()%><small><%=u.getUserIdentity()%></small></h5>
+                                    <h5 class="mg-title text-semibold"><%=u.getUserName()%><small><%=u.getUserIdentity()%>
+                                    </small></h5>
                                 </div>
                             </div>
-                            <%}%>
+                            <%}%>--%>
                         </div>
                     </div>
                     <div id="emails" class="tab-pane">

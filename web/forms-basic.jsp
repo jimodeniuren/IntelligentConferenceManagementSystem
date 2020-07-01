@@ -2,6 +2,9 @@
 <%@ page import="entity.Conference" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="dao.UserDao" %>
+<%@ page import="dao.ConferenceRoomDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="entity.ConferenceRoom" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -391,7 +394,15 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputMr">会议室</label>
 												<div class="col-md-6">
-													<input name="conferenceroom_id" type="number" class="form-control" id="inputMr">
+													<select name="conferenceroom_id" class="form-control mb-md">
+													<%
+														ConferenceRoomDao dao1 = new ConferenceRoomDao();
+														List<ConferenceRoom> conferenceRooms = dao1.getAllConferenceRoom();
+														for (ConferenceRoom x : conferenceRooms){
+													%>
+														<option value="<%=x.getId()%>"><%=x.getAddress()%></option>
+														<%}%>
+												</select>
 												</div>
 											</div>
 

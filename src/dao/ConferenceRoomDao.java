@@ -56,15 +56,21 @@ public class ConferenceRoomDao extends DBUtils {
         return i;
     }
 
-    public String getStatusById(String id){
-        String sql = "select * from tbl_mr where mr_id = " + id;
+    public List<ConferenceRoom> getAllConferenceRoom(){
+        String sql = "select * from tbl_mr";
 
         ResultSet rs = doQuery(sql, null);
 
+        List<ConferenceRoom> conferenceRooms = new ArrayList<>();
+
         try {
-            if (rs.next()) {
-                getClose();
-                return "会议室的状态为：" + rs.getString(4);
+            while (rs.next()) {
+                 conferenceRooms.add(new ConferenceRoom(
+                         rs.getInt(1),
+                         rs.getString(2),
+                         rs.getInt(3),
+                         rs.getString(4),
+                         rs.getString(5)));
             }
 
         } catch (SQLException e) {
@@ -72,7 +78,27 @@ public class ConferenceRoomDao extends DBUtils {
             e.printStackTrace();
         }
         getClose();
-        return "会议室不存在！";
+        return conferenceRooms;
+    }
+
+    public String getStatusById(String id){
+        String sql = "select * from tbl_mr where mr_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        String result = "";
+
+        try {
+            if (rs.next()) {
+                result = rs.getString(4);
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return result.equals("")?"会议室不存在！":result;
     }
     public static List getAllData()
     {

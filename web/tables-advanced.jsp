@@ -3,6 +3,8 @@
 <%@ page import="entity.Conference" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="dao.UserDao" %>
+<%@ page import="dao.ConferenceRoomDao" %>
+<%@ page import="entity.ConferenceRoom" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -334,7 +336,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="test.html">
+										<a href="tables-video.jsp">
 											<i class="fa fa-columns" aria-hidden="true"></i>
 											<span>语音会议</span>
 										</a>
@@ -369,6 +371,45 @@
 					</header>
 
 					<!-- start: page -->
+					<section class="panel">
+						<header class="panel-heading">
+							<div class="panel-actions">
+								<a href="#" class="fa fa-caret-down"></a>
+								<a href="#" class="fa fa-times"></a>
+							</div>
+
+							<h2 class="panel-title">会议室状态查询</h2>
+						</header>
+						<div class="panel-body">
+							<table class="table table-bordered table-striped mb-none" id="datatable-default">
+								<thead>
+								<tr>
+									<th>会议室ID</th>
+									<th>会议室地址</th>
+									<th>会议室最大人数</th>
+									<th>会议室状态</th>
+									<th>会议室资源</th>
+								</tr>
+								</thead>
+								<tbody>
+								<%
+									ConferenceRoomDao dao1 = new ConferenceRoomDao();
+									List<ConferenceRoom> conferenceRooms = dao1.getAllConferenceRoom();
+									for (ConferenceRoom conferenceRoom : conferenceRooms) {
+								%>
+								<tr>
+									<td><%=conferenceRoom.getId() %></td >
+									<td><%=conferenceRoom.getAddress() %></td >
+									<td><%=conferenceRoom.getMax()%></td >
+									<td><%=conferenceRoom.getStatus()%></td>
+									<td><%=conferenceRoom.getResources() %></td>
+								</tr>
+								<%}%>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
 						<section class="panel">
 							<header class="panel-heading">
 								<div class="panel-actions">
@@ -376,10 +417,10 @@
 									<a href="#" class="fa fa-times"></a>
 								</div>
 						
-								<h2 class="panel-title">会议室状态查询</h2>
+								<h2 class="panel-title">会议查询</h2>
 							</header>
 							<div class="panel-body">
-								<table class="table table-bordered table-striped mb-none" id="datatable-default">
+								<table class="table table-bordered table-striped mb-none" id="datatable-default2">
 									<thead>
 										<tr>
 											<th>会议名称</th>
@@ -421,7 +462,6 @@
 								</table>
 							</div>
 						</section>
-
 				</section>
 			</div>
 

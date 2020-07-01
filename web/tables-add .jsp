@@ -449,21 +449,21 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="inputMrId">会议室ID</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" id="inputMrId" name="aid">
+                                <input type="number" class="form-control" id="inputMrId">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="inputMax">容纳人数</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" id="inputMax" name="amax">
+                                <input type="number" class="form-control" id="inputMax">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">会议室状态</label>
                             <div class="col-md-6">
-                                <select class="form-control mb-md" name="astatus">
+                                <select class="form-control mb-md">
                                     <option>空闲中</option>
                                     <option>使用中</option>
                                     <option>维修中</option>
@@ -474,7 +474,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="inputAddr">会议室地址</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="inputAddr" name="aadd">
+                                <input type="text" class="form-control" id="inputAddr">
                             </div>
                         </div>
 
@@ -483,35 +483,35 @@
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="投影仪" name="apro">
+                                        <input type="checkbox" value="projection">
                                         投影仪
                                     </label>
                                 </div>
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="电脑" name="apc">
+                                        <input type="checkbox" value="pc">
                                         电脑
                                     </label>
                                 </div>
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="麦克风" name="amic">
+                                        <input type="checkbox" value="mic">
                                         麦克风
                                     </label>
                                 </div>
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="饮水机" name="adm">
+                                        <input type="checkbox" value="dm">
                                         饮水机
                                     </label>
                                 </div>
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="白板" name="awb">
+                                        <input type="checkbox" value="wb">
                                         白板
                                     </label>
                                 </div>
