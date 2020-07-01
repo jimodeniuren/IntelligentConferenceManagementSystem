@@ -244,7 +244,7 @@
                     </figure>
                     <%
                         UserDao userDao=new UserDao();
-                        String id_str = (String) request.getSession().getAttribute("userID");
+                        String id_str = request.getSession().getAttribute("userID").toString();
                         int id = Integer.parseInt(id_str);
                         Object userInfo[] = userDao.getUserInfo(id);
                     %>
@@ -335,7 +335,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="test.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>”Ô“Ùª·“È</span>
                                 </a>
