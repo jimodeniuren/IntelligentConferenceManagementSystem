@@ -1,5 +1,9 @@
+<%@ page import="entity.ConferenceRoom" %>
+<%@ page import="dao.ConferenceRoomDao" %>
+<%@ page import="java.util.*" %>
 <%@ page import="dao.UserDao" %>
 <!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="fixed">
 	<head>
 
@@ -237,7 +241,7 @@
 							</figure>
 							<%
 							UserDao userDao=new UserDao();
-							String id_str = request.getSession().getAttribute("userID").toString();
+							String id_str = (String) request.getSession().getAttribute("userID");
 							int id = Integer.parseInt(id_str);
 							Object userInfo[] = userDao.getUserInfo(id);
 							%>
@@ -328,7 +332,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="test.html">
+										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
 											<span>”Ô“Ùª·“È</span>
 										</a>
@@ -381,7 +385,7 @@
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
-									<a href="test.html">
+									<a href="index.html">
 										<i class="fa fa-home"></i>
 									</a>
 								</li>

@@ -338,7 +338,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="test.html">
+                                <a href="index.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
@@ -391,7 +391,7 @@
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="test.html">
+                            <a href="index.html">
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
