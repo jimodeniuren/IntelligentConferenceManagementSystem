@@ -9,7 +9,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Advanced Tables | Okler Themes | Porto-Admin</title>
+		<title>ф╝ЪшооходчК╢цАБцЯешпв</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -251,7 +251,7 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="servlet.UserInfoEditServlet"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
@@ -273,7 +273,7 @@
 
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							╟│▓▌╗с╥щ
+							ц╡ЕшНЙф╝Ъшоо
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -287,22 +287,22 @@
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ▓щ╤п</span>
+											<span>ф╝ЪшооцЯешпв</span>
 										</a>
 										<ul class="nav nav-children">
 											<li class="nav-active">
 												<a href="tables-advanced.jsp">
-													╗с╥щ╩╥╫┤╠м▓щ╤п
+													ф╝ЪшооходчК╢цАБцЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-attendencerecord.jsp">
-													╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п
+													ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв
 												</a>
 											</li>
 											<li>
 												<a href="tables-participantrecord.jsp">
-													╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
+													ф╝ЪшоохПВхКашо░х╜ХцЯешпв
 												</a>
 											</li>
 										</ul>
@@ -310,17 +310,17 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>╗с╥щ╘д╢и</span>
+											<span>ф╝ЪшоощвДхоЪ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.jsp">
-													╖в╞Ё╨┬╗с╥щ
+													хПСш╡╖цЦ░ф╝Ъшоо
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.jsp">
-													▓щ┐┤╥╤╘д╢й╡─╗с╥щ
+													цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
 												</a>
 											</li>
 										</ul>
@@ -328,34 +328,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>╙я╥Ї╗с╥щ</span>
+											<span>шпнщЯ│ф╝Ъшоо</span>
 										</a>
 									</li>
 									<li>
 										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>╚и╧▐╔ш╓├</span>
+											<span>цЭГщЩРшо╛ч╜о</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>╗с╥щ╣▄└э</span>
+											<span>ф╝ЪшоочобчРЖ</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													╗с╥щ╘д╢и╔є║╦
+													ф╝ЪшоощвДхоЪхобца╕
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.jsp">
-													╗с╥щ╩╥┐╪╓╞╓╨╨─
+													ф╝ЪшооходцОзхИ╢ф╕нх┐Г
 												</a>
 											</li>
 											<li>
 												<a href="ui-elements-charts.html">
-													╗с╥щ╩╥╩╣╙├╟щ┐Ў
+													ф╝Ъшооходф╜┐чФицГЕхЖ╡
 												</a>
 											</li>
 
@@ -374,7 +374,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>╗с╥щ▓щ╤п</h2>
+						<h2>ф╝ЪшооцЯешпв</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -383,7 +383,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>╗с╥щ▓щ╤п</span></li>
+								<li><span>ф╝ЪшооцЯешпв</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -398,18 +398,18 @@
 									<a href="#" class="fa fa-times"></a>
 								</div>
 						
-								<h2 class="panel-title">╗с╥щ╩╥╫┤╠м▓щ╤п</h2>
+								<h2 class="panel-title">ф╝ЪшооходчК╢цАБцЯешпв</h2>
 							</header>
 							<div class="panel-body">
 								<table class="table table-bordered table-striped mb-none" id="datatable-default">
 									<thead>
 										<tr>
-											<th>╗с╥щ├√│╞</th>
-											<th>╗с╥щ╡╪╡уID</th>
-											<th>╗с╥щ┐к╩╝╩▒╝ф</th>
-											<th class="hidden-phone">╓ў░ь▓┐├┼</th>
-											<th class="hidden-phone">╖в╞Ё╚╦ID</th>
-											<th class="hidden-phone">╗с╥щ╔є║╦╫┤╠м</th>
+											<th>ф╝ЪшоохРНчз░</th>
+											<th>ф╝ЪшоохЬ░чВ╣ID</th>
+											<th>ф╝Ъшоох╝АхзЛцЧ╢щЧ┤</th>
+											<th class="hidden-phone">ф╕╗хКЮщГищЧи</th>
+											<th class="hidden-phone">хПСш╡╖ф║║ID</th>
+											<th class="hidden-phone">ф╝Ъшоохобца╕чК╢цАБ</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -417,16 +417,28 @@
 											ConferenceDao dao = new ConferenceDao();
 											List<Conference> conferences = dao.getUnstartedConference();
 											SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-											for (Conference x:conferences){
+											for (Conference conference : conferences) {
 										%>
 										<tr class="gradeA">
-											<td><%=x.getConferenceName()%></td>
-											<td><%=x.getMrId()%></td>
-											<td><%=sdf.format(x.getStartTime())%></td>
-											<td class="center hidden-phone"><%=x.getHostDepartment()%></td>
-											<td class="center hidden-phone"><%=x.getHostId()%></td>
-											<td class="center hidden-phone"><%=x.getConferenceStatus()%></td>
-										</tr><%}%>
+											<td><%=conference.getConferenceName() %></td >
+											<td><%=conference.getMrId() %></td >
+											<td><%=sdf.format(conference.getStartTime()) %></td >
+											<td><%=conference.getHostDepartment() %></td>
+											<td><%=conference.getHostId() %></td>
+												<%String status = "";
+												switch (conference.getConferenceStatus()) {
+													case 0:
+														status = "хобца╕ф╕н";
+														break;
+													case 1:
+														status = "хобца╕щАЪш┐З";
+														break;
+													case 2:
+														status = "хобца╕ф╕НщАЪш┐З";
+												}%>
+											<td><%=status %></td>
+										</tr>
+												<%}%>
 									</tbody>
 								</table>
 							</div>
@@ -536,5 +548,5 @@
 	</body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>

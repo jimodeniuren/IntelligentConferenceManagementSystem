@@ -162,10 +162,11 @@ public class UserDao extends DBUtils{
 
             List<User> list = new ArrayList<>();
 
+            String result="";
+
             try {
                 if (rs.next()) {
-                    getClose();
-                    return rs.getString(4);
+                    result = rs.getString(4);
                 }
 
             } catch (SQLException e) {
@@ -173,7 +174,7 @@ public class UserDao extends DBUtils{
                 e.printStackTrace();
             }
             getClose();
-            return "没有这个用户";
+            return result.equals("")?"没有这个用户":result;
     }
     public String getIdentityById(String id){
 

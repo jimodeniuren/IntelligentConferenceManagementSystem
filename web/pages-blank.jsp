@@ -407,7 +407,7 @@
 						  <tbody>
 						  <%
 							  ConferenceDao dao = new ConferenceDao();
-							  List<Conference> conferenceList = dao.selectByHostId((String) request.getSession().getAttribute("userID"));
+							  List<Conference> conferenceList = dao.selectByHostId(request.getSession().getAttribute("userID").toString());
 							  for (int i=0;i<conferenceList.size();i++){
 						  %>
 						  <tr>
@@ -428,6 +428,7 @@
 									  	status="审核不通过";
 								  }
 							  %>
+							  <td><%=status%></td>
 							  <%
 								  try{
 									  if (request.getParameter("isdelete").equals("true")){
@@ -439,7 +440,6 @@
 									  }
 								  }catch (Exception e){}
 							  %>
-							  <td><%=status%></td>
 						  </tr><%}%>
 						  </tbody>
 						</table>

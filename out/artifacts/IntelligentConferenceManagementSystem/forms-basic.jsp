@@ -231,7 +231,7 @@
 					</ul>
 			
 					<span class="separator"></span>
-			
+
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
@@ -241,21 +241,21 @@
 								<span class="name">John Doe Junior</span>
 								<span class="role">administrator</span>
 							</div>
-			
+
 							<i class="fa custom-caret"></i>
 						</a>
-			
+
 						<div class="dropdown-menu">
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
 								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
@@ -402,7 +402,8 @@
 										<h2 class="panel-title">会议预约申请表</h2>
 									</header>
 									<div class="panel-body">
-										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="get">
+										<form action="forms-basic.jsp?isinsert=true" class="form-horizontal form-bordered" method="post">
+											<%request.setCharacterEncoding("utf-8");%>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputSubject">会议名称</label>
 												<div class="col-md-6">
@@ -419,7 +420,7 @@
 
 											<div class="form-group">
 
-												<label class="col-md-3 control-label" for="inputDep">主办部门</label>
+												<label class="col-md-3 control-label">主办部门</label>
 
 												<div class="col-md-6">
 													<select name="department" class="form-control mb-md">
@@ -459,14 +460,27 @@
 												<button id="cancel" class="mb-xs mt-xs mr-xs btn btn-default">取消</button>
 												<%
 													try{
-														if (request.getParameter("isinsert").equals("true")){
-															SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+														if (request.getParameter("isinsert").equals("true"))
+														{
+															SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 															ConferenceDao dao = new ConferenceDao();
-															out.print(dao.insert(new Conference(request.getParameter("conference_name"), 1,
-																		0,Integer.parseInt(request.getParameter("conferenceroom_id")),Integer.parseInt((String)request.getSession().getAttribute("userID")),
-																	request.getParameter("department"),sdf.parse(request.getParameter("start_time")),sdf.parse(request.getParameter("end_time")),0)));
+															System.out.println();
+															Conference conference = new Conference(
+																	request.getParameter("conference_name"),
+																	1,
+																	0,
+																	Integer.parseInt(request.getParameter("conferenceroom_id")),
+																	Integer.parseInt(request.getSession().getAttribute("userID").toString()),
+																	request.getParameter("department"),
+																	sdf.parse(request.getParameter("start_time").replace("T", " ") + ":00"),
+																	sdf.parse(request.getParameter("end_time").replace("T", " ") + ":00"),
+																	0);
+															out.print(dao.insert(conference));
 														}
-													}catch (Exception e){}
+													}catch (Exception e){
+														e.printStackTrace();
+													}
 												%>
 											</div>
 										</form>

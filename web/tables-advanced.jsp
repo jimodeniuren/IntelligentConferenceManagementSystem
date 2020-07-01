@@ -417,16 +417,28 @@
 											ConferenceDao dao = new ConferenceDao();
 											List<Conference> conferences = dao.getUnstartedConference();
 											SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-											for (Conference x:conferences){
+											for (Conference conference : conferences) {
 										%>
 										<tr class="gradeA">
-											<td><%=x.getConferenceName()%></td>
-											<td><%=x.getMrId()%></td>
-											<td><%=sdf.format(x.getStartTime())%></td>
-											<td class="center hidden-phone"><%=x.getHostDepartment()%></td>
-											<td class="center hidden-phone"><%=x.getHostId()%></td>
-											<td class="center hidden-phone"><%=x.getConferenceStatus()%></td>
-										</tr><%}%>
+											<td><%=conference.getConferenceName() %></td >
+											<td><%=conference.getMrId() %></td >
+											<td><%=sdf.format(conference.getStartTime()) %></td >
+											<td><%=conference.getHostDepartment() %></td>
+											<td><%=conference.getHostId() %></td>
+												<%String status = "";
+												switch (conference.getConferenceStatus()) {
+													case 0:
+														status = "审核中";
+														break;
+													case 1:
+														status = "审核通过";
+														break;
+													case 2:
+														status = "审核不通过";
+												}%>
+											<td><%=status %></td>
+										</tr>
+												<%}%>
 									</tbody>
 								</table>
 							</div>

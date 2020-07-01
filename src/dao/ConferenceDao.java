@@ -17,13 +17,13 @@ public class ConferenceDao extends DBUtils {
     public String insert(Conference conference) {
 
         Object[] params
-                = {conference.getConferenceName(), conference.getConferenceId()
+                = {conference.getConferenceName()
                 , conference.getConferenceType(), conference.getMrId()
                 , conference.getHostId(),conference.getHostDepartment()
                 , conference.getStartTime(),conference.getEndTime()
                 , conference.getConferenceStatus()};
 
-        String sql = "insert into tbl_conference values(?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into tbl_conference values(?,null,?,?,?,?,?,?,?)";
 
         int i = doUpdate(sql,params);
 
@@ -31,16 +31,16 @@ public class ConferenceDao extends DBUtils {
         return  i==1?"预定成功！":"预定失败！";
     }
 
-    public int delete(Conference conference) {
+    public String delete(Conference conference) {
 
         Object[] params = {conference.getConferenceId()};
 
-        String sql = "delete from tbl_conference where mr_id=?";
+        String sql = "delete from tbl_conference where conference_id=?";
 
         int i = doUpdate(sql, params);
 
         getClose();
-        return i;
+        return i==1?"删除成功":"删除失败";
     }
 
     public int update(Conference conference) {
@@ -88,9 +88,11 @@ public class ConferenceDao extends DBUtils {
 
         ResultSet rs = doQuery(sql, null);
 
+        String result = "";
+
         try {
             if (rs.next()) {
-                return rs.getString(1);
+                result=  rs.getString(1);
             }
 
         } catch (SQLException e) {
@@ -98,7 +100,7 @@ public class ConferenceDao extends DBUtils {
             e.printStackTrace();
         }
         getClose();
-        return "会议不存在！";
+        return result.equals("")?"会议不存在！":result;
     }
 
     public List<Conference> getUnstartedConference(){

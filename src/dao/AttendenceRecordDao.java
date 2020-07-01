@@ -65,7 +65,6 @@ public class AttendenceRecordDao extends DBUtils {
             e.printStackTrace();
         }
         getClose();
-
         return list;
     }
 
