@@ -15,7 +15,9 @@ import java.util.List;
  **/
 public class AttendenceRecordDao extends DBUtils {
     public String insert(AttendenceRecord attendenceRecord) {
-
+        if (isExist(attendenceRecord)){
+            return "已经签过到了";
+        }
         Object[] params
                 = {attendenceRecord.getConferenceId(),attendenceRecord.getConferenceName(),
                     attendenceRecord.getParticipantId(),attendenceRecord.getParticipantName()};
@@ -67,5 +69,25 @@ public class AttendenceRecordDao extends DBUtils {
         getClose();
         return list;
     }
+    private boolean isExist(AttendenceRecord attendenceRecord){
+        Boolean result = false;
 
+        String sql = "select * from tbl_mar where conference_id = ? and participant_id = ?";
+
+        Object[] params = {attendenceRecord.getConferenceId(),attendenceRecord.getParticipantId()};
+
+        ResultSet rs = doQuery(sql, params);
+
+        try {
+            if (rs.next()) {
+                result = true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        getClose();
+        return result;
+
+    }
 }
