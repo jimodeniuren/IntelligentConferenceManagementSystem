@@ -36,7 +36,7 @@
 			},
 			yaxis: {
 				min: 0,
-				max: 20,
+				max: 25,
 				color: 'rgba(0,0,0,0.1)'
 			},
 			xaxis: {
