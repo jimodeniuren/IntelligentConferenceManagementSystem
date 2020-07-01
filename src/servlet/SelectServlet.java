@@ -2,7 +2,9 @@ package servlet;
 
 import dao.AttendenceRecordDao;
 import dao.ConferenceRoomDao;
+import dao.UserDao;
 import entity.AttendenceRecord;
+import entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +19,21 @@ public class SelectServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String caozuo=request.getParameter("caozuo");
+        UserDao dao = new UserDao();
+
+        if ("search".equals(caozuo)) {
+                List<User> ulist = dao.selectById(request.getParameter("insertid"));
+                System.out.println("userName:");
+                System.out.println(ulist.get(0).getUserName());
+                request.getSession().setAttribute("list", ulist);
+                response.sendRedirect("pages-search-results.jsp");
+
+        } else {
+            List<User> userList = dao.selectAll();
+            request.getSession().setAttribute("list", userList);
+            response.sendRedirect("pages-search-results.jsp");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

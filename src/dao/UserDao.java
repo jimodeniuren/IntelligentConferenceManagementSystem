@@ -135,7 +135,7 @@ public class UserDao extends DBUtils{
     }
 
     public List<User> selectById(String id){
-        String sql = "select * from tbl_user where host_id = " + id;
+        String sql = "select * from tbl_user where user_id = " + id;
 
         ResultSet rs = doQuery(sql, null);
 
