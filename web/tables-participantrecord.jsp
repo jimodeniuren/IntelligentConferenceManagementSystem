@@ -12,7 +12,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>ª·“È≤Œº”º«¬º≤È—Ø</title>
+    <title>‰ºöËÆÆÂèÇÂä†ËÆ∞ÂΩïÊü•ËØ¢</title>
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
@@ -260,13 +260,13 @@
                     <ul class="list-unstyled">
                         <li class="divider"></li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> ∏ˆ»À÷––ƒ</a>
+                            <a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> ‰∏™‰∫∫‰∏≠ÂøÉ</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> À¯∆¡</a>
+                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> ÈîÅÂ±è</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> µ«≥ˆ</a>
+                            <a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> ÁôªÂá∫</a>
                         </li>
                     </ul>
                 </div>
@@ -282,7 +282,7 @@
 
             <div class="sidebar-header">
                 <div class="sidebar-title">
-                    «≥≤›ª·“È
+                    ÊµÖËçâ‰ºöËÆÆ
                 </div>
                 <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
                     <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -296,22 +296,22 @@
                             <li class="nav-parent nav-expanded nav-active">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>ª·“È≤È—Ø</span>
+                                    <span>‰ºöËÆÆÊü•ËØ¢</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="tables-advanced.jsp">
-                                            ª·“È “◊¥Ã¨≤È—Ø
+                                            ‰ºöËÆÆÂÆ§Áä∂ÊÄÅÊü•ËØ¢
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tables-attendencerecord.jsp">
-                                            ª·“È«©µΩ«Èøˆ≤È—Ø
+                                            ‰ºöËÆÆÁ≠æÂà∞ÊÉÖÂÜµÊü•ËØ¢
                                         </a>
                                     </li>
                                     <li class="nav-active">
                                         <a href="tables-participantrecord.jsp">
-                                            ª·“È≤Œº”º«¬º≤È—Ø
+                                            ‰ºöËÆÆÂèÇÂä†ËÆ∞ÂΩïÊü•ËØ¢
                                         </a>
                                     </li>
                                 </ul>
@@ -319,17 +319,17 @@
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>ª·“È‘§∂®</span>
+                                    <span>‰ºöËÆÆÈ¢ÑÂÆö</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="forms-basic.jsp">
-                                            ∑¢∆–¬ª·“È
+                                            ÂèëËµ∑Êñ∞‰ºöËÆÆ
                                         </a>
                                     </li>
                                     <li>
                                         <a href="pages-blank.jsp">
-                                            ≤Èø¥“—‘§∂©µƒª·“È
+                                            Êü•ÁúãÂ∑≤È¢ÑËÆ¢ÁöÑ‰ºöËÆÆ
                                         </a>
                                     </li>
                                 </ul>
@@ -337,38 +337,8 @@
                             <li>
                                 <a href="test.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>”Ô“Ùª·“È</span>
+                                    <span>ËØ≠Èü≥‰ºöËÆÆ</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="pages-search-results.jsp">
-                                    <i class="fa fa-tasks" aria-hidden="true"></i>
-                                    <span>»®œﬁ…Ë÷√</span>
-                                </a>
-                            </li>
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-table" aria-hidden="true"></i>
-                                    <span>ª·“Èπ‹¿Ì</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="ui-elements-portlets.jsp">
-                                            ª·“È‘§∂®…Û∫À
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-editable.jsp">
-                                            ª·“È “øÿ÷∆÷––ƒ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-elements-charts.jsp">
-                                            ª·“È “ π”√«Èøˆ
-                                        </a>
-                                    </li>
-
-                                </ul>
                             </li>
 
                         </ul>
@@ -383,7 +353,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>ª·“Èº«¬º</h2>
+                <h2>‰ºöËÆÆËÆ∞ÂΩï</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -392,7 +362,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>ª·“Èº«¬º</span></li>
+                        <li><span>‰ºöËÆÆËÆ∞ÂΩï</span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -407,16 +377,16 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">ª·“È≤Œº”º«¬º≤È—Ø</h2>
+                    <h2 class="panel-title">‰ºöËÆÆÂèÇÂä†ËÆ∞ÂΩïÊü•ËØ¢</h2>
                 </header>
                 <div class="panel-body">
                     <table class="table table-bordered table-striped mb-none" id="datatable-default">
                         <thead>
                         <tr>
-                            <th>ª·“ÈID</th>
-                            <th>ª·“È√˚≥∆</th>
-                            <th>≤Œ”Î’ﬂID</th>
-                            <th>≤Œ”Î’ﬂ√˚≥∆</th>
+                            <th>‰ºöËÆÆID</th>
+                            <th>‰ºöËÆÆÂêçÁß∞</th>
+                            <th>ÂèÇ‰∏éËÄÖID</th>
+                            <th>ÂèÇ‰∏éËÄÖÂêçÁß∞</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -1404,5 +1374,5 @@
 </body>
 </html>
 
-<%@ page language="java" contentType="text/html; charset=GB18030"
-         pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>

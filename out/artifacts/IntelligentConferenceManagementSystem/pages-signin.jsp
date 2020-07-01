@@ -90,7 +90,7 @@
 							</div>
 							<p class="text-center">还没有账号? <a href="pages-signup.jsp">注册!</a></p>
 						</form>
-					</div>
+					</form>
 				</div>
 
 				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2018. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a></p>

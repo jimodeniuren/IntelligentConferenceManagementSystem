@@ -132,7 +132,45 @@ public class UserEditServlet extends HttpServlet {
         System.out.println(amax);
         String astatus=request.getParameter("astatus");
         String aadd=request.getParameter("aadd");
-        String ares=request.getParameter("ares");
+        String ares="";
+        String fgh="、";
+        String apro=request.getParameter("apro");
+        System.out.println(apro);
+        String apc=request.getParameter("apc");
+        String amic=request.getParameter("amic");
+        String adm=request.getParameter("adm");
+        String awb=request.getParameter("awb");
+        if(apro==null)
+        {System.out.println("apro null");}
+        else ares=ares+apro;
+        if(apc==null)
+        {System.out.println("apc null");}
+        else if(ares.equals(""))
+        {
+            ares=ares+apc;
+        }
+        else ares=ares+fgh+apc;
+        if(amic==null)
+        {;}
+        else if(ares.equals(""))
+        {
+            ares=ares+amic;
+        }
+        else ares=ares+fgh+amic;
+        if(adm==null)
+        {;}
+        else if(ares.equals(""))
+        {
+            ares=ares+adm;
+        }
+        else ares=ares+fgh+adm;
+        if(awb==null)
+        {;}
+        else if(ares.equals(""))
+        {
+            ares=ares+awb;
+        }
+        else ares=ares+fgh+awb;
         ConferenceRoom conf=new ConferenceRoom();
         conf.setId(aid!=null&&!aid.equals("")?Integer.parseInt(aid):0);
         conf.setMax(amax!=null&&!amax.equals("")?Integer.parseInt(amax):0);

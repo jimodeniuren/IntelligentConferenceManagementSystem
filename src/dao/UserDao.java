@@ -114,7 +114,7 @@ public class UserDao extends DBUtils{
         return 0;
     }
     public List<User> selectAll() {
-        String sql = "select * from tbl_user";
+        String sql = "select * from tbl_user where user_identity!="+"\"administrator\"";
 
         ResultSet rs = doQuery(sql, null);
 

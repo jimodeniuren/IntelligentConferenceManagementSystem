@@ -1,4 +1,4 @@
-<%--
+<%@ page import="dao.UserDao" %><%--
   Created by IntelliJ IDEA.
   User: lin
   Date: 2020/6/28
@@ -16,7 +16,13 @@
     if (cookies != null) {
         for (Cookie c : cookies) {
             if(c.getName().equals("userID")){
-                response.sendRedirect("tables-advanced.jsp");
+                UserDao userDao = new UserDao();
+                System.out.println();
+                if(userDao.getUserInfo(Integer.parseInt(c.getValue()))[4].equals("administrator")){
+                    response.sendRedirect("pages-search-results.jsp");
+                }else{
+                    response.sendRedirect("tables-advanced.jsp");
+                }
                 session.setAttribute("userID",c.getValue());
                 return;
             }

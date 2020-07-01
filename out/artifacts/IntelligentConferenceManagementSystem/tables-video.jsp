@@ -12,7 +12,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>会议签到</title>
+    <title>语音会议</title>
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
@@ -304,7 +304,7 @@
                                             会议室状态查询
                                         </a>
                                     </li>
-                                    <li class="nav-active">
+                                    <li>
                                         <a href="tables-attendencerecord.jsp">
                                             会议签到情况查询
                                         </a>
@@ -334,11 +334,41 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="test.html">
+                            <li  class="nav-active">
+                                <a href="tables-video.jsp">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
+                            </li>
+                            <li>
+                                <a href="pages-search-results.jsp">
+                                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                                    <span>权限设置</span>
+                                </a>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-table" aria-hidden="true"></i>
+                                    <span>会议管理</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="ui-elements-portlets.jsp">
+                                            会议预定审核
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-editable.jsp">
+                                            会议室控制中心
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-elements-charts.jsp">
+                                            会议室使用情况
+                                        </a>
+                                    </li>
+
+                                </ul>
                             </li>
 
                         </ul>
@@ -353,7 +383,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>会议签到</h2>
+                <h2>视频会议</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -362,7 +392,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>会议签到</span></li>
+                        <li><span>视频会议</span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -377,80 +407,15 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">会议签到</h2>
+                    <h2 class="panel-title">视频会议</h2>
                 </header>
                 <div class="panel-body">
-                    <form action="tables-attendencerecord.jsp?isinsert=true" method="post">
+                    <form action=servlet.BookServlet method="post">
                         <div class="form-group mb-lg">
-                            <input name="insertid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="输入要签到的会议ID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">签到</button>
-                            <%
-                                try{
-                                    if (request.getParameter("isinsert").equals("true")){
-                                        AttendenceRecordDao dao =new AttendenceRecordDao();
-                                        ConferenceDao dao1 = new ConferenceDao();
-                                        UserDao dao2 = new UserDao();
-                                        String conferenceId = request.getParameter("insertid");
-                                        String conferenceName = dao1.getNameById(conferenceId);
-                                        String userId = request.getSession().getAttribute("userID").toString();
-                                        String userName = dao2.getNameById(userId);
-                                        if (conferenceName.equals("会议不存在！")){
-                                            out.print("会议不存在！");
-                                        }
-                                        else{
-                                            AttendenceRecord attendenceRecord = new AttendenceRecord(Integer.parseInt(conferenceId), conferenceName, Integer.parseInt(userId), userName);
-                                            out.print(dao.insert(attendenceRecord));
-                                        }
-                                    }
-                                }catch (Exception e){}
-                            %>
+                            <input name="insertid" type="search"  style="width:350px;Float:left;" class="form-control" placeholder="输入视频会议房间号(没有则自动创建)" aria-controls="datatable-default"/>
+                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">进入</button>
                         </div>
                     </form>
-                </div>
-            </section>
-            <!-- start: page -->
-            <section class="panel">
-                <header class="panel-heading">
-                    <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
-                        <a href="#" class="fa fa-times"></a>
-                    </div>
-                    <h2 class="panel-title">会议签到情况查询</h2>
-                </header>
-                <div class="panel-body">
-                    <form action="tables-attendencerecord.jsp?isresult=true" method="post">
-                        <div class="form-group mb-lg">
-                            <input name="searchid" type="search"  style="width:250px;Float:left;" class="form-control" placeholder="输入要查询签到情况的会议ID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs">查询</button>
-                        </div>
-                    </form>
-                    <% try {
-                        if(request.getParameter("isresult").equals("true"))
-                        {%>
-                    <table class="table table-bordered table-striped mb-none" id="datatable-default">
-                        <thead>
-                        <tr>
-                            <th>会议ID</th>
-                            <th>会议名称</th>
-                            <th>参与者ID</th>
-                            <th>参与者名称</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <%
-                            AttendenceRecordDao dao = new AttendenceRecordDao();
-                            List<AttendenceRecord> attendenceRecords = dao.selectById(request.getParameter("searchid"),0);
-                            for (AttendenceRecord x:attendenceRecords){
-                        %>
-                        <tr class="gradeA">
-                            <td><%=x.getConferenceId()%></td>
-                            <td><%=x.getConferenceName()%></td>
-                            <td><%=x.getParticipantId()%></td>
-                            <td><%=x.getParticipantName()%></td>
-                        </tr><%}%>
-                        </tbody>
-                    </table>
-                    <%}} catch (Exception e){}%>
                 </div>
             </section>
         </section>
