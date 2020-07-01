@@ -1,6 +1,7 @@
 <%@ page import="dao.ConferenceDao" %>
 <%@ page import="entity.Conference" %>
 <%@ page import="java.util.List" %>
+<%@ page import="dao.UserDao" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -55,7 +56,7 @@
 				<!-- start: search & user box -->
 				<div class="header-right">
 			
-					<form action="pages-search-results.html" class="search nav-form">
+					<form action="pages-search-results.jsp" class="search nav-form">
 						<div class="input-group input-search">
 							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
 							<span class="input-group-btn">
@@ -234,9 +235,15 @@
 							<figure class="profile-picture">
 								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
+							<%
+								UserDao userDao=new UserDao();
+								String id_str = (String) request.getSession().getAttribute("userID");
+								int id = Integer.parseInt(id_str);
+								Object userInfo[] = userDao.getUserInfo(id);
+							%>
+							<div class="profile-info" data-lock-name=<%=userInfo[1]%> data-lock-email=<%=userInfo[3]%>>
+								<span class="name"><%=userInfo[1]%></span>
+								<span class="role"><%=userInfo[3]%></span>
 							</div>
 
 							<i class="fa custom-caret"></i>
@@ -246,13 +253,13 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> 个人中心</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> 锁屏</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> 登出</a>
 								</li>
 							</ul>
 						</div>
@@ -327,7 +334,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="pages-user-authority.jsp">
+										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>

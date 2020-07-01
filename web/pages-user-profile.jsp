@@ -57,7 +57,7 @@
 				<!-- start: search & user box -->
 				<div class="header-right">
 			
-					<form action="pages-search-results.html" class="search nav-form">
+					<form action="pages-search-results.jsp" class="search nav-form">
 						<div class="input-group input-search">
 							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
 							<span class="input-group-btn">
@@ -240,12 +240,12 @@
 							<%
 								UserDao userDao=new UserDao();
 								String id_str = (String) request.getSession().getAttribute("userID");
-								System.out.println(id_str);
 								int id = Integer.parseInt(id_str);
+								Object userInfo[] = userDao.getUserInfo(id);
 							%>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name"><%=userDao.getUserInfo(id)[1]%>></span>
-								<span class="role"><%=userDao.getUserInfo(id)[4]%>></span>
+							<div class="profile-info" data-lock-name=<%=userInfo[1]%> data-lock-email=<%=userInfo[3]%>>
+								<span class="name"><%=userInfo[1]%></span>
+								<span class="role"><%=userInfo[3]%></span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
