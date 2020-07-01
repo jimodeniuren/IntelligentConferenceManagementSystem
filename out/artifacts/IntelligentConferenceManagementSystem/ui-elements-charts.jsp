@@ -1,38 +1,39 @@
-<%@ page import="dao.UserDao" %>
-<%@ page import="java.util.List" %>
-<%@ page import="entity.User" %>
-<%@ page import="java.io.IOException" %>
-
+<%@ page import="entity.ConferenceRoom" %>
+<%@ page import="dao.ConferenceRoomDao" %>
+<%@ page import="java.util.*" %>
 <!doctype html>
-<html class="fixed search-results">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html class="fixed">
 <head>
 
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>权限设置</title>
-    <meta name="keywords" content="HTML5 Admin Template"/>
+    <title>会议室使用情况</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
 
     <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- Web Fonts  -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
-          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css"/>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css"/>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/morris/morris.css" />
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/stylesheets/theme.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/theme.css" />
 
     <!-- Skin CSS -->
-    <link rel="stylesheet" href="assets/stylesheets/skins/default.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/skins/default.css" />
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
@@ -48,10 +49,9 @@
     <header class="header">
         <div class="logo-container">
             <a href="../" class="logo">
-                <img src="assets/images/logo.png" height="35" alt="Porto Admin"/>
+                <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
             </a>
-            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
-                 data-fire-event="sidebar-left-opened">
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
                 <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
             </div>
         </div>
@@ -59,7 +59,7 @@
         <!-- start: search & user box -->
         <div class="header-right">
 
-            <form action="pages-search-results.jsp" class="search nav-form">
+            <form action="pages-search-results.html" class="search nav-form">
                 <div class="input-group input-search">
                     <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
                     <span class="input-group-btn">
@@ -91,8 +91,7 @@
                                         <span class="message pull-right text-dark">60%</span>
                                     </p>
                                     <div class="progress progress-xs light">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
                                     </div>
                                 </li>
 
@@ -102,8 +101,7 @@
                                         <span class="message pull-right text-dark">98%</span>
                                     </p>
                                     <div class="progress progress-xs light">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="98"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
                                     </div>
                                 </li>
 
@@ -113,8 +111,7 @@
                                         <span class="message pull-right text-dark">33%</span>
                                     </p>
                                     <div class="progress progress-xs light mb-xs">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="33"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
                                     </div>
                                 </li>
                             </ul>
@@ -138,8 +135,7 @@
                                 <li>
                                     <a href="#" class="clearfix">
                                         <figure class="image">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior"
-                                                 class="img-circle"/>
+                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle" />
                                         </figure>
                                         <span class="title">Joseph Doe</span>
                                         <span class="message">Lorem ipsum dolor sit.</span>
@@ -148,8 +144,7 @@
                                 <li>
                                     <a href="#" class="clearfix">
                                         <figure class="image">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Junior"
-                                                 class="img-circle"/>
+                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
                                         </figure>
                                         <span class="title">Joseph Junior</span>
                                         <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
@@ -158,8 +153,7 @@
                                 <li>
                                     <a href="#" class="clearfix">
                                         <figure class="image">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joe Junior"
-                                                 class="img-circle"/>
+                                            <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle" />
                                         </figure>
                                         <span class="title">Joe Junior</span>
                                         <span class="message">Lorem ipsum dolor sit.</span>
@@ -168,8 +162,7 @@
                                 <li>
                                     <a href="#" class="clearfix">
                                         <figure class="image">
-                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Junior"
-                                                 class="img-circle"/>
+                                            <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
                                         </figure>
                                         <span class="title">Joseph Junior</span>
                                         <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
@@ -177,7 +170,7 @@
                                 </li>
                             </ul>
 
-                            <hr/>
+                            <hr />
 
                             <div class="text-right">
                                 <a href="#" class="view-more">View All</a>
@@ -228,7 +221,7 @@
                                 </li>
                             </ul>
 
-                            <hr/>
+                            <hr />
 
                             <div class="text-right">
                                 <a href="#" class="view-more">View All</a>
@@ -243,18 +236,11 @@
             <div id="userbox" class="userbox">
                 <a href="#" data-toggle="dropdown">
                     <figure class="profile-picture">
-                        <img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle"
-                             data-lock-picture="assets/images/!logged-user.jpg"/>
+                        <img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
                     </figure>
-                    <%
-                        UserDao userDao=new UserDao();
-                        String id_str = (String) request.getSession().getAttribute("userID");
-                        int id = Integer.parseInt(id_str);
-                        Object userInfo[] = userDao.getUserInfo(id);
-                    %>
-                    <div class="profile-info" data-lock-name=<%=userInfo[1]%> data-lock-email=<%=userInfo[3]%>>
-                        <span class="name"><%=userInfo[1]%></span>
-                        <span class="role"><%=userInfo[3]%></span>
+                    <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                        <span class="name">John Doe Junior</span>
+                        <span class="role">administrator</span>
                     </div>
 
                     <i class="fa custom-caret"></i>
@@ -264,16 +250,13 @@
                     <ul class="list-unstyled">
                         <li class="divider"></li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i>
-                                个人中心</a>
+                            <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i>
-                                锁屏</a>
+                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i>
-                                登出</a>
+                            <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -291,8 +274,7 @@
                 <div class="sidebar-title">
                     浅草会议
                 </div>
-                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
-                     data-fire-event="sidebar-left-toggle">
+                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
                     <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
                 </div>
             </div>
@@ -324,7 +306,6 @@
                                     </li>
                                 </ul>
                             </li>
-
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -349,13 +330,13 @@
                                     <span>语音会议</span>
                                 </a>
                             </li>
-                            <li class="nav-active">
+                            <li>
                                 <a href="pages-search-results.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
                                     <span>权限设置</span>
                                 </a>
                             </li>
-                            <li class="nav-parent">
+                            <li class="nav-parent nav-expanded nav-active">
                                 <a>
                                     <i class="fa fa-table" aria-hidden="true"></i>
                                     <span>会议管理</span>
@@ -371,8 +352,8 @@
                                             会议室控制中心
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="ui-elements-charts.jsp">
+                                    <li class="nav-active">
+                                        <a href="ui-elements-charts.html">
                                             会议室使用情况
                                         </a>
                                     </li>
@@ -392,7 +373,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>查找结果</h2>
+                <h2>会议室使用情况</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -401,7 +382,8 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>权限设置</span></li>
+                        <li><span>会议室使用情况</span></li>
+                        <li><span>会议管理</span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -409,131 +391,179 @@
             </header>
 
             <!-- start: page -->
-            <div class="search-content">
-                <div class="search-control-wrapper">
-                    <form>
-                        <div class="form-group mb-lg">
-                            <input name="insertid" type="search" style="width:250px;Float:left;" class="form-control"
-                                   placeholder="请输入用户ID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">查找</button>
+            <h2 class="mt-none">图表展示</h2>
+            <p class="mb-lg">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+
+                            <h2 class="panel-title">会议室使用情况</h2>
+                            <p class="panel-subtitle">You don't have to do much to get an attractive plot. Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
+                        </header>
+                        <div class="panel-body">
+
+                            <!-- Flot: Basic -->
+                            <div class="chart chart-md" id="flotBasic"></div>
+                            <script type="text/javascript">
+
+                                var flotBasicData = [{
+                                    data: [
+                                        [8, 17],
+                                        [9, 16],
+                                        [10, 17],
+                                        [11, 18],
+                                        [12, 14],
+                                        [13, 11],
+                                        [14, 12],
+                                        [15, 16],
+                                        [16, 17],
+                                        [17, 12],
+                                        [18, 12]
+                                    ],
+                                    label: "空闲中",
+                                    color: "#0088cc"
+                                }, {
+                                    data: [
+                                        [8, 11],
+                                        [9, 12],
+                                        [10, 11],
+                                        [11, 12],
+                                        [12, 11],
+                                        [13, 8],
+                                        [14, 10],
+                                        [15, 14],
+                                        [16, 14],
+                                        [17, 10],
+                                        [18, 11]
+                                    ],
+                                    label: "使用中",
+                                    color: "#2baab1"
+                                }, {
+                                    data: [
+                                        [8, 4],
+                                        [9, 4],
+                                        [10, 4],
+                                        [11, 4],
+                                        [12, 4],
+                                        [13, 3],
+                                        [14, 2],
+                                        [15, 6],
+                                        [16, 7],
+                                        [17, 2],
+                                        [18, 2]
+                                    ],
+                                    label: "维修中",
+                                    color: "#734ba9"
+                                }];
+
+                                // See: assets/javascripts/ui-elements/examples.charts.js for more settings.
+
+                            </script>
+
                         </div>
-                    </form>
+                    </section>
                 </div>
-                <div class="search-toolbar">
-                    <ul class="list-unstyled nav nav-pills">
-                        <li class="active">
-                            <a href="#everything" data-toggle="tab">详细信息</a>
-                        </li>
-                        <li>
-                            <a href="#medias" data-toggle="tab">头像</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-content">
-                    <div id="everything" class="tab-pane active">
-                        <p class="total-results text-muted">展示47条结果中的1-10条</p>
-                        <ul class="list-unstyled search-results-list">
-                            <%
-									UserDao dao = new UserDao();
-                                List<User> ulist = dao.selectAll();
-                                for (User u : ulist) {
-                            %>
-                            <li>
-                                <p class="result-type">
-                                    <span class="label label-primary">User</span>
-                                </p>
-                                <a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
-                                    <div class="result-thumb">
-                                        <img src="assets/images/!logged-user.jpg" alt="John Doe"/>
-                                    </div>
-                                    <div class="result-data">
-                                        <p class="h3 title text-primary"><%=u.getUserName()%>
-                                        </p>
-                                        <p class="description">
-                                            <label>ID：</label><label><%=u.getUserID()%>
-                                        </label><br>
-                                            <label>邮箱：</label><label><%=u.getUserEmail()%>
-                                        </label><br>
-                                            <label>部门：</label><label><%=u.getUserDepartment()%>
-                                        </label><br>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                            <%
 
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+
+                            <h2 class="panel-title">会议室状态</h2>
+                            <p class="panel-subtitle">从左到右分别为.</p>
+                            <%
+                            ConferenceRoomDao dao=new ConferenceRoomDao();
+                            List<ConferenceRoom> list =dao.getAllData();
+                            int i=0,total=0, freerate=0;
+                            String sta="free";
+                            for(ConferenceRoom cl:list)
+                            {
+                                System.out.println(cl.getStatus());
+                                if(sta.equals(cl.getStatus()))
+                                    i=i+1;
+                                total=total+1;
+                            }
+                            System.out.println(i);
+                            if(total==0)
+                                    freerate=0;
+                                else
+                                    freerate=i*100/total;
+                            %>
+                        </header>
+                        <div class="panel-body">
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <div class="circular-bar">
+                                        <div class="circular-bar-chart" data-percent="<%=freerate%>>" data-plugin-options='{ "barColor": "#0088CC", "delay": 300 }'>
+                                            <strong>空闲中</strong>
+                                            <label><span class="percent">52</span>%</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%
+                                    int j=0, busyrate=0;
+                                    total=0;
+                                    String stb="busy";
+                                    for(ConferenceRoom cl:list)
+                                    {
+                                        System.out.println(cl.getStatus());
+                                        if(stb.equals(cl.getStatus()))
+                                            j=j+1;
+                                        total=total+1;
                                     }
-                            %>
-                            <%--
-                            <li>
-                                <p class="result-type">
-                                    <span class="label label-primary">user</span>
-                                </p>
-                                <a href="pages-user-authority.html" class="has-thumb">
-                                    <div class="result-thumb">
-                                        <img src="assets/images/!logged-user.jpg" alt="John Doe" />
+                                    System.out.println(j);
+                                    if(total==0)
+                                        busyrate=0;
+                                    else
+                                        busyrate=j*100/total;
+                                %>
+                                <div class="col-md-3">
+                                    <div class="circular-bar">
+                                        <div class="circular-bar-chart" data-percent="<%=busyrate%>>" data-plugin-options='{ "barColor": "#2BAAB1", "delay": 600 }'>
+                                            <strong>使用中</strong>
+                                            <label><span class="percent">45</span>%</label>
+                                        </div>
                                     </div>
-                                    <div class="result-data">
-                                        <p class="h3 title text-primary">张三</p>
-                                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
+                                </div>
+                                <%
+                                    int k=0, repairrate=0;
+                                    total=0;
+                                    String stc="repair";
+                                    for(ConferenceRoom cl:list)
+                                    {
+                                        if(stc.equals(cl.getStatus()))
+                                            k=k+1;
+                                        total=total+1;
+                                    }
+                                    System.out.println(k);
+                                    if(total==0)
+                                        repairrate=0;
+                                    else
+                                        repairrate=k*100/total;
+                                %>
+                                <div class="col-md-3">
+                                    <div class="circular-bar">
+                                        <div class="circular-bar-chart" data-percent="<%=repairrate%>>" data-plugin-options='{ "barColor": "#734ba9", "delay": 600 }'>
+                                            <strong>维修中</strong>
+                                            <label><span class="percent">3</span>%</label>
+                                        </div>
                                     </div>
-                                </a>
-                            </li>
-                            --%>
-                        </ul>
-
-                        <hr class="solid mb-none"/>
-
-                        <ul class="pagination">
-                            <li class="prev disabled">
-                                <a href="#">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                            <li class="next">
-                                <a href="#">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="medias" class="tab-pane">
-                        <div class="row">
-                            <%for (User u : ulist) {%>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-                                <div class="thumbnail">
-                                    <div class="thumb-preview">
-                                        <a class="thumb-image" href="#">
-                                            <img src="assets/images/projects/project-2.jpg" class="img-responsive"
-                                                 alt="Project">
-                                        </a>
-                                    </div>
-                                    <h5 class="mg-title text-semibold"><%=u.getUserName()%><small><%=u.getUserIdentity()%></small></h5>
                                 </div>
                             </div>
-                            <%}%>
                         </div>
-                    </div>
-                    <div id="emails" class="tab-pane">
-                        <p>Recent</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
-                    </div>
+                    </section>
                 </div>
             </div>
             <!-- end: page -->
@@ -551,7 +581,7 @@
 
                     <div class="sidebar-widget widget-calendar">
                         <h6>Upcoming Tasks</h6>
-                        <div data-plugin-datepicker data-plugin-skin="dark"></div>
+                        <div data-plugin-datepicker data-plugin-skin="dark" ></div>
 
                         <ul>
                             <li>
@@ -618,6 +648,21 @@
 <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+<script src="assets/vendor/flot/jquery.flot.js"></script>
+<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="assets/vendor/raphael/raphael.js"></script>
+<script src="assets/vendor/morris/morris.js"></script>
+<script src="assets/vendor/gauge/gauge.js"></script>
+<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
+
 <!-- Theme Base, Components and Settings -->
 <script src="assets/javascripts/theme.js"></script>
 
@@ -627,8 +672,8 @@
 <!-- Theme Initialization Files -->
 <script src="assets/javascripts/theme.init.js"></script>
 
+
+<!-- Examples -->
+<script src="assets/javascripts/ui-elements/examples.charts.js"></script>
 </body>
 </html>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>

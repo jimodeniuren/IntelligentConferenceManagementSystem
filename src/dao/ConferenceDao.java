@@ -16,6 +16,12 @@ import java.util.List;
 public class ConferenceDao extends DBUtils {
     public String insert(Conference conference) {
 
+        ConferenceRoomDao dao =new ConferenceRoomDao();
+        if (dao.getStatusById(String.valueOf(conference.getMrId())).equals("会议室不存在！")
+                ||conference.getEndTime().compareTo(conference.getStartTime())<=0){
+            return "预定失败！";
+        }
+
         Object[] params
                 = {conference.getConferenceName()
                 , conference.getConferenceType(), conference.getMrId()

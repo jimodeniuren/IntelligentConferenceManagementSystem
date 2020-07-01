@@ -296,13 +296,29 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li>
-                                <a href="tables-advanced.jsp">
-                                    <i class="fa fa-home" aria-hidden="true"></i>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
                                     <span>会议查询</span>
                                 </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="tables-advanced.jsp">
+                                            会议室状态查询
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-attendencerecord.jsp">
+                                            会议签到情况查询
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-participantrecord.jsp">
+                                            会议参加记录查询
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -315,7 +331,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="forms-advanced.jsp">
+                                        <a href="pages-blank.jsp">
                                             查看已预订的会议
                                         </a>
                                     </li>
@@ -340,7 +356,7 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="tables-basic.html">
+                                        <a href="ui-elements-portlets.jsp">
                                             会议预定审核
                                         </a>
                                     </li>
@@ -349,9 +365,9 @@
                                             会议室控制中心
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="tables-editable.jsp">
-                                            应急调度
+                                    <li >
+                                        <a href="ui-elements-charts.jsp">
+                                            会议室使用情况
                                         </a>
                                     </li>
 
@@ -456,7 +472,11 @@
                             <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>&max=<%=max%>&status=<%=status%>&add=<%=add%>&res=<%=res%>" method="post" id="change">
                             <td> <input type="text" name="cid"  value="<%=id%>"></td>
                             <td><input type="text" name="cmax" value="<%=max%>"></td>
-                            <td><input type="text" name="cstatus" value="<%=status%>"></td>
+                            <td><select name="cstatus">
+                                <option value="free">空闲中</option>
+                                <option value="busy">占用中</option>
+                                <option value="repair">维修中</option>
+                            </select></td>
                             <td><input type="text" name="cadd" value="<%=add%>"></td>
                             <td><input type="text" name="cres" value="<%=res%>"></td>
                             <td class="actions">
