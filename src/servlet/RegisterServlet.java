@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
         if(request.getParameter("agreeterms")!=null&&request.getParameter("agreeterms").equals("on")){
             if(password.equals(password_confirm)){
                 User user= new User();
-                user.setUserDepartment("人事部");
+                user.setUserDepartment("策划部");
                 user.setUserIdentity("attendee");
                 user.setUserName(name);
                 user.setUserPwd(password);
