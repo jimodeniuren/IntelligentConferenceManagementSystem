@@ -56,6 +56,31 @@ public class ConferenceRoomDao extends DBUtils {
         return i;
     }
 
+    public List<ConferenceRoom> getAllConferenceRoom(){
+        String sql = "select * from tbl_mr";
+
+        ResultSet rs = doQuery(sql, null);
+
+        List<ConferenceRoom> conferenceRooms = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                 conferenceRooms.add(new ConferenceRoom(
+                         rs.getInt(1),
+                         rs.getString(2),
+                         rs.getInt(3),
+                         rs.getString(4),
+                         rs.getString(5)));
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return conferenceRooms;
+    }
+
     public String getStatusById(String id){
         String sql = "select * from tbl_mr where mr_id = " + id;
 
