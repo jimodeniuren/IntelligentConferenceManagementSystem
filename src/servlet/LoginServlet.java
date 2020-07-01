@@ -28,8 +28,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("userID",userDao.getUserID(emailAddr));
             if(userDao.getUserInfo(userDao.getUserID(emailAddr))[4].equals("administrator")){
-               //response.sendRedirect("test.jsp?id=3");
-                response.sendRedirect("tables-advanced.jsp");
+                response.sendRedirect("pages-search-results.jsp");
             }else{
                 response.sendRedirect("tables-advanced.jsp");
             }

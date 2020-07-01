@@ -17,8 +17,9 @@
         for (Cookie c : cookies) {
             if(c.getName().equals("userID")){
                 UserDao userDao = new UserDao();
-                if(userDao.getUserInfo(Integer.parseInt(c.getValue())).equals("administrator")){
-                    response.sendRedirect("test.jsp");
+                System.out.println();
+                if(userDao.getUserInfo(Integer.parseInt(c.getValue()))[4].equals("administrator")){
+                    response.sendRedirect("pages-search-results.jsp");
                 }else{
                     response.sendRedirect("tables-advanced.jsp");
                 }

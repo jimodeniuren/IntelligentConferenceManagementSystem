@@ -42,7 +42,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="../" class="logo">
+					<a href="pages-search-results.jsp" class="logo">
 						<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -52,181 +52,9 @@
 			
 				<!-- start: search & user box -->
 				<div class="header-right">
-			
-					<form action="pages-search-results.jsp" class="search nav-form">
-						<div class="input-group input-search">
-							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</form>
-			
+
 					<span class="separator"></span>
-			
-					<ul class="notifications">
-						<li>
-							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-								<i class="fa fa-tasks"></i>
-								<span class="badge">3</span>
-							</a>
-			
-							<div class="dropdown-menu notification-menu large">
-								<div class="notification-title">
-									<span class="pull-right label label-default">3</span>
-									Tasks
-								</div>
-			
-								<div class="content">
-									<ul>
-										<li>
-											<p class="clearfix mb-xs">
-												<span class="message pull-left">Generating Sales Report</span>
-												<span class="message pull-right text-dark">60%</span>
-											</p>
-											<div class="progress progress-xs light">
-												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-											</div>
-										</li>
-			
-										<li>
-											<p class="clearfix mb-xs">
-												<span class="message pull-left">Importing Contacts</span>
-												<span class="message pull-right text-dark">98%</span>
-											</p>
-											<div class="progress progress-xs light">
-												<div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
-											</div>
-										</li>
-			
-										<li>
-											<p class="clearfix mb-xs">
-												<span class="message pull-left">Uploading something big</span>
-												<span class="message pull-right text-dark">33%</span>
-											</p>
-											<div class="progress progress-xs light mb-xs">
-												<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-								<i class="fa fa-envelope"></i>
-								<span class="badge">4</span>
-							</a>
-			
-							<div class="dropdown-menu notification-menu">
-								<div class="notification-title">
-									<span class="pull-right label label-default">230</span>
-									Messages
-								</div>
-			
-								<div class="content">
-									<ul>
-										<li>
-											<a href="#" class="clearfix">
-												<figure class="image">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle" />
-												</figure>
-												<span class="title">Joseph Doe</span>
-												<span class="message">Lorem ipsum dolor sit.</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="clearfix">
-												<figure class="image">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
-												</figure>
-												<span class="title">Joseph Junior</span>
-												<span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="clearfix">
-												<figure class="image">
-													<img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle" />
-												</figure>
-												<span class="title">Joe Junior</span>
-												<span class="message">Lorem ipsum dolor sit.</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="clearfix">
-												<figure class="image">
-													<img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
-												</figure>
-												<span class="title">Joseph Junior</span>
-												<span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
-											</a>
-										</li>
-									</ul>
-			
-									<hr />
-			
-									<div class="text-right">
-										<a href="#" class="view-more">View All</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-								<i class="fa fa-bell"></i>
-								<span class="badge">3</span>
-							</a>
-			
-							<div class="dropdown-menu notification-menu">
-								<div class="notification-title">
-									<span class="pull-right label label-default">3</span>
-									Alerts
-								</div>
-			
-								<div class="content">
-									<ul>
-										<li>
-											<a href="#" class="clearfix">
-												<div class="image">
-													<i class="fa fa-thumbs-down bg-danger"></i>
-												</div>
-												<span class="title">Server is Down!</span>
-												<span class="message">Just now</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="clearfix">
-												<div class="image">
-													<i class="fa fa-lock bg-warning"></i>
-												</div>
-												<span class="title">User Locked</span>
-												<span class="message">15 minutes ago</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="clearfix">
-												<div class="image">
-													<i class="fa fa-signal bg-success"></i>
-												</div>
-												<span class="title">Connection Restaured</span>
-												<span class="message">10/10/2014</span>
-											</a>
-										</li>
-									</ul>
-			
-									<hr />
-			
-									<div class="text-right">
-										<a href="#" class="view-more">View All</a>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-			
-					<span class="separator"></span>
-			
+
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
@@ -249,9 +77,6 @@
 						<div class="dropdown-menu">
 							<ul class="list-unstyled">
 								<li class="divider"></li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> 个人中心</a>
-								</li>
 								<li>
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> 锁屏</a>
 								</li>
@@ -283,82 +108,29 @@
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>会议查询</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="tables-advanced.jsp">
-													会议室状态查询
-												</a>
-											</li>
-											<li>
-												<a href="tables-attendencerecord.jsp">
-													会议签到情况查询
-												</a>
-											</li>
-											<li>
-												<a href="tables-participantrecord.jsp">
-													会议参加记录查询
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>会议预定</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="forms-basic.jsp">
-													发起新会议
-												</a>
-											</li>
-											<li>
-												<a href="pages-blank.jsp">
-													查看已预订的会议
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="test.html">
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>语音会议</span>
-										</a>
-									</li>
 									<li class="nav-active">
 										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>权限设置</span>
 										</a>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>会议管理</span>
+									<li>
+										<a href="ui-elements-portlets.jsp">
+											<i class="fa fa-list-alt"></i>
+											<span>会议预定审核</span>
 										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="ui-elements-portlets.jsp">
-													会议预定审核
-												</a>
-											</li>
-											<li>
-												<a href="tables-editable.jsp">
-													会议室控制中心
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-charts.jsp">
-													会议室使用情况
-												</a>
-											</li>
-
-										</ul>
+									</li>
+									<li>
+										<a href="tables-editable.jsp">
+											<i class="fa fa-columns"></i>
+											<span>会议室控制中心</span>
+										</a>
+									</li>
+									<li>
+										<a href="ui-elements-charts.jsp">
+											<i class="fa fa-table"></i>
+											<span>会议室使用情况</span>
+										</a>
 									</li>
 
 								</ul>
@@ -377,11 +149,6 @@
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
-								<li>
-									<a href="test.html">
-										<i class="fa fa-home"></i>
-									</a>
-								</li>
 								<li><span>权限设置</span></li>
 							</ol>
 					

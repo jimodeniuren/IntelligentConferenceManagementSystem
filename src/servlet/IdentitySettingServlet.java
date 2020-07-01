@@ -23,7 +23,9 @@ public class IdentitySettingServlet extends HttpServlet {
         if(userDao.getUserInfo(userID)[4].equals("administrator")){
             if(request.getParameter("ID")==null){
                 out.print("<script language='javascript'>alert('user do not exist');window.history.go(-1);</script>");
-            }else {
+            }else if(userDao.getIdentityById(request.getParameter("ID")).equals("administrator")){
+                out.print("<script language='javascript'>alert('user do not exist');window.history.go(-2);</script>");
+            }else{
                 int id = Integer.parseInt(request.getParameter("ID"));
                 System.out.println(id + request.getParameter("testID"));
                 String identity = request.getParameter("indentity");
