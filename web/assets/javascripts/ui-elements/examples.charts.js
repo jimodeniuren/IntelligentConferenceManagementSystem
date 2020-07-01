@@ -36,7 +36,7 @@
 			},
 			yaxis: {
 				min: 0,
-				max: 200,
+				max: 20,
 				color: 'rgba(0,0,0,0.1)'
 			},
 			xaxis: {
@@ -47,7 +47,7 @@
 				content: '%s: Value of %x is %y',
 				shifts: {
 					x: -60,
-					y: 25
+					y: 4
 				},
 				defaultTheme: false
 			}

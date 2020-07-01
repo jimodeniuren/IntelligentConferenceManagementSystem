@@ -60,7 +60,7 @@
 		<!-- start: search & user box -->
 		<div class="header-right">
 
-			<form action="pages-search-results.html" class="search nav-form">
+			<form action="pages-search-results.jsp" class="search nav-form">
 				<div class="input-group input-search">
 					<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
 					<span class="input-group-btn">
@@ -360,7 +360,7 @@
 										</a>
 									</li>
 									<li class="nav-active">
-										<a href="ui-elements-charts.html">
+										<a href="ui-elements-charts.jsp">
 											会议室使用情况
 										</a>
 									</li>
