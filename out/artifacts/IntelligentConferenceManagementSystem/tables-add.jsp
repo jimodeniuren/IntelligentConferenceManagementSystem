@@ -289,13 +289,29 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li>
-                                <a href="tables-advanced.jsp">
-                                    <i class="fa fa-home" aria-hidden="true"></i>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
                                     <span>会议查询</span>
                                 </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="tables-advanced.jsp">
+                                            会议室状态查询
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-attendencerecord.jsp">
+                                            会议签到情况查询
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-participantrecord.jsp">
+                                            会议参加记录查询
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -308,7 +324,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="forms-advanced.jsp">
+                                        <a href="pages-blank.jsp">
                                             查看已预订的会议
                                         </a>
                                     </li>
@@ -333,7 +349,7 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="tables-basic.html">
+                                        <a href="ui-elements-portlets.jsp">
                                             会议预定审核
                                         </a>
                                     </li>
@@ -342,9 +358,9 @@
                                             会议室控制中心
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="tables-editable.jsp">
-                                            应急调度
+                                    <li >
+                                        <a href="ui-elements-charts.jsp">
+                                            会议室使用情况
                                         </a>
                                     </li>
 
@@ -422,7 +438,11 @@
                             <form action="servlet.UserEditServlet?caozuo=tianjia" method="post" id="add">
                                 <td> <input type="text" name="aid" ></td>
                                 <td><input type="text" name="amax" ></td>
-                                <td><input type="text" name="astatus" ></td>
+                                <td><select name="astatus">
+                                    <option value="free">空闲中</option>
+                                    <option value="busy">占用中</option>
+                                    <option value="repair">维修中</option>
+                                </select></td>
                                 <td><input type="text" name="aadd" ></td>
                                 <td><input type="text" name="ares" ></td>
                                 <td class="actions">
@@ -561,6 +581,3 @@
 <script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
 </body>
 </html>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>

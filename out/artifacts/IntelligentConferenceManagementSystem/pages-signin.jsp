@@ -47,7 +47,7 @@
 						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 登录</h2>
 					</div>
 					<div class="panel-body">
-						<form action="servlet.LoginServlet" method="post">
+						<div action="servlet.LoginServlet" method="post">
 							<div class="form-group mb-lg">
 								<label>邮箱</label>
 								<div class="input-group input-group-icon">
@@ -81,14 +81,13 @@
 										<input id="RememberMe" name="rememberme" type="checkbox"/>
 										<label for="RememberMe">记住我</label>
 									</div>
-									</div>
 								</div>
 								<div class="col-sm-4 text-right">
 									<button type="submit" class="btn btn-primary hidden-xs">登录</button>
 									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
 								</div>
-
-							<p class="text-center">还没有账号? <a href="pages-signup.jsp">注册!</a>
+							</div>
+							<p class="text-center">还没有账号? <a href="pages-signup.jsp">注册!</a></p>
 
 						</form>
 					</div>
