@@ -242,7 +242,7 @@
 							</figure>
 							<%
 								UserDao userDao=new UserDao();
-								String id_str = (String) request.getSession().getAttribute("userID");
+								String id_str = request.getSession().getAttribute("userID").toString();
 								int id = Integer.parseInt(id_str);
 								Object userInfo[] = userDao.getUserInfo(id);
 							%>
@@ -334,7 +334,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="index.html">
+										<a href="test.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
 											<span>语音会议</span>
 										</a>
@@ -387,7 +387,7 @@
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
-									<a href="index.html">
+									<a href="test.html">
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
@@ -425,18 +425,16 @@
 										<a href="#" class="fa fa-times"></a>
 									</div>
 
-									<h2 class="panel-title"><%=x.getConferenceId()%></h2>
+									<h2 class="panel-title"><%=x.getConferenceName()%></h2>
 								</header>
 								<div class="panel-body">
-									<label>申请人：<%=x.getHostId()%></label><br>
+									<label>申请人：<%=userDao.getNameById(x.getHostId()+"")%></label><br>
 									<label>举办部门：<%=x.getHostDepartment()%></label><br>
 									<label>会议室：<%=x.getMrId()%></label><br>
 									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>
 									<form method="post">
-										<%--<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success" formaction="ui-elements-portlets.jsp?isPass=true">通过</button>
-										<button type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" formaction="ui-elements-portlets.jsp?isReject=true">不通过</button>--%>
 											<button type="button" class="mb-xs mt-xs mr-xs btn btn-success"  onclick="pass(<%=x.getConferenceId()%>)">通过</button>
                                             <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger" onclick="reject(<%=x.getConferenceId()%>)">不通过</button>
 											<script>
@@ -447,25 +445,7 @@
 													window.location.href = "servlet.reviewConf?caozuo=reject&id="+value;
 												}
 											</script>
-											<%-- <script>
-													document.getElementById("pass").onclick = pass;
-													document.getElementById("reject").onclick = reject;
-                                                    /*function Reject() {
-														&lt;%&ndash;<%System.out.println("Reject");
-                                                        x.setConferenceStatus(2);
-                                                        dao.update(x);%>&ndash;%&gt;
-                                                    }*/
-                                                </script>--%><%--
-										<%System.out.println("111111111");
-											if (request.getParameter("isPass").equals("true")){
-												System.out.println("111111111");x.setConferenceStatus(1);
-										}
-											if (request.getParameter("isReject").equals("true"))
-												x.setConferenceStatus(2);
-
-										%>--%>
 									</form>
-
 
 								</div>
 							</section>

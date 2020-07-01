@@ -85,4 +85,14 @@
         <servlet-name>UserInfoEditServlet</servlet-name>
         <url-pattern>/servlet.UserInfoEditServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>reviewConf</servlet-name>
+        <servlet-class>servlet.reviewConf</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>reviewConf</servlet-name>
+        <url-pattern>/servlet.reviewConf</url-pattern>
+    </servlet-mapping>
 </web-app>

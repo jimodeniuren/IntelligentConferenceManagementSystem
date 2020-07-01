@@ -247,7 +247,7 @@
                     </figure>
                     <%
                         UserDao userDao=new UserDao();
-                        String id_str = (String) request.getSession().getAttribute("userID");
+                        String id_str = request.getSession().getAttribute("userID").toString();
                         int id = Integer.parseInt(id_str);
                         Object userInfo[] = userDao.getUserInfo(id);
                     %>
@@ -338,7 +338,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="test.html">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
@@ -391,7 +391,7 @@
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="index.html">
+                            <a href="test.html">
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
