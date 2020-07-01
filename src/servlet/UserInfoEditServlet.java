@@ -20,7 +20,7 @@ public class UserInfoEditServlet extends HttpServlet {
         String dep = request.getParameter("department");
         //dep = new String(dep.getBytes("ISO-8859-1"),"UFT-8");
         System.out.println(dep+request.getSession().getAttribute("userID"));
-        userDao.editUserInfo(dep,Integer.parseInt((String)request.getSession().getAttribute("userID")));
+        userDao.editUserInfo(dep,Integer.parseInt(request.getSession().getAttribute("userID").toString()));
         PrintWriter out = response.getWriter();
         out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('success');window.location.href='pages-user-profile.jsp';</script>");
         out.flush();
