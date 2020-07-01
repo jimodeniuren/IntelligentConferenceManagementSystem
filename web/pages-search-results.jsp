@@ -433,7 +433,7 @@
                 </div>
                 <div class="tab-content">
                     <div id="everything" class="tab-pane active">
-                        <p class="total-results text-muted">展示47条结果中的1-10条</p>
+                        <p class="total-results text-muted"></p>
                         <ul class="list-unstyled search-results-list">
                             <%
                                 if(request.getSession().getAttribute("list")!=null){

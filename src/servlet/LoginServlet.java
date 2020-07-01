@@ -27,7 +27,13 @@ public class LoginServlet extends HttpServlet {
             }
             HttpSession session = request.getSession();
             session.setAttribute("userID",userDao.getUserID(emailAddr));
-            response.sendRedirect("tables-advanced.jsp");
+            if(userDao.getUserInfo(userDao.getUserID(emailAddr))[4].equals("administrator")){
+               //response.sendRedirect("test.jsp?id=3");
+                response.sendRedirect("tables-advanced.jsp");
+            }else{
+                response.sendRedirect("tables-advanced.jsp");
+            }
+
         }else {
             out.print("<script language='javascript'>alert('Wrong Email Or Password!');window.history.go(-1);</script>");
         }
