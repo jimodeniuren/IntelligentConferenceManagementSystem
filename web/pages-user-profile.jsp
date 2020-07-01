@@ -358,7 +358,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-charts.html">
+												<a href="ui-elements-charts.jsp">
 													 会议室使用情况
 												</a>
 											</li>

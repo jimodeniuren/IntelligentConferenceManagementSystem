@@ -1,3 +1,4 @@
+<%@ page import="dao.UserDao" %>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -5,7 +6,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>ф╝Ъшооходф╜┐чФицГЕхЖ╡</title>
+		<title>╗с╥щ╩╥╩╣╙├╟щ┐Ў</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -55,7 +56,7 @@
 				<!-- start: search & user box -->
 				<div class="header-right">
 			
-					<form action="pages-search-results.html" class="search nav-form">
+					<form action="pages-search-results.jsp" class="search nav-form">
 						<div class="input-group input-search">
 							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
 							<span class="input-group-btn">
@@ -234,9 +235,15 @@
 							<figure class="profile-picture">
 								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
+							<%
+							UserDao userDao=new UserDao();
+							String id_str = (String) request.getSession().getAttribute("userID");
+							int id = Integer.parseInt(id_str);
+							Object userInfo[] = userDao.getUserInfo(id);
+							%>
+							<div class="profile-info" data-lock-name=<%=userInfo[1]%> data-lock-email=<%=userInfo[3]%>>
+								<span class="name"><%=userInfo[1]%></span>
+								<span class="role"><%=userInfo[3]%></span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
@@ -246,13 +253,13 @@
 							<ul class="list-unstyled">
 								<li class="divider"></li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.jsp"><i class="fa fa-user"></i> ╕Ў╚╦╓╨╨─</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> ╦°╞┴</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="pages-signin.jsp"><i class="fa fa-power-off"></i> ╡╟│Ў</a>
 								</li>
 							</ul>
 						</div>
@@ -268,7 +275,7 @@
 
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							ц╡ЕшНЙф╝Ъшоо
+							╟│▓▌╗с╥щ
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -282,22 +289,22 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ф╝ЪшооцЯешпв</span>
+											<span>╗с╥щ▓щ╤п</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="tables-advanced.jsp">
-													ф╝ЪшооходчК╢цАБцЯешпв
+													╗с╥щ╩╥╫┤╠м▓щ╤п
 												</a>
 											</li>
 											<li>
 												<a href="tables-attendencerecord.jsp">
-													ф╝Ъшоочн╛хИ░цГЕхЖ╡цЯешпв
+													╗с╥щ╟й╡╜╟щ┐Ў▓щ╤п
 												</a>
 											</li>
 											<li>
 												<a href="tables-participantrecord.jsp">
-													ф╝ЪшоохПВхКашо░х╜ХцЯешпв
+													╗с╥щ▓╬╝╙╝╟┬╝▓щ╤п
 												</a>
 											</li>
 										</ul>
@@ -305,17 +312,17 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>ф╝ЪшоощвДхоЪ</span>
+											<span>╗с╥щ╘д╢и</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="forms-basic.jsp">
-													хПСш╡╖цЦ░ф╝Ъшоо
+													╖в╞Ё╨┬╗с╥щ
 												</a>
 											</li>
 											<li>
 												<a href="pages-blank.jsp">
-													цЯечЬЛх╖▓щвДшовчЪДф╝Ъшоо
+													▓щ┐┤╥╤╘д╢й╡─╗с╥щ
 												</a>
 											</li>
 										</ul>
@@ -323,34 +330,34 @@
 									<li>
 										<a href="index.html">
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>шпнщЯ│ф╝Ъшоо</span>
+											<span>╙я╥Ї╗с╥щ</span>
 										</a>
 									</li>
 									<li>
 										<a href="pages-search-results.jsp">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>цЭГщЩРшо╛ч╜о</span>
+											<span>╚и╧▐╔ш╓├</span>
 										</a>
 									</li>
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>ф╝ЪшоочобчРЖ</span>
+											<span>╗с╥щ╣▄└э</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="ui-elements-portlets.jsp">
-													ф╝ЪшоощвДхоЪхобца╕
+													╗с╥щ╘д╢и╔є║╦
 												</a>
 											</li>
 											<li>
 												<a href="tables-editable.jsp">
-													ф╝ЪшооходцОзхИ╢ф╕нх┐Г
+													╗с╥щ╩╥┐╪╓╞╓╨╨─
 												</a>
 											</li>
 											<li class="nav-active">
-												<a href="ui-elements-charts.html">
-													ф╝Ъшооходф╜┐чФицГЕхЖ╡
+												<a href="ui-elements-charts.jsp">
+													╗с╥щ╩╥╩╣╙├╟щ┐Ў
 												</a>
 											</li>
 
@@ -369,7 +376,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>ф╝Ъшооходф╜┐чФицГЕхЖ╡</h2>
+						<h2>╗с╥щ╩╥╩╣╙├╟щ┐Ў</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -378,8 +385,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>ф╝Ъшооходф╜┐чФицГЕхЖ╡</span></li>
-								<li><span>ф╝ЪшоочобчРЖ</span></li>
+								<li><span>╗с╥щ╩╥╩╣╙├╟щ┐Ў</span></li>
+								<li><span>╗с╥щ╣▄└э</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -387,7 +394,7 @@
 					</header>
 
 					<!-- start: page -->
-						<h2 class="mt-none">хЫ╛шбих▒Хчд║</h2>
+						<h2 class="mt-none">═╝▒э╒╣╩╛</h2>
 						<p class="mb-lg">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
 						
 						<div class="row">
@@ -399,7 +406,7 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 						
-										<h2 class="panel-title">ф╝Ъшооходф╜┐чФицГЕхЖ╡</h2>
+										<h2 class="panel-title">╗с╥щ╩╥╩╣╙├╟щ┐Ў</h2>
 										<p class="panel-subtitle">You don't have to do much to get an attractive plot. Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
 									</header>
 									<div class="panel-body">
@@ -422,7 +429,7 @@
 													[17, 12],
 													[18, 12]
 												],
-												label: "чй║щЧ▓ф╕н",
+												label: "┐╒╧╨╓╨",
 												color: "#0088cc"
 											}, {
 												data: [
@@ -438,7 +445,7 @@
 													[17, 10],
 													[18, 11]
 												],
-												label: "ф╜┐чФиф╕н",
+												label: "╩╣╙├╓╨",
 												color: "#2baab1"
 											}, {
 												data: [
@@ -454,7 +461,7 @@
 													[17, 2],
 													[18, 2]
 												],
-												label: "ч╗┤ф┐оф╕н",
+												label: "╬м╨▐╓╨",
 												color: "#734ba9"
 											}];
 						
@@ -476,15 +483,15 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 				
-										<h2 class="panel-title">ф╝ЪшооходчК╢цАБ</h2>
-										<p class="panel-subtitle">ф╗Ох╖жхИ░хП│хИЖхИлф╕║.</p>
+										<h2 class="panel-title">╗с╥щ╩╥╫┤╠м</h2>
+										<p class="panel-subtitle">┤╙╫є╡╜╙╥╖╓▒Ё╬к.</p>
 									</header>
 									<div class="panel-body">
 										<div class="row text-center">
 											<div class="col-md-3">
 												<div class="circular-bar">
 													<div class="circular-bar-chart" data-percent="52" data-plugin-options='{ "barColor": "#0088CC", "delay": 300 }'>
-														<strong>чй║щЧ▓ф╕н</strong>
+														<strong>┐╒╧╨╓╨</strong>
 														<label><span class="percent">52</span>%</label>
 													</div>
 												</div>
@@ -492,7 +499,7 @@
 											<div class="col-md-3">
 												<div class="circular-bar">
 													<div class="circular-bar-chart" data-percent="45" data-plugin-options='{ "barColor": "#2BAAB1", "delay": 600 }'>
-														<strong>ф╜┐чФиф╕н</strong>
+														<strong>╩╣╙├╓╨</strong>
 														<label><span class="percent">45</span>%</label>
 													</div>
 												</div>
@@ -500,7 +507,7 @@
 											<div class="col-md-3">
 												<div class="circular-bar">
 													<div class="circular-bar-chart" data-percent="3" data-plugin-options='{ "barColor": "#734ba9", "delay": 600 }'>
-														<strong>ч╗┤ф┐оф╕н</strong>
+														<strong>╬м╨▐╓╨</strong>
 														<label><span class="percent">3</span>%</label>
 													</div>
 												</div>
@@ -620,4 +627,6 @@
 		<!-- Examples -->
 		<script src="assets/javascripts/ui-elements/examples.charts.js"></script>
 	</body>
-</html>
+</
+<%@ page language="java" contentType="text/html; charset=GB18030"
+		 pageEncoding="GB18030"%>>
