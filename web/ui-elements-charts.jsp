@@ -413,6 +413,7 @@
 							<h2 class="panel-title">会议室使用情况</h2>
 							<p class="panel-subtitle">You don't have to do much to get an attractive plot. Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
 						</header>
+						
 						<div class="panel-body">
 
 							<!-- Flot: Basic -->
