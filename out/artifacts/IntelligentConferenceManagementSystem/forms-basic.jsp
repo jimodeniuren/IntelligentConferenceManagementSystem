@@ -240,7 +240,7 @@
 							</figure>
 							<%
 								UserDao userDao=new UserDao();
-								String id_str = (String) request.getSession().getAttribute("userID");
+								String id_str = request.getSession().getAttribute("userID").toString();
 								int id = Integer.parseInt(id_str);
 								Object userInfo[] = userDao.getUserInfo(id);
 							%>

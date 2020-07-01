@@ -47,7 +47,7 @@
 						<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> 登录</h2>
 					</div>
 					<div class="panel-body">
-						<div action="servlet.LoginServlet" method="post">
+						<form action="servlet.LoginServlet" method="post">
 							<div class="form-group mb-lg">
 								<label>邮箱</label>
 								<div class="input-group input-group-icon">
@@ -59,7 +59,7 @@
 									</span>
 								</div>
 							</div>
-
+<%System.out.println("111111");%>
 							<div class="form-group mb-lg">
 								<div class="clearfix">
 									<label class="pull-left">密码</label>
@@ -82,18 +82,18 @@
 										<label for="RememberMe">记住我</label>
 									</div>
 								</div>
+
 								<div class="col-sm-4 text-right">
 									<button type="submit" class="btn btn-primary hidden-xs">登录</button>
 									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
 								</div>
 							</div>
 							<p class="text-center">还没有账号? <a href="pages-signup.jsp">注册!</a></p>
-
 						</form>
 					</div>
 				</div>
 
-				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2018. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2018. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a></p>
 			</div>
 		</section>
 		<!-- end: page -->

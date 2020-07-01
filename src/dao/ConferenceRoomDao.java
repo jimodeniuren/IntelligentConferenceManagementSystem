@@ -61,10 +61,11 @@ public class ConferenceRoomDao extends DBUtils {
 
         ResultSet rs = doQuery(sql, null);
 
+        String result = "";
+
         try {
             if (rs.next()) {
-                getClose();
-                return "会议室的状态为：" + rs.getString(4);
+                result = rs.getString(4);
             }
 
         } catch (SQLException e) {
@@ -72,7 +73,7 @@ public class ConferenceRoomDao extends DBUtils {
             e.printStackTrace();
         }
         getClose();
-        return "会议室不存在！";
+        return result.equals("")?"会议室不存在！":result;
     }
     public static List getAllData()
     {
