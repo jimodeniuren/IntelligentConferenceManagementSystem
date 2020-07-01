@@ -87,11 +87,11 @@ public class ConferenceRoomDao extends DBUtils {
         }
 
         try {
-            String url = "jdbc:mysql://localhost:3306/words?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+            String url = "jdbc:mysql://121.89.200.33:3306/icms?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
             String user = "root";
-            String password = "";
+            String password = "146325";
             con = DriverManager.getConnection(url, user, password);
-            String sql = "select * from mr";
+            String sql = "select * from tbl_mr";
             psmt = con.prepareStatement(sql);
             rs = psmt.executeQuery();
             while (rs.next()) {
