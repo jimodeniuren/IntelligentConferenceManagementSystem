@@ -149,6 +149,11 @@
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
+								<li>
+									<a href="index.html">
+										<i class="fa fa-home"></i>
+									</a>
+								</li>
 								<li><span>权限设置</span></li>
 							</ol>
 					
