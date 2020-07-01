@@ -393,14 +393,17 @@
 
 					<div class="row">
 						<div class="col-md-4 col-lg-3">
-
+							<%
+								int setid = Integer.parseInt(request.getParameter("id"));
+								Object Info[] = userDao.getUserInfo(setid);
+							%>
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
 										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner" ><%=userInfo[1]%></span>
-											<span class="thumb-info-type"><%=userInfo[4]%></span>
+											<span class="thumb-info-inner" ><%=Info[1]%></span>
+											<span class="thumb-info-type"><%=Info[4]%></span>
 										</div>
 									</div>
 
@@ -436,7 +439,7 @@
 													<div class="form-group">
 														<label class="col-md-3 control-label" for="profileID">ID</label>
 														<div class="col-md-8">
-															<input type="text" class="form-control" id="profileID" value="<%=id%>" name="ID">
+															<input type="text" class="form-control" id="profileID" value="<%=setid%>" name="ID">
 														</div>
 														<script>
 															function test() {
@@ -451,14 +454,14 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileName">姓名</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileName" value="<%=userInfo[1]%>" readonly>
+														<input type="text" class="form-control" id="profileName" value="<%=Info[1]%>" readonly>
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileDep">部门</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileDep" value="<%=userInfo[2]%>" readonly>
+														<input type="text" class="form-control" id="profileDep" value="<%=Info[2]%>" readonly>
 													</div>
 												</div>												
 												<div class="form-group">
@@ -486,7 +489,7 @@
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">
 														<button type="submit" class="btn btn-primary" onclick="test()">提交</button>
-														<button type="cancel" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
+														<button type="cancel" class="btn btn-default" onclick="javascript:history.go(-2);">取消</button>
 													</div>
 												</div>
 											</div>
