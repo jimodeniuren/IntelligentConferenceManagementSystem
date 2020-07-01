@@ -336,7 +336,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="test.html">
+										<a href="tables-video.jsp">
 											<i class="fa fa-columns" aria-hidden="true"></i>
 											<span>语音会议</span>
 										</a>
