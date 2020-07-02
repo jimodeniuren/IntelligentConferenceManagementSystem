@@ -157,7 +157,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>权限设置</h2>
+                <h2>会议室控制</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
