@@ -207,7 +207,7 @@
                             %>
                             <li>
                                 <p class="result-type">
-                                    <span class="label label-primary">User</span>
+                                    <span class="label label-primary"><%=u.getUserIdentity()%></span>
                                 </p>
                                 <a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="has-thumb">
                                     <div class="result-thumb">

@@ -187,7 +187,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <a href="tables-add.jsp" class="btn btn-primary" >添加<i class="fa fa-plus"></i></a>
+                                <a href="tables-add .jsp" class="btn btn-primary" >添加<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
