@@ -183,8 +183,8 @@
 
 									<hr class="dotted short">
 
-									<h6 class="text-muted">About</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
+									<h6 class="text-muted">关于</h6>
+									<p><%=Info[5]%></p>
 									<div class="clearfix">
 										<a class="text-uppercase text-muted pull-right" href="#">(View All)</a>
 									</div>
