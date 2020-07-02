@@ -337,7 +337,7 @@
                             <li  class="nav-active">
                                 <a href="tables-video.jsp">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>语音会议</span>
+                                    <span>视频会议</span>
                                 </a>
                             </li>
 
@@ -382,7 +382,7 @@
                 <div class="panel-body">
                     <form action=servlet.BookServlet method="post">
                         <div class="form-group mb-lg">
-                            <input name="insertid" type="search"  style="width:350px;Float:left;" class="form-control" placeholder="输入视频会议房间号(没有则自动创建)" aria-controls="datatable-default"/>
+                            <input name="insertid" type="search"  style="width:300px;Float:left;" class="form-control" placeholder="输入视频会议房间号(没有则自动创建)" aria-controls="datatable-default"/>
                             <button type="submit" class="btn btn-primary hidden-xs" style="Float:left;">进入</button>
                         </div>
                     </form>

@@ -263,7 +263,7 @@
 								ConferenceRoomDao dao=new ConferenceRoomDao();
 								List<ConferenceRoom> list =dao.getAllData();
 								int i=0,total=0, freerate=0;
-								String sta="free";
+								String sta="空闲中";
 								for(ConferenceRoom cl:list)
 								{
 									System.out.println(cl.getStatus());
@@ -291,7 +291,7 @@
 								<%
 									int j=0, busyrate=0;
 									total=0;
-									String stb="busy";
+									String stb="使用中";
 									for(ConferenceRoom cl:list)
 									{
 										System.out.println(cl.getStatus());
@@ -316,7 +316,7 @@
 								<%
 									int k=0, repairrate=0;
 									total=0;
-									String stc="repair";
+									String stc="维修中";
 									for(ConferenceRoom cl:list)
 									{
 										if(stc.equals(cl.getStatus()))

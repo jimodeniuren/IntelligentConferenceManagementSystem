@@ -381,93 +381,131 @@
             </header>
 
             <!-- start: page -->
-            <section class="panel">
-                <header class="panel-heading">
-                    <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
-                        <a href="#" class="fa fa-times"></a>
-                    </div>
+            <section role="main" class="content-body">
+                <header class="page-header">
+                    <h2>会议室控制中心</h2>
 
-                    <h2 class="panel-title">会议室控制中心</h2>
+                    <div class="right-wrapper pull-right">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="test.html">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li><span>会议室控制中心</span></li>
+                            <li><span>修改会议室</span></li>
+                        </ol>
+
+                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                    </div>
                 </header>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="mb-md">
-                                <button id="addToTable" class="btn btn-primary">添加 <i class="fa fa-plus"></i></button>
-                            </div>
+
+                <!-- start: page -->
+                <section class="panel">
+                    <header class="panel-heading">
+                        <div class="panel-actions">
+                            <a href="#" class="fa fa-caret-down"></a>
+                            <a href="#" class="fa fa-times"></a>
                         </div>
+
+                        <h2 class="panel-title">修改会议室</h2>
+                    </header>
+                    <%String roomid=request.getParameter("roomid");%>
+                    <%String max=request.getParameter("max");%>
+                    <%String status=request.getParameter("status");%>
+                    <%String add=request.getParameter("add");%>
+                    <%String res=request.getParameter("res");%>
+                    <div class="panel-body">
+                        <form class="form-horizontal form-bordered" action="servlet.UserEditServlet?caozuo=xiugai&roomid=<%=roomid%>&max=<%=max%>&status=<%=status%>&add=<%=add%>&res=<%=res%>" method="post" id="change"
+                              method="post" id="add">
+
+                            <%
+                                if ((String) request.getAttribute("str") == "false") {
+                            %>
+                            <script>
+                                alert("会议室id已被使用！");
+                            </script>
+                            <%
+                                }
+                            %>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputMrId">会议室ID</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="inputMrId" name="cid" value="<%=roomid%>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputMax">容纳人数</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="inputMax" name="cmax" value="<%=max%>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">会议室状态</label>
+                                <div class="col-md-6">
+                                    <select class="form-control mb-md" name="cstatus">
+                                        <option>空闲中</option>
+                                        <option>使用中</option>
+                                        <option>维修中</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputAddr">会议室地址</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputAddr" name="cadd" value="<%=add%>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">会议室资源</label>
+                                <div class="col-md-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="投影仪" name="cpro" >
+                                            投影仪
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="电脑" name="cpc">
+                                            电脑
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="麦克风" name="cmic">
+                                            麦克风
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="饮水机" name="cdm">
+                                            饮水机
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="白板" name="awb">
+                                            白板
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <a href="#" onclick="document:change.submit()"><i class="fa fa-save">保存</i></a>
+                            <a href="tables-editable.jsp"><i class="fa fa-times">取消</i></a>
+                        </form>
                     </div>
-                    <%
-                        if ((String)request.getAttribute("str") == "false") {
-                    %>
-                    <script>
-                        alert("会议室id已被使用！");
-                    </script>
-                    <%
-                        }
-                    %>
-                    <%
-                        if ((String)request.getAttribute("stri") == "false") {
-                    %>
-                    <script>
-                        alert("会议室id和容纳人数必须为整数且容纳人数不能为负！");
-                    </script>
-                    <%
-                        }
-                    %>
-                    <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>容纳人数</th>
-                            <th>会议室状态</th>
-                            <th>会议室地址</th>
-                            <th>资源</th>
-                            <th>编辑</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <%String id=request.getParameter("id");%>
-                        <%String max=request.getParameter("max");%>
-                        <%String status=request.getParameter("status");%>
-                        <%String add=request.getParameter("add");%>
-                        <%String res=request.getParameter("res");%>
-                        <tr class="gradeA">
-                            <td><%=id%></td>
-                            <td><%=max%></td>
-                            <td><%=status%></td>
-                            <td><%=add%></td>
-                            <td><%=res%></td>
-                            <td class="actions">
-                                <a href="#" class="hidden" ><i class="fa fa-trash-o"></i></a>
-
-
-                            </td>
-                        </tr>
-                        <tr class="gradeX">
-                            <form action="servlet.UserEditServlet?caozuo=xiugai&id=<%=id%>&max=<%=max%>&status=<%=status%>&add=<%=add%>&res=<%=res%>" method="post" id="change">
-                            <td> <input type="text" name="cid"  value="<%=id%>"></td>
-                            <td><input type="text" name="cmax" value="<%=max%>"></td>
-                            <td><select name="cstatus">
-                                <option value="free">空闲中</option>
-                                <option value="busy">占用中</option>
-                                <option value="repair">维修中</option>
-                            </select></td>
-                            <td><input type="text" name="cadd" value="<%=add%>"></td>
-                            <td><input type="text" name="cres" value="<%=res%>"></td>
-                            <td class="actions">
-                                <a href="#" onclick="document:change.submit()" ><i class="fa fa-save">保存</i></a>
-                                <a href="tables-editable.jsp" ><i class="fa fa-times">取消</i></a>
-                            </td>
-                            </form>
-                        </tr>
-                        </tbody>
-
-                    </table>
-
-                </div>
-            </section>
+                </section>
             <!-- end: page -->
         </section>
     </div>
