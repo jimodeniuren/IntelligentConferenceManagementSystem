@@ -69,7 +69,7 @@
                              data-lock-picture="assets/images/!logged-user.jpg"/>
                     </figure>
                     <%
-                        UserDao userDao=new UserDao();
+                        UserDao userDao = new UserDao();
                         String id_str = request.getSession().getAttribute("userID").toString();
                         int id = Integer.parseInt(id_str);
                         Object userInfo[] = userDao.getUserInfo(id);
@@ -127,20 +127,20 @@
                             </li>
                             <li>
                                 <a href="ui-elements-portlets.jsp">
-                                <i class="fa fa-list-alt"></i>
-                                <span>会议预定审核</span>
+                                    <i class="fa fa-list-alt"></i>
+                                    <span>会议预定审核</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="tables-editable.jsp">
-                                <i class="fa fa-columns"></i>
-                                <span>会议室控制中心</span>
+                                    <i class="fa fa-columns"></i>
+                                    <span>会议室控制中心</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="ui-elements-charts.jsp">
-                                <i class="fa fa-table"></i>
-                                <span>会议室使用情况</span>
+                                    <i class="fa fa-table"></i>
+                                    <span>会议室使用情况</span>
                                 </a>
                             </li>
 
@@ -179,7 +179,9 @@
                         <div class="form-group mb-lg">
                             <input name="insertid" type="search" style="width:250px;Float:left;" class="form-control"
                                    placeholder="请输入用户ID" aria-controls="datatable-default"/>
-                            <button type="submit" class="btn btn-primary hidden-xs" formaction="servlet.SelectServlet?caozuo=search" style="Float:left;">查找</button>
+                            <button type="submit" class="btn btn-primary hidden-xs"
+                                    formaction="servlet.SelectServlet?caozuo=search" style="Float:left;">查找
+                            </button>
                             <button type="submit" class="btn btn-default" style="Float:left;">显示全部</button>
                         </div>
                     </form>
@@ -199,11 +201,11 @@
                         <p class="total-results text-muted"></p>
                         <ul class="list-unstyled search-results-list">
                             <%
-                                if(request.getSession().getAttribute("list")!=null){
-                                ArrayList list = (ArrayList) request.getSession().getAttribute("list");
-                                System.out.println(list);
-                                for (Object i : list) {
-                                    User u = (User) i;
+                                if (request.getSession().getAttribute("list") != null) {
+                                    ArrayList list = (ArrayList) request.getSession().getAttribute("list");
+                                    System.out.println(list);
+                                    for (Object i : list) {
+                                        User u = (User) i;
                             %>
                             <li>
                                 <p class="result-type">
@@ -237,13 +239,17 @@
                     </div>
                     <div id="medias" class="tab-pane">
                         <div class="row">
-                         <%--   <%for (Object i : list) {
-                                User u=(User)i;
+                            <%
+                                if (request.getSession().getAttribute("list") != null) {
+                                    ArrayList list = (ArrayList) request.getSession().getAttribute("list");
+                                    System.out.println(list);
+                                    for (Object i : list) {
+                                        User u = (User) i;
                             %>
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail">
                                     <div class="thumb-preview">
-                                        <a class="thumb-image" href="#">
+                                        <a a href="pages-user-authority.jsp?id=<%=u.getUserID()%>" class="thumb-image" href="#">
                                             <img src="assets/images/projects/project-2.jpg" class="img-responsive"
                                                  alt="Project">
                                         </a>
@@ -252,7 +258,10 @@
                                     </small></h5>
                                 </div>
                             </div>
-                            <%}%>--%>
+                            <%
+                                    }
+                                }
+                            %>
                         </div>
                     </div>
                     <div id="emails" class="tab-pane">
@@ -276,27 +285,27 @@
                 <div class="sidebar-right-wrapper">
 
                     <div class="sidebar-widget widget-calendar">
-                        <h6>Upcoming Tasks</h6>
+                        <h6>接下来的会议</h6>
                         <div data-plugin-datepicker data-plugin-skin="dark"></div>
 
                         <ul>
                             <li>
-                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
-                                <span>Company Meeting</span>
+                                <time datetime="2020-07-19T00:00+00:00">04/19/2014</time>
+                                <span>企划会议</span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="sidebar-widget widget-friends">
-                        <h6>Friends</h6>
+                        <h6>好友</h6>
                         <ul>
                             <li class="status-online">
                                 <figure class="profile-picture">
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">李大嘴</span>
+                                    <span class="title">吃了吗您？</span>
                                 </div>
                             </li>
                             <li class="status-online">
@@ -304,8 +313,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">老番茄</span>
+                                    <span class="title">中午好！</span>
                                 </div>
                             </li>
                             <li class="status-offline">
@@ -313,8 +322,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">德文卷毛猫</span>
+                                    <span class="title">下午来找我一趟</span>
                                 </div>
                             </li>
                             <li class="status-offline">
@@ -322,8 +331,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">刘苏良</span>
+                                    <span class="title">中午一起去吃饭不？</span>
                                 </div>
                             </li>
                         </ul>
