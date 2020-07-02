@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="dao.UserDao" %>
+<%@ page import="entity.ConferenceRoom" %>
+<%@ page import="dao.ConferenceRoomDao" %>
 
 <!doctype html>
 <html class="fixed">
@@ -183,6 +185,7 @@
 
 							<%
 								ConferenceDao dao = new ConferenceDao();
+								ConferenceRoomDao crDao = new ConferenceRoomDao();
 								List<Conference> conferences = dao.getUnreviewedConference();
 								SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 								for (Conference x:conferences){
@@ -199,7 +202,7 @@
 								<div class="panel-body">
 									<label>申请人：<%=userDao.getNameById(x.getHostId()+"")%></label><br>
 									<label>举办部门：<%=x.getHostDepartment()%></label><br>
-									<label>会议室：<%=x.getMrId()%></label><br>
+									<label>会议室：<%=crDao.getNameByID(x.getMrId())%></label><br>
 									<label>会议时间：<%=x.getStartTime()+"-"+x.getEndTime()%></label><br>
 									<div class="col-md-3"></div>
 									<div class="col-md-2"></div>

@@ -100,6 +100,29 @@ public class ConferenceRoomDao extends DBUtils {
         getClose();
         return result.equals("")?"会议室不存在！":result;
     }
+
+    public String getNameByID(int id){
+        String sql = "select * from tbl_mr where mr_id = " + id;
+
+        ResultSet rs = doQuery(sql, null);
+
+        try {
+            if(rs.next()){
+                return rs.getString("mr_addr");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            if (rs!=null){
+                try {
+                    rs.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        }
+        return "error";
+    }
     public static List getAllData()
     {
         List<ConferenceRoom> list = new ArrayList<ConferenceRoom>();
