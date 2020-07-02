@@ -316,82 +316,29 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>会议查询</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="tables-advanced.jsp">
-                                            会议室状态查询
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-attendencerecord.jsp">
-                                            会议签到情况查询
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-participantrecord.jsp">
-                                            会议参加记录查询
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    <span>会议预定</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="forms-basic.jsp">
-                                            发起新会议
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-blank.jsp">
-                                            查看已预订的会议
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="test.html">
-                                    <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>语音会议</span>
-                                </a>
-                            </li>
                             <li>
                                 <a href="pages-search-results.jsp">
                                     <i class="fa fa-tasks" aria-hidden="true"></i>
                                     <span>权限设置</span>
                                 </a>
                             </li>
-                            <li class="nav-parent nav-expanded nav-active">
-                                <a>
-                                    <i class="fa fa-table" aria-hidden="true"></i>
-                                    <span>会议管理</span>
+                            <li>
+                                <a href="ui-elements-portlets.jsp">
+                                    <i class="fa fa-list-alt"></i>
+                                    <span>会议预定审核</span>
                                 </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="ui-elements-portlets.jsp">
-                                            会议预定审核
-                                        </a>
-                                    </li>
-                                    <li class="nav-active">
-                                        <a href="tables-editable.jsp">
-                                            会议室控制中心
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-elements-charts.jsp">
-                                            会议室使用情况
-                                        </a>
-                                    </li>
-
-                                </ul>
+                            </li>
+                            <li class="nav-active">
+                                <a href="tables-editable.jsp">
+                                    <i class="fa fa-columns"></i>
+                                    <span>会议室控制中心</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-elements-charts.jsp">
+                                    <i class="fa fa-table"></i>
+                                    <span>会议室使用情况</span>
+                                </a>
                             </li>
 
                         </ul>

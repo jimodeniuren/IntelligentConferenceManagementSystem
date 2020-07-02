@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="assets/vendor/jquery-datatables-bs3/assets/css/datatables.css"/>
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/stylesheets/theme.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/theme-change.css"/>
 
     <!-- Skin CSS -->
     <link rel="stylesheet" href="assets/stylesheets/skins/default.css"/>
@@ -372,23 +372,6 @@
 
             <!-- start: page -->
             <section role="main" class="content-body">
-                <header class="page-header">
-                    <h2>会议室控制中心</h2>
-
-                    <div class="right-wrapper pull-right">
-                        <ol class="breadcrumbs">
-                            <li>
-                                <a href="test.html">
-                                    <i class="fa fa-home"></i>
-                                </a>
-                            </li>
-                            <li><span>会议室控制中心</span></li>
-                            <li><span>修改会议室</span></li>
-                        </ol>
-
-                        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-                    </div>
-                </header>
 
                 <!-- start: page -->
                 <section class="panel">
