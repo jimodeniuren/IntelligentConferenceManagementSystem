@@ -499,27 +499,27 @@
                 <div class="sidebar-right-wrapper">
 
                     <div class="sidebar-widget widget-calendar">
-                        <h6>Upcoming Tasks</h6>
+                        <h6>接下来的会议</h6>
                         <div data-plugin-datepicker data-plugin-skin="dark"></div>
 
                         <ul>
                             <li>
-                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
-                                <span>Company Meeting</span>
+                                <time datetime="2020-07-19T00:00+00:00">04/19/2014</time>
+                                <span>企划会议</span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="sidebar-widget widget-friends">
-                        <h6>Friends</h6>
+                        <h6>好友</h6>
                         <ul>
                             <li class="status-online">
                                 <figure class="profile-picture">
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">李大嘴</span>
+                                    <span class="title">吃了吗您？</span>
                                 </div>
                             </li>
                             <li class="status-online">
@@ -527,8 +527,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">老番茄</span>
+                                    <span class="title">中午好！</span>
                                 </div>
                             </li>
                             <li class="status-offline">
@@ -536,8 +536,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">德文卷毛猫</span>
+                                    <span class="title">下午来找我一趟</span>
                                 </div>
                             </li>
                             <li class="status-offline">
@@ -545,8 +545,8 @@
                                     <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                                 </figure>
                                 <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
+                                    <span class="name">刘苏良</span>
+                                    <span class="title">中午一起去吃饭不？</span>
                                 </div>
                             </li>
                         </ul>
