@@ -21,25 +21,21 @@ public class UserInfoEditServlet extends HttpServlet {
         String pwd=request.getParameter("pwd");
         String pwd_confirm = request.getParameter("pwd_confirm");
         System.out.println(dep+request.getSession().getAttribute("userID"));
-        String caozuo = request.getParameter("caozuo");
         int id = Integer.parseInt(request.getSession().getAttribute("userID").toString());
-        if(caozuo.equals("dwd")){
+        if(pwd!=null&&pwd_confirm!=null){
             if(pwd.equals(pwd_confirm)){
                 userDao.updatePwd(pwd,id);
-                out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('success');window.location.href='pages-user-profile.jsp';</script>");
             }
-        }else if(caozuo.equals("dep")){
-            userDao.updateDep(dep,id);
-            out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('部门更新成功');window.location.href='pages-user-profile.jsp';</script>");
-        }else if(caozuo.equals("intro")){
-            userDao.updateIntro(request.getParameter("introduction"),id);
-            out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('introduction updated');window.location.href='pages-user-profile.jsp';</script>");
         }
-
-
+        if(!dep.equals(userDao.getUserInfo(id)[4])){
+            userDao.updateDep(dep,id);
+        }
+        if(!request.getParameter("intro").equals(userDao.getUserInfo(id)[5])){
+            userDao.updateIntro(request.getParameter("intro"),id);
+        }
+        out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('updated');window.location.href='pages-user-profile.jsp';</script>");
         out.flush();
         out.close();
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

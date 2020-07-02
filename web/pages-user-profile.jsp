@@ -353,7 +353,7 @@
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
-									<a href="test.html">
+									<a href="tables-advanced.jsp">
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
@@ -372,10 +372,10 @@
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
-										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="<%=userDao.getUserInfo(id)[1]%>">
+										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="<%=userInfo[1]%>">
 										<div class="thumb-info-title">
-											<span class="thumb-info-inner"><%=userDao.getUserInfo(id)[1]%></span>
-											<span class="thumb-info-type"><%=userDao.getUserInfo(id)[4]%></span>
+											<span class="thumb-info-inner"><%=userInfo[1]%></span>
+											<span class="thumb-info-type"><%=userInfo[4]%></span>
 										</div>
 									</div>
 
@@ -404,7 +404,7 @@
 									<hr class="dotted short">
 
 									<h6 class="text-muted">关于</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
+									<p><%=userInfo[5]%></p>
 									<div class="clearfix">
 										<a class="text-uppercase text-muted pull-right" href="#">(全部)</a>
 									</div>
@@ -632,7 +632,7 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">姓名</label>
 													<div class="col-md-8">
-														<label><%=userDao.getUserInfo(id)[1]%></label>
+														<label><%=userInfo[1]%></label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -644,13 +644,13 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-8">
-                                                        <label><%=userDao.getUserInfo(id)[3]%></label>
+                                                        <label><%=userInfo[3]%></label>
                                                     </div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label">部门</label>
 													<div class="col-md-6">
-														<select name="department" class="form-control mb-md">
+														<select name="department" id="dep" class="form-control mb-md">
 															<option id="ch" >策划部</option>
 															<option id="sj" >设计部</option>
 															<option id="mg" >美工部</option>
@@ -664,7 +664,7 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileBio">个人履历</label>
 													<div class="col-md-8">
-														<textarea class="form-control" rows="3" id="profileBio"></textarea>
+														<textarea class="form-control" rows="3" id="profileBio" name="intro"></textarea>
 													</div>
 												</div>
 												<div class="form-group">
@@ -683,13 +683,13 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPassword">输入新密码</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPassword">
+														<input type="text" class="form-control" id="profileNewPassword" name="pwd">
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPasswordRepeat">再次输入</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPasswordRepeat">
+														<input type="text" class="form-control" id="profileNewPasswordRepeat" name="pwd_confirm">
 													</div>
 												</div>
 											</fieldset>
