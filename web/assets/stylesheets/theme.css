@@ -16701,7 +16701,6 @@ html.search-results body {
 }
 .search-results-list .has-thumb {
 	display: table;
-	width: 100%;
 }
 .search-results-list .has-thumb .result-thumb,
 .search-results-list .has-thumb .result-data {
@@ -16709,7 +16708,7 @@ html.search-results body {
 	vertical-align: top;
 }
 .search-results-list .result-thumb {
-	padding-right: 25px;
+	padding-right: 50px;
 }
 .search-results-list .result-thumb img,
 .search-results-list .result-thumb .fa {
