@@ -41,7 +41,7 @@ public class UserDao extends DBUtils{
         getClose();
         return count;
     }
-    public int editUserInfo(String department,int id){
+    public int updateDep(String department,int id){
         Object params[]={department,id};
         String sql = "update tbl_user set user_department=? where user_id = ?";
         int count = doUpdate(sql,params);
@@ -51,6 +51,20 @@ public class UserDao extends DBUtils{
     public int updateIdentity(String identity ,int id){
         Object params[]={identity,id};
         String sql = "update tbl_user set user_identity=? where user_id = ?";
+        int count  = doUpdate(sql,params);
+        getClose();
+        return count;
+    }
+    public int updatePwd(String pwd ,int id){
+        Object params[]={pwd,id};
+        String sql = "update tbl_user set user_pwd=? where user_id = ?";
+        int count  = doUpdate(sql,params);
+        getClose();
+        return count;
+    }
+    public int updateIntro(String intro ,int id){
+        Object params[]={intro,id};
+        String sql = "update tbl_user set user_introducion=? where user_id = ?";
         int count  = doUpdate(sql,params);
         getClose();
         return count;
