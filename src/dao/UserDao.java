@@ -97,7 +97,8 @@ public class UserDao extends DBUtils{
         try {
             if(rs.next()){
                 Object params[]={rs.getInt("user_id"),rs.getString("user_name"),
-                        rs.getString("user_department"),rs.getString("user_emailAddr"),rs.getString("user_identity")};
+                        rs.getString("user_department"),rs.getString("user_emailAddr"),
+                        rs.getString("user_identity"),rs.getString("user_introduction")};
                 return params;
             }
         } catch (SQLException throwables) {
