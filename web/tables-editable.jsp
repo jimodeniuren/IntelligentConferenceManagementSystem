@@ -215,7 +215,7 @@
                             <td><%=cl.getAddress()%></td>
                             <td><%=cl.getResources()%></td>
                             <td class="actions">
-                                <a href="tables-change.jsp?id=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
+                                <a href="tables-change.jsp?roomid=<%=cl.getId()%>&max=<%=cl.getMax()%>&status=<%=cl.getStatus()%>&add=<%=cl.getAddress()%>&res=<%=cl.getResources()%>"><i class="fa fa-pencil">修改</i></a>
                                 <a href="servlet.UserEditServlet?caozuo=del&id=<%=cl.getId()%>"><i class="fa fa-trash-o">删除</i></a>
 
                             </td>

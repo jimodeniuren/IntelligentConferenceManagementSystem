@@ -64,7 +64,7 @@ public class UserEditServlet extends HttpServlet {
     protected void ChangeConfRoom(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         int oldid, changeid;
         int flag = 0;
-        String id = request.getParameter("id");
+        String id = request.getParameter("roomid");
         System.out.println(id);
         String max = request.getParameter("max");
         System.out.println(max);
@@ -77,7 +77,45 @@ public class UserEditServlet extends HttpServlet {
         System.out.println(cmax);
         String cstatus = request.getParameter("cstatus");
         String cadd = request.getParameter("cadd");
-        String cres = request.getParameter("cres");
+        String cres = "";
+        String fgh="、";
+        String cpro=request.getParameter("cpro");
+        System.out.println(cpro);
+        String cpc=request.getParameter("cpc");
+        String cmic=request.getParameter("cmic");
+        String cdm=request.getParameter("cdm");
+        String cwb=request.getParameter("cwb");
+        if(cpro==null)
+        {System.out.println("cpro null");}
+        else cres=cres+cpro;
+        if(cpc==null)
+        {System.out.println("cpc null");}
+        else if(cres.equals(""))
+        {
+            cres=cres+cpc;
+        }
+        else cres=cres+fgh+cpc;
+        if(cmic==null)
+        {;}
+        else if(cres.equals(""))
+        {
+            cres=cres+cmic;
+        }
+        else cres=cres+fgh+cmic;
+        if(cdm==null)
+        {;}
+        else if(cres.equals(""))
+        {
+            cres=cres+cdm;
+        }
+        else cres=cres+fgh+cdm;
+        if(cwb==null)
+        {;}
+        else if(cres.equals(""))
+        {
+            cres=cres+cwb;
+        }
+        else cres=cres+fgh+cwb;
         ConferenceRoom conf = new ConferenceRoom();
         if (!isInteger(cid)||!isInteger(cmax)||Integer.parseInt(cmax)<0) {
             System.out.println("change false");
