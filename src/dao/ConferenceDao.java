@@ -108,6 +108,29 @@ public class ConferenceDao extends DBUtils {
         getClose();
         return result.equals("")?"会议不存在！":result;
     }
+    public List<Conference> getConfByDep(String Dep){
+        String sql = "select * from tbl_conference where end_time > NOW() and conference_status=1 and host_department = ?";
+        Object params[]={Dep};
+        ResultSet rs = doQuery(sql, params);
+
+        List<Conference> list = new ArrayList<>();
+
+        try {
+            if (rs.next()) {
+                list.add(new Conference(rs.getString(1),rs.getInt(2),
+                        rs.getInt(3),rs.getInt(4),rs.getInt(5),
+                        rs.getString(6),rs.getTimestamp(7),rs.getTimestamp(8),
+                        rs.getInt(9)));
+                System.out.println(rs.getString("conference_name"));
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        getClose();
+        return list;
+    }
 
     public List<Conference> getUnstartedConference(){
         String sql = "select * from tbl_conference where end_time > NOW()";

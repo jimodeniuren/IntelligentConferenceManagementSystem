@@ -64,7 +64,7 @@ public class UserDao extends DBUtils{
     }
     public int updateIntro(String intro ,int id){
         Object params[]={intro,id};
-        String sql = "update tbl_user set user_introducion=? where user_id = ?";
+        String sql = "update tbl_user set user_introduction=? where user_id = ?";
         int count  = doUpdate(sql,params);
         getClose();
         return count;

@@ -22,18 +22,28 @@ public class UserInfoEditServlet extends HttpServlet {
         String pwd_confirm = request.getParameter("pwd_confirm");
         System.out.println(dep+request.getSession().getAttribute("userID"));
         int id = Integer.parseInt(request.getSession().getAttribute("userID").toString());
-        if(pwd!=null&&pwd_confirm!=null){
-            if(pwd.equals(pwd_confirm)){
-                userDao.updatePwd(pwd,id);
-            }
-        }
+        int count=0;
         if(!dep.equals(userDao.getUserInfo(id)[4])){
             userDao.updateDep(dep,id);
+            count++;
         }
         if(!request.getParameter("intro").equals(userDao.getUserInfo(id)[5])){
             userDao.updateIntro(request.getParameter("intro"),id);
+            System.out.println(request.getParameter("intro"));
+            count++;
         }
-        out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('updated');window.location.href='pages-user-profile.jsp';</script>");
+        if(pwd!=null&&pwd_confirm!=null){
+            if((!pwd.equals(""))&&pwd.equals(pwd_confirm)){
+                System.out.println(pwd);
+                userDao.updatePwd(pwd,id);
+                count++;
+            }else if(!pwd.equals(pwd_confirm)){
+                out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('pwd error');</script>");
+            }
+        }
+        if(count>0)
+            out.print("<script type='text/javascript' charset='UTF-8' language='javascript'>alert('updated');</script>");
+        response.sendRedirect("pages-user-profile.jsp");
         out.flush();
         out.close();
     }

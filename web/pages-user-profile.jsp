@@ -1,6 +1,9 @@
 
 <%@ page import="entity.User" %>
 <%@ page import="dao.UserDao" %>
+<%@ page import="dao.ConferenceDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="entity.Conference" %>
 
 <!doctype html>
 <html class="fixed">
@@ -649,11 +652,19 @@
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label">部门</label>
+													<%
+														if(userInfo[2].equals("策划部"))
+															session.setAttribute("dep1","selected");
+														else if(userInfo[2].equals("设计部"))
+															session.setAttribute("dep2","selected");
+														else if(userInfo[2].equals("美工部"))
+															session.setAttribute("dep3","selected");
+													%>
 													<div class="col-md-6">
 														<select name="department" id="dep" class="form-control mb-md">
-															<option id="ch" >策划部</option>
-															<option id="sj" >设计部</option>
-															<option id="mg" >美工部</option>
+															<option id="ch" ${sessionScope["dep1"]}>策划部</option>
+															<option id="sj" ${sessionScope["dep2"]}>设计部</option>
+															<option id="mg" ${sessionScope["dep3"]}>美工部</option>
 														</select>
 													</div>
 												</div>
@@ -664,18 +675,10 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileBio">个人履历</label>
 													<div class="col-md-8">
-														<textarea class="form-control" rows="3" id="profileBio" name="intro"></textarea>
+														<textarea class="form-control" rows="5" id="profileBio" name="intro"><%=userInfo[5]%></textarea>
 													</div>
 												</div>
-												<div class="form-group">
-													<label class="col-xs-3 control-label mt-xs pt-none">公开</label>
-													<div class="col-md-8">
-														<div class="checkbox-custom checkbox-default checkbox-inline mt-xs">
-															<input type="checkbox" checked="" id="profilePublic">
-															<label for="profilePublic"></label>
-														</div>
-													</div>
-												</div>
+
 											</fieldset>
 											<hr class="dotted tall">
 											<h4 class="mb-xlg">修改密码</h4>
@@ -683,13 +686,13 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPassword">输入新密码</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPassword" name="pwd">
+														<input type="password" class="form-control" id="profileNewPassword" name="pwd">
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPasswordRepeat">再次输入</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPasswordRepeat" name="pwd_confirm">
+														<input type="password" class="form-control" id="profileNewPasswordRepeat" name="pwd_confirm">
 													</div>
 												</div>
 											</fieldset>
@@ -712,22 +715,18 @@
 
 							<h4 class="mb-md">会议</h4>
 							<ul class="simple-bullet-list mb-xlg">
-								<li class="red">
-									<span class="title">Porto Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
+								<%
+									ConferenceDao conferenceDao = new ConferenceDao();
+									List<Conference> confList = conferenceDao.getConfByDep(userInfo[2].toString());
+									for(Conference conf:confList){
+								%>
+								<li>
+									<span class="title"><%=conf.getConferenceName()%></span>
+									<span class="description truncate"><%=conf.getStartTime()+"--"+conf.getEndTime()%></span>
 								</li>
-								<li class="green">
-									<span class="title">Tucson HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit amet</span>
-								</li>
-								<li class="blue">
-									<span class="title">Porto HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-								<li class="orange">
-									<span class="title">Tucson Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
+								<%
+									}
+								%>
 							</ul>
 
 							<h4 class="mb-md">消息</h4>
