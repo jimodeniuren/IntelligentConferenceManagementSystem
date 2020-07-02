@@ -335,37 +335,7 @@
 											<span>语音会议</span>
 										</a>
 									</li>
-									<li>
-										<a href="pages-search-results.jsp">
-											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>权限设置</span>
-										</a>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>会议管理</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="ui-elements-portlets.jsp">
-													会议预定审核
-												</a>
-											</li>
-											<li>
-												<a href="tables-editable.jsp">
-													会议室控制中心
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-charts.jsp">
-													 会议室使用情况
-												</a>
-											</li>
-		
-										</ul>
-									</li>
-		
+
 								</ul>
 							</nav>
 		
@@ -402,10 +372,9 @@
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
-										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="John Doe">
+										<img src="assets/images/!logged-user.jpg" class="rounded img-responsive" alt="<%=userDao.getUserInfo(id)[1]%>">
 										<div class="thumb-info-title">
 											<span class="thumb-info-inner"><%=userDao.getUserInfo(id)[1]%></span>
-
 											<span class="thumb-info-type"><%=userDao.getUserInfo(id)[4]%></span>
 										</div>
 									</div>
@@ -434,10 +403,10 @@
 
 									<hr class="dotted short">
 
-									<h6 class="text-muted">About</h6>
+									<h6 class="text-muted">关于</h6>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis vulputate quam. Interdum et malesuada</p>
 									<div class="clearfix">
-										<a class="text-uppercase text-muted pull-right" href="#">(View All)</a>
+										<a class="text-uppercase text-muted pull-right" href="#">(全部)</a>
 									</div>
 
 									<hr class="dotted short">
@@ -689,9 +658,41 @@
 													</div>
 												</div>
 											</fieldset>
-											
 											<hr class="dotted tall">
-											
+											<h4 class="mb-xlg">关于自己</h4>
+											<fieldset>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileBio">个人履历</label>
+													<div class="col-md-8">
+														<textarea class="form-control" rows="3" id="profileBio"></textarea>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-xs-3 control-label mt-xs pt-none">公开</label>
+													<div class="col-md-8">
+														<div class="checkbox-custom checkbox-default checkbox-inline mt-xs">
+															<input type="checkbox" checked="" id="profilePublic">
+															<label for="profilePublic"></label>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+											<hr class="dotted tall">
+											<h4 class="mb-xlg">修改密码</h4>
+											<fieldset class="mb-xl">
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileNewPassword">输入新密码</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileNewPassword">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileNewPasswordRepeat">再次输入</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileNewPasswordRepeat">
+													</div>
+												</div>
+											</fieldset>
 											<div class="panel-footer">
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">

@@ -293,7 +293,7 @@
                 <div class="nano-content">
                     <nav id="menu" class="nav-main" role="navigation">
                         <ul class="nav nav-main">
-                            <li class="nav-parent nav-expanded nav-active">
+                            <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-list-alt" aria-hidden="true"></i>
                                     <span>会议查询</span>
@@ -339,36 +339,6 @@
                                     <i class="fa fa-columns" aria-hidden="true"></i>
                                     <span>语音会议</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="pages-search-results.jsp">
-                                    <i class="fa fa-tasks" aria-hidden="true"></i>
-                                    <span>权限设置</span>
-                                </a>
-                            </li>
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-table" aria-hidden="true"></i>
-                                    <span>会议管理</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a href="ui-elements-portlets.jsp">
-                                            会议预定审核
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-editable.jsp">
-                                            会议室控制中心
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-elements-charts.jsp">
-                                            会议室使用情况
-                                        </a>
-                                    </li>
-
-                                </ul>
                             </li>
 
                         </ul>

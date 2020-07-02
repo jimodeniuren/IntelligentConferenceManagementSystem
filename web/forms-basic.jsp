@@ -466,9 +466,7 @@
 																	0);
 															out.print(dao.insert(conference));
 														}
-													}catch (Exception e){
-														e.printStackTrace();
-													}
+													}catch (Exception e){ }
 												%>
 											</div>
 										</form>
