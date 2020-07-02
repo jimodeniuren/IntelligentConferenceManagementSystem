@@ -337,7 +337,7 @@
                             <li  class="nav-active">
                                 <a href="tables-video.jsp">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>语音会议</span>
+                                    <span>视频会议</span>
                                 </a>
                             </li>
 
