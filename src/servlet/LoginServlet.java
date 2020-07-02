@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             if(userDao.getUserInfo(userDao.getUserID(emailAddr))[4].equals("administrator")){
                 response.sendRedirect("pages-search-results.jsp");
             }else{
-                response.sendRedirect("tables-advanced.jsp");
+                response.sendRedirect("pages-user-profile.jsp");
             }
 
         }else {

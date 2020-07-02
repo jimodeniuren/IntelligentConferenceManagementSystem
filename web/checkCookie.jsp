@@ -21,7 +21,7 @@
                 if(userDao.getUserInfo(Integer.parseInt(c.getValue()))[4].equals("administrator")){
                     response.sendRedirect("pages-search-results.jsp");
                 }else{
-                    response.sendRedirect("tables-advanced.jsp");
+                    response.sendRedirect("pages-user-profile.jsp");
                 }
                 session.setAttribute("userID",c.getValue());
                 return;
